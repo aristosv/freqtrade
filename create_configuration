@@ -43,7 +43,7 @@ bash -c 'cat > /root/freqtrade/config.json' << 'EOL'
             "rateLimit": 200
         },
         "pair_whitelist": [
-                "AAVE/USDT",
+		"AAVE/USDT",
 		"AAVEUP/USDT",
 		"ADA/USDT",
 		"ADAUP/USDT",
