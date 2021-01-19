@@ -30,7 +30,6 @@ class freqtrade(IStrategy):
 
     stoploss = -0.3
 
-    # Optimal timeframe for the strategy
     timeframe = '5m'
 
     def populate_indicators(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
