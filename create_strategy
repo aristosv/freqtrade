@@ -21,7 +21,6 @@ class freqtrade(IStrategy):
             and CCI > 100
     """
 
-    # Minimal ROI designed for the strategy.
     minimal_roi = {
         "60":  0.01,
         "30":  0.03,
@@ -29,7 +28,6 @@ class freqtrade(IStrategy):
         "0":  0.05
     }
 
-    # Optimal stoploss designed for the strategy
     stoploss = -0.3
 
     # Optimal timeframe for the strategy
