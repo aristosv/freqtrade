@@ -8,14 +8,14 @@ The scripts provide the configuration, strategy and service files.
 
 You need to provide exchange API keys, Telegram token and chatID
 
-install freqtrade
+- install freqtrade
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/freqtrade/main/install_freqtrade)
 
-create freqtrade configuration
+- create freqtrade configuration
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/freqtrade/main/create_configuration)
 
-create freqtrade strategy
+- create freqtrade strategy
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/freqtrade/main/create_strategy)
 
-create freqtrade service
+- create freqtrade service
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/freqtrade/main/create_service)
