@@ -14,10 +14,16 @@ bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristo
 ```
 
 - create freqtrade configuration
-`bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/freqtrade/main/create_configuration)
+```
+bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/freqtrade/main/create_configuration)
+```
 
 - create freqtrade strategy
-`bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/freqtrade/main/create_strategy)
+```
+bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/freqtrade/main/create_strategy)
+```
 
 - create freqtrade service
-`bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/freqtrade/main/create_service)
+```
+bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/freqtrade/main/create_service)
+```
