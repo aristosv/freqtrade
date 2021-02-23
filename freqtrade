@@ -234,7 +234,6 @@ bash -c "cat > /root/$botname/config.json" << EOL
 		"XRP/USDT",
 		"XTZ/USDT",
 		"XVS/USDT",
-		"XZC/USDT",
 		"YFI/USDT",
 		"YFII/USDT",
 		"ZEC/USDT",
