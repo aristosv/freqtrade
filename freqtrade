@@ -1,6 +1,17 @@
 #!/bin/bash
 
-botname=freqtrade1
+echo ======================================================================
+echo Before continuing make sure you already have the following information:
+echo Exchange key, Exchange secret, Telegram bot token, Telegram chat id.
+echo ======================================================================
+read -p "press enter to continue"
+
+echo bot name: ; read botname
+echo Exchange Name: ; read exchange_name
+echo Exchange Key: ; read exchange_key
+echo Exchange Secret: ; read exchange_secret
+echo Telegram Token: ; read telegram_token
+echo Telegram ChatID: ; read telegram_chatid
 
 ################################################################
 
@@ -58,9 +69,9 @@ bash -c "cat > /root/$botname/config.json" << EOL
         "ignore_roi_if_buy_signal": false
     },
     "exchange": {
-        "name": "binance",
-        "key": "",
-        "secret": "",
+        "name": "$exchange_name",
+        "key": "$exchange_key",
+        "secret": "$exchange_secret",
         "ccxt_config": {"enableRateLimit": true},
         "ccxt_async_config": {
             "enableRateLimit": true,
@@ -248,9 +259,9 @@ bash -c "cat > /root/$botname/config.json" << EOL
         {"method": "StaticPairList"}
     ],
     "telegram": {
-        "enabled": false,
-        "token": "",
-        "chat_id": "",
+        "enabled": true,
+        "token": "$telegram_token",
+        "chat_id": "$telegram_chatid",
         "keyboard": [
           ["/daily", "/profit", "/count"],
           ["/status table", "/performance", "/logs"]
@@ -354,5 +365,14 @@ EOL
 
 systemctl daemon-reload
 systemctl enable $botname.service
+systemctl start $botname.service
 
 ################################################################
+
+echo ======================================================================
+
+echo Installation has been completed. Your bot should talk to you on Telegram.
+echo Your bot service is running, but the trader is stopped. This is intentional.
+echo Confirm config.json is as you want it and start the trader by running /start on Telegram.
+
+echo ======================================================================
