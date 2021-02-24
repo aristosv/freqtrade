@@ -6,7 +6,7 @@ echo Exchange key, Exchange secret, Telegram bot token, Telegram chat id.
 echo ========================================================================
 read -p "press enter to continue"
 
-echo bot name: ; read botname
+echo Bot Name: ; read botname
 echo Exchange Name: ; read exchange_name
 echo Exchange Key: ; read exchange_key
 echo Exchange Secret: ; read exchange_secret
