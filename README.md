@@ -14,7 +14,7 @@ Before continuing make sure you already have the following information:
 
 If you want to set up multiple bots, run the script again and set a different bot name.
 
-Run the command below to run the script and install freqtrade
+The command below will run the script and install freqtrade
 ```
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/freqtrade/main/freqtrade)
 ```
