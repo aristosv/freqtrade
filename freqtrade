@@ -264,7 +264,7 @@ bash -c "cat > /root/$botname/config.json" << EOL
         "chat_id": "$telegram_chatid",
         "keyboard": [
           ["/daily", "/profit", "/count"],
-          ["/status table", "/performance", "/logs"]
+          ["/status table", "/stats", "/trades"]
       ]
     },
     "initial_state": "stopped",
