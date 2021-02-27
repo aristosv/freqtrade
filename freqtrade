@@ -39,7 +39,6 @@ echo ======================
 bash -c "cat > /root/$botname/config.json" << EOL
 {
     "dry_run": true,
-    "ticker_interval": "5m",
     "max_open_trades": -1,
     "tradable_balance_ratio": 1.00,
     "stake_currency": "USDT",
@@ -301,10 +300,7 @@ class $botname(IStrategy):
     """
 
     minimal_roi = {
-        "60":  0.01,
-        "30":  0.03,
-        "20":  0.04,
-        "0":  0.05
+        "0":  0.01
     }
 
     stoploss = -0.3
