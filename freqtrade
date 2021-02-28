@@ -38,6 +38,11 @@ git checkout develop
 echo installing bot
 printf 'y\ny\n' | ./setup.sh --install
 
+echo installing frequi
+source .env/bin/activate
+freqtrade install-ui
+deactivate
+
 echo creating configuration
 echo ======================
 
