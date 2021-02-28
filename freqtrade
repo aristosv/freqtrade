@@ -294,7 +294,7 @@ bash -c "cat > /root/$botname/config.json" << EOL
       ]
     },
     
-    "bot_name": "$botname"
+    "bot_name": "$botname",
     "initial_state": "stopped",
     "forcebuy_enable": false,
     "internals": {
