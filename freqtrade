@@ -20,7 +20,7 @@ echo ========================
 
 apt-get install -y git python3-pip python3-venv sudo
 
-echo changing directory
+echo going to root
 cd /root
 
 echo cloning repository
@@ -29,7 +29,7 @@ git clone https://github.com/freqtrade/freqtrade.git
 echo renaming directory
 mv freqtrade $botname
 
-echo changing directory
+echo going to $botname
 cd /root/$botname
 
 echo checking out git repository
