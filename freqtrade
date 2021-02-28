@@ -16,8 +16,8 @@ echo Telegram Token: ; read telegram_token
 echo Telegram ChatID: ; read telegram_chatid
 
 echo setting variables
-ipaddress=$(hostname -I | cut -d' ' -f1)
 secretkey="openssl rand -hex 16"
+ipaddress=$(hostname -I | cut -d' ' -f1)
 
 echo installing prerequisites
 echo ========================
