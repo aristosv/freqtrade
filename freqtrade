@@ -7,6 +7,8 @@ echo ========================================================================
 read -p "press enter to continue"
 
 echo Bot Name: ; read botname
+echo Web UI User: read webuser
+echo Web UI Pass: read webpass
 echo Exchange Name: ; read exchange_name
 echo Exchange Key: ; read exchange_key
 echo Exchange Secret: ; read exchange_secret
@@ -255,9 +257,23 @@ bash -c "cat > /root/$botname/config.json" << EOL
         "pair_blacklist": [
         ]
     },
+    
+    "api_server": {
+        "enabled": true,
+        "listen_ip_address": "echo $(hostname -I | cut -d' ' -f1)",
+        "listen_port": 8080,
+        "verbosity": "error",
+        "enable_openapi": false,
+        "jwt_secret_key": "random_key_here",
+        "CORS_origins": [],
+        "username": "$webuser",
+        "password": "$webpass"
+    },
+    
     "pairlists": [
         {"method": "StaticPairList"}
     ],
+    
     "telegram": {
         "enabled": true,
         "token": "$telegram_token",
@@ -267,6 +283,8 @@ bash -c "cat > /root/$botname/config.json" << EOL
           ["/status table", "/stats", "/trades"]
       ]
     },
+    
+    "bot_name": "$botname"
     "initial_state": "stopped",
     "forcebuy_enable": false,
     "internals": {
@@ -370,4 +388,6 @@ echo ===========================================================================
 echo The installation has been completed. Your bot should talk to you on Telegram.
 echo Your bot service is running, but the trader is stopped. This is intentional.
 echo Confirm config.json is as you want it and start the trader by running /start on Telegram.
+echo You can also access the bot at http://$(hostname -I | cut -d' ' -f1):8080.
+echo You can login using username:$webuser password:$webpass
 echo =========================================================================================
