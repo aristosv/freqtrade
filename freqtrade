@@ -16,6 +16,7 @@ echo Telegram Token: ; read telegram_token
 echo Telegram ChatID: ; read telegram_chatid
 
 ipaddress=$(hostname -I | cut -d' ' -f1)
+secretkey="openssl rand -hex 16"
 
 echo installing prerequisites
 echo ========================
@@ -274,7 +275,7 @@ bash -c "cat > /root/$botname/config.json" << EOL
         "listen_port": 8080,
         "verbosity": "error",
         "enable_openapi": false,
-        "jwt_secret_key": "random_key_here",
+        "jwt_secret_key": "$secretkey",
         "CORS_origins": [],
         "username": "$webuser",
         "password": "$webpass"
