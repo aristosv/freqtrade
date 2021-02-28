@@ -50,7 +50,7 @@ echo ======================
 
 bash -c "cat > /root/$botname/config.json" << EOL
 {
-    "dry_run": true,
+    "dry_run": false,
     "max_open_trades": -1,
     "tradable_balance_ratio": 1.00,
     "stake_currency": "USDT",
