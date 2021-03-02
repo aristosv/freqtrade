@@ -24,11 +24,11 @@ This is the new freqtrade configuration installer, using VolumePairList to autom
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/freqtrade/main/freqtrade_new)
 ```
 
-- Bot Name: This will be the bot's name. Useful when setting up multiple bots on the same server so you can name them differenty.
+- Bot Name: This will be the bot's name. When setting up multiple bots each one can have it's name.
 - Web UI user/pass: The credentials to login on the web interface of the bot. http://your_ip_address:8080
 - Stake Currency: Which coin do you want to use to trade on? It's recommended to use a stablecoin like USDT.
 - Stake Amount: How much of you stake currency do you want to invest per trade? Try to keep it around 20 USDT.
-- Max Open Trades: The number of trades you want to allow the bot to open? -1 means use all the available amount on the Exchange.
+- Max Open Trades: The number of trades you want to allow the bot to open? -1 uses all the available amount on the Exchange.
 - Exchange Name: The name of your Exchange. For example: binance.
 - Exchange Key: Generate an API key on your exchange and use it here.
 - Exchange Secret: Along with the key you will also get a secret.
