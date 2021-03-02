@@ -18,3 +18,8 @@ The command below will run the script and install freqtrade (needs wget).
 ```
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/freqtrade/main/freqtrade)
 ```
+
+This is the new freqtrade configuration installer, using VolumePairList to automatically detect pairs.
+```
+bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/freqtrade/main/freqtrade_new)
+```
