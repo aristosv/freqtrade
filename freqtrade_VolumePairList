@@ -114,7 +114,7 @@ bash -c "cat > /root/$botname/config.json" << EOL
         {
             "method": "LowProfitPairs",
             "lookback_period_candles": 360,
-            "trade_limit": 1,
+            "trade_limit": 2,
             "stop_duration_candles": 12,
             "required_profit": 0.02
         }
