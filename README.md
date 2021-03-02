@@ -24,6 +24,10 @@ This is the new freqtrade configuration installer, using VolumePairList to autom
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/freqtrade/main/freqtrade_new)
 ```
 
+
+These are some of the information you will be required to provide when installing Freqtrade.
+
+
 - Bot Name: This will be the bot's name. When setting up multiple bots each one can have it's name.
 - Web UI user/pass: The credentials to login on the web interface of the bot. http://your_ip_address:8080
 - Stake Currency: Which coin do you want to use to trade on? It's recommended to use a stablecoin like USDT.
