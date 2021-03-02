@@ -28,13 +28,13 @@ bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristo
 This is the information you will be required to provide when installing Freqtrade.
 
 
-- Bot Name: This will be the bot's name. When setting up multiple bots each one can have it's own name.
-- Web UI user/pass: The credentials to login on the web interface of the bot. http://your_ip_address:8080
-- Stake Currency: The coin you want to use to trade on. It's recommended to use a stablecoin like USDT.
-- Stake Amount: The amount you want to invest per trade. Binance requires above 16 USDT.
-- Max Open Trades: The maximum allowed number of trades. -1 uses all the available amount on the Exchange.
-- Exchange Name: The name of your Exchange. For example: binance.
-- Exchange Key: Generate an API key on your exchange and use it here.
-- Exchange Secret: Along with the key you will also get a secret.
-- Telegram Token: In Telegram, talk to [@botfather](https://t.me/BotFather), create a new bot and get it's token.
-- Telegram ChatID: In Telegram, talk to [@myidbot](https://t.me/myidbot) and get your ID.
+- **Bot Name:** This will be the bot's name. When setting up multiple bots each one can have it's own name.
+- **Web UI user/pass:** The credentials to login on the web interface of the bot. http://your_ip_address:8080
+- **Stake Currency:** The coin you want to use to trade on. It's recommended to use a stablecoin like USDT.
+- **Stake Amount:** The amount you want to invest per trade. Binance requires above 16 USDT.
+- **Max Open Trades:** The maximum allowed number of trades. -1 uses all the available amount on the Exchange.
+- **Exchange Name:** The name of your Exchange. For example: binance.
+- **Exchange Key:** Generate an API key on your exchange and use it here.
+- **Exchange Secret:** Along with the key you will also get a secret.
+- **Telegram Token:** In Telegram, talk to [@botfather](https://t.me/BotFather), create a new bot and get it's token.
+- **Telegram ChatID:** In Telegram, talk to [@myidbot](https://t.me/myidbot) and get your I.
