@@ -9,6 +9,10 @@ read -p "press enter to continue"
 echo Bot Name: ; read botname
 echo Web UI User: ; read webuser
 echo Web UI Pass: ; read webpass
+echo Stake Currency ; read stake_currency
+echo Stake Amount ; read stake_amount
+echo Max Open Trades ; read max_open_trades
+echo Display Currency ; read display_currency
 echo Exchange Name: ; read exchange_name
 echo Exchange Key: ; read exchange_key
 echo Exchange Secret: ; read exchange_secret
@@ -20,8 +24,6 @@ secretkey=$(openssl rand -hex 16)
 ipaddress=$(hostname -I | cut -d' ' -f1)
 
 echo installing prerequisites
-echo ========================
-
 apt-get install -y git python3-pip python3-venv sudo
 
 echo going to root directory
@@ -52,10 +54,10 @@ echo ======================
 
 bash -c "cat > /root/$botname/config.json" << EOL
 {
-    "max_open_trades": -1,
-    "stake_currency": "USDT",
-    "stake_amount": 50,
-    "fiat_display_currency": "USD",
+    "max_open_trades": $max_open_trades,
+    "stake_currency": "$stake_currency",
+    "stake_amount": $stake_amount,
+    "fiat_display_currency": "$display_currency",
     "dry_run": false,
 
     "unfilledtimeout": {
@@ -119,35 +121,10 @@ bash -c "cat > /root/$botname/config.json" << EOL
     ],
 
     "exchange": {
-        "name": "binance",
-        "key": "46r41kLeN0H5cws1itaKmG2TubRk5DomRQsXSLk7h4lxTnLfaFa4TF1vZtRfIOyD",
-        "secret": "ArE6CdLDnR4XotLye2i81pjQVCmhrjk9dDB1iQMxeZaAflRS00RSH8x3yLcHGIPA",
+        "name": "$exchange_name",
+        "key": "$exchange_key",
+        "secret": "$exchange_secret",
         },
-
-    "telegram": {
-        "enabled": false,
-        "token": "your_telegram_token",
-        "chat_id": "your_telegram_chat_id",
-    },
-
-    "api_server": {
-        "enabled": false,
-        "listen_ip_address": "127.0.0.1",
-        "listen_port": 8080,
-        "verbosity": "error",
-        "enable_openapi": false,
-        "jwt_secret_key": "somethingrandom",
-        "CORS_origins": [],
-        "username": "freqtrader",
-        "password": "SuperSecurePassword"
-    },
-
-    "initial_state": "stopped",
-    "internals": {
-        "process_throttle_secs": 5,
-        "heartbeat_interval": 60
-    },
-}
 
     "api_server": {
         "enabled": true,
@@ -161,10 +138,6 @@ bash -c "cat > /root/$botname/config.json" << EOL
         "password": "$webpass"
     },
     
-    "pairlists": [
-        {"method": "StaticPairList"}
-    ],
-    
     "telegram": {
         "enabled": true,
         "token": "$telegram_token",
@@ -174,13 +147,8 @@ bash -c "cat > /root/$botname/config.json" << EOL
           ["/status table", "/stats", "/trades"]
       ]
     },
-    
-    "bot_name": "$botname",
+
     "initial_state": "stopped",
-    "forcebuy_enable": false,
-    "internals": {
-        "process_throttle_secs": 5
-    }
 }
 EOL
 
