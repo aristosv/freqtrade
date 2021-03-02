@@ -81,6 +81,8 @@ bash -c "cat > /root/$botname/config.json" << EOL
             "refresh_period": 1800
         },
         {"method": "PrecisionFilter"},
+        {"method": "PriceFilter", "low_price_ratio": 0.01, "min_price": 0.00000010},
+        {"method": "SpreadFilter", "max_spread_ratio": 0.005},
         {"method": "ShuffleFilter"},
         {
             "method": "RangeStabilityFilter",
@@ -113,7 +115,7 @@ bash -c "cat > /root/$botname/config.json" << EOL
             "method": "LowProfitPairs",
             "lookback_period_candles": 360,
             "trade_limit": 1,
-            "stop_duration_candles": 2,
+            "stop_duration_candles": 12,
             "required_profit": 0.02
         }
     ],
