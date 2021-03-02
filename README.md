@@ -12,7 +12,7 @@ Before continuing make sure you already have the following information:
 - Telegram chat id.
 
 If you want to set up multiple bots, run the command again and set a different bot name.
-
+---
 This command will install freqtrade.
 ```
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/freqtrade/main/freqtrade)
