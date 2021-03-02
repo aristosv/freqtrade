@@ -32,5 +32,5 @@ bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristo
 - Exchange Name: The name of your Exchange. For example: binance.
 - Exchange Key: Generate an API key on your exchange and use it here.
 - Exchange Secret: Along with the key you will also get a secret.
-- Telegram Token: Install Telegram, talk to @botfather, create a new bot and get it's token.
+- Telegram Token: In Telegram, talk to [@botfather](https://t.me/BotFather), create a new bot and get it's token.
 - Telegram ChatID: In Telegram, talk to [@myidbot](https://t.me/myidbot) and get your ID.
