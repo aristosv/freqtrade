@@ -1,9 +1,8 @@
 # freqtrade
 
-Install freqtrade cryptotrading bot on a Debian 10 machine.
+Install [freqtrade](https://github.com/freqtrade/freqtrade) cryptotrading bot on a Debian 10 machine.
 
-
-The script provides the configuration, strategy and service file.
+**Disclaimer:** This software can, and probably will, lose your money. Investigate, find a strategy you're comfortable with, and use it with this bot. You are responsible for your decisions and your money. The script provides a configuration, strategy and service file. Look at them, understand them, modify them. Good luck.
 
 
 Before continuing make sure you already have the following information:
