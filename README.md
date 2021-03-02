@@ -27,7 +27,7 @@ bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristo
 - Bot Name: This will be the bot's name. When setting up multiple bots each one can have it's name.
 - Web UI user/pass: The credentials to login on the web interface of the bot. http://your_ip_address:8080
 - Stake Currency: Which coin do you want to use to trade on? It's recommended to use a stablecoin like USDT.
-- Stake Amount: The amount you want to invest per trade.
+- Stake Amount: The amount you want to invest per trade. Binance requires above 16 USDT.
 - Max Open Trades: The number of trades you want to allow the bot to open? -1 uses all the available amount on the Exchange.
 - Exchange Name: The name of your Exchange. For example: binance.
 - Exchange Key: Generate an API key on your exchange and use it here.
