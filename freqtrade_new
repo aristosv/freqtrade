@@ -22,7 +22,7 @@ echo Telegram ChatID: ; read telegram_chatid
 echo setting variables
 secretkey=$(openssl rand -hex 16)
 ipaddress=$(hostname -I | cut -d' ' -f1)
-
+##############################################################################
 echo installing prerequisites
 apt-get install -y git python3-pip python3-venv sudo
 
@@ -48,10 +48,8 @@ echo installing frequi
 source .env/bin/activate
 freqtrade install-ui
 deactivate
-
+##############################################################################
 echo creating configuration
-echo ======================
-
 bash -c "cat > /root/$botname/config.json" << EOL
 {
     "max_open_trades": $max_open_trades,
@@ -151,10 +149,8 @@ bash -c "cat > /root/$botname/config.json" << EOL
     "initial_state": "stopped",
 }
 EOL
-
+##############################################################################
 echo creating strategy
-echo =================
-
 bash -c "cat > /root/$botname/user_data/strategies/$botname.py" << EOL
 
 from freqtrade.strategy.interface import IStrategy
@@ -204,10 +200,8 @@ class $botname(IStrategy):
 
         return dataframe
 EOL
-
+##############################################################################
 echo creating service
-echo ================
-
 bash -c "cat > /etc/systemd/system/$botname.service" << EOL
 Description=$botname service
 After=network.target
