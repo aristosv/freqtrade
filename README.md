@@ -25,7 +25,7 @@ This freqtrade installer uses VolumePairList to automatically detect coin pairs.
 ```
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/freqtrade/main/freqtrade_VolumePairList)
 ```
-
+---
 
 This is the information you will be required to provide when installing Freqtrade.
 
