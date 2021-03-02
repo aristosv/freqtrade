@@ -33,4 +33,4 @@ bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristo
 - Exchange Key: Generate an API key on your exchange and use it here.
 - Exchange Secret: Along with the key you will also get a secret.
 - Telegram Token: Install Telegram, talk to @botfather, create a new bot and get it's token.
-- Telegram ChatID: Talk to @myidbot and get your ID.
+- Telegram ChatID: In Telegram, talk to [@myidbot](https://t.me/myidbot) and get your ID.
