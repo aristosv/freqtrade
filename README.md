@@ -11,16 +11,16 @@ Before continuing make sure you already have the following information:
 - Telegram bot token
 - Telegram chat id.
 
-If you want to set up multiple bots, run the script again and set a different bot name.
+If you want to set up multiple bots, run the command again and set a different bot name.
 
-The command below will run the script and install freqtrade (needs wget).
+This command will install freqtrade.
 ```
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/freqtrade/main/freqtrade)
 ```
 
 This is the new freqtrade configuration installer, using VolumePairList to automatically detect pairs.
 ```
-bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/freqtrade/main/freqtrade_new)
+bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/freqtrade/main/freqtrade_VolumePairList)
 ```
 
 
