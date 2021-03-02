@@ -18,7 +18,8 @@ This command will install freqtrade.
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/freqtrade/main/freqtrade)
 ```
 
-This is the new freqtrade configuration installer, using VolumePairList to automatically detect pairs.
+
+This freqtrade installer uses VolumePairList to automatically detect coin pairs.
 ```
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/freqtrade/main/freqtrade_VolumePairList)
 ```
