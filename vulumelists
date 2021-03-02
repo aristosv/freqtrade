@@ -1,0 +1,388 @@
+#!/bin/bash
+
+echo ========================================================================
+echo Before continuing make sure you already have the following information:
+echo Exchange key, Exchange secret, Telegram bot token, Telegram chat id.
+echo ========================================================================
+read -p "press enter to continue"
+
+echo Bot Name: ; read botname
+echo Web UI User: ; read webuser
+echo Web UI Pass: ; read webpass
+echo Exchange Name: ; read exchange_name
+echo Exchange Key: ; read exchange_key
+echo Exchange Secret: ; read exchange_secret
+echo Telegram Token: ; read telegram_token
+echo Telegram ChatID: ; read telegram_chatid
+
+echo setting variables
+secretkey=$(openssl rand -hex 16)
+ipaddress=$(hostname -I | cut -d' ' -f1)
+
+echo installing prerequisites
+echo ========================
+
+apt-get install -y git python3-pip python3-venv sudo
+
+echo going to root directory
+cd /root
+
+echo cloning repository
+git clone https://github.com/freqtrade/freqtrade.git
+
+echo renaming directory
+mv freqtrade $botname
+
+echo going to $botname directory
+cd /root/$botname
+
+echo checking out git repository
+git checkout develop
+
+echo installing bot
+printf 'y\ny\n' | ./setup.sh --install
+
+echo installing frequi
+source .env/bin/activate
+freqtrade install-ui
+deactivate
+
+echo creating configuration
+echo ======================
+
+bash -c "cat > /root/$botname/config.json" << EOL
+{
+    "dry_run": false,
+    "max_open_trades": -1,
+    "tradable_balance_ratio": 1.00,
+    "stake_currency": "USDT",
+    "stake_amount": 50,
+    "fiat_display_currency": "USD",
+    "amend_last_stake_amount": true,
+    "dry_run_wallet": 100000,
+
+    "unfilledtimeout": {
+        "buy": 10,
+        "sell": 30
+    },
+    "bid_strategy": {
+        "ask_last_balance": 0.0,
+        "use_order_book": false,
+        "order_book_top": 1,
+        "check_depth_of_market": {
+            "enabled": false,
+            "bids_to_ask_delta": 1
+        }
+    },
+    
+    "ask_strategy":{
+        "use_order_book": false,
+        "order_book_min": 1,
+        "order_book_max": 1,
+        "use_sell_signal": true,
+        "sell_profit_only": false,
+        "ignore_roi_if_buy_signal": false
+    },
+    
+    "exchange": {
+        "name": "$exchange_name",
+        "key": "$exchange_key",
+        "secret": "$exchange_secret",
+        "ccxt_config": {"enableRateLimit": true},
+        "ccxt_async_config": {
+            "enableRateLimit": true,
+            "rateLimit": 200
+        },
+        
+    "pair_whitelist": [
+	"AAVE/USDT",
+	"ADA/USDT",
+	"AION/USDT",
+	"AKRO/USDT",
+	"ALGO/USDT",
+	"ALPHA/USDT",
+	"ANKR/USDT",
+	"ANT/USDT",
+	"ARDR/USDT",
+	"ARPA/USDT",
+	"ATOM/USDT",
+	"AUD/USDT",
+	"AUDIO/USDT",
+	"AVA/USDT",
+	"AVAX/USDT",
+	"AXS/USDT",
+	"BAL/USDT",
+	"BAND/USDT",
+	"BAT/USDT",
+	"BCH/USDT",
+	"BEAM/USDT",
+	"BEL/USDT",
+	"BLZ/USDT",
+	"BNB/USDT",
+	"BNT/USDT",
+	"BTC/USDT",
+	"BTS/USDT",
+	"BTT/USDT",
+	"BZRX/USDT",
+	"CELR/USDT",
+	"CHR/USDT",
+	"CHZ/USDT",
+	"COCOS/USDT",
+	"COMP/USDT",
+	"COS/USDT",
+	"COTI/USDT",
+	"CRV/USDT",
+	"CTK/USDT",
+	"CTSI/USDT",
+	"CTXC/USDT",
+	"CVC/USDT",
+	"DASH/USDT",
+	"DATA/USDT",
+	"DCR/USDT",
+	"DENT/USDT",
+	"DGB/USDT",
+	"DIA/USDT",
+	"DNT/USDT",
+	"DOCK/USDT",
+	"DOGE/USDT",
+	"DOT/USDT",
+	"DREP/USDT",
+	"DUSK/USDT",
+	"EGLD/USDT",
+	"ENJ/USDT",
+	"EOS/USDT",
+	"ETC/USDT",
+	"ETH/USDT",
+	"FET/USDT",
+	"FIL/USDT",
+	"FIO/USDT",
+	"FLM/USDT",
+	"FTM/USDT",
+	"FTT/USDT",
+	"FUN/USDT",
+	"GRT/USDT",
+	"GTO/USDT",
+	"GXS/USDT",
+	"HARD/USDT",
+	"HBAR/USDT",
+	"HIVE/USDT",
+	"HNT/USDT",
+	"HOT/USDT",
+	"ICX/USDT",
+	"INJ/USDT",
+	"IOST/USDT",
+	"IOTA/USDT",
+	"IOTX/USDT",
+	"IRIS/USDT",
+	"JST/USDT",
+	"KAVA/USDT",
+	"KEY/USDT",
+	"KMD/USDT",
+	"KNC/USDT",
+	"KSM/USDT",
+	"LINK/USDT",
+	"LRC/USDT",
+	"LSK/USDT",
+	"LTC/USDT",
+	"LTO/USDT",
+	"LUNA/USDT",
+	"MANA/USDT",
+	"MATIC/USDT",
+	"MBL/USDT",
+	"MDT/USDT",
+	"MFT/USDT",
+	"MITH/USDT",
+	"MKR/USDT",
+	"MTL/USDT",
+	"NANO/USDT",
+	"NBS/USDT",
+	"NEAR/USDT",
+	"NEO/USDT",
+	"NKN/USDT",
+	"NMR/USDT",
+	"NPXS/USDT",
+	"NULS/USDT",
+	"OCEAN/USDT",
+	"OGN/USDT",
+	"OMG/USDT",
+	"ONE/USDT",
+	"ONG/USDT",
+	"ONT/USDT",
+	"ORN/USDT",
+	"OXT/USDT",
+	"PAXG/USDT",
+	"PERL/USDT",
+	"PNT/USDT",
+	"QTUM/USDT",
+	"REN/USDT",
+	"REP/USDT",
+	"RLC/USDT",
+	"ROSE/USDT",
+	"RSR/USDT",
+	"RUNE/USDT",
+	"RVN/USDT",
+	"SAND/USDT",
+	"SC/USDT",
+	"SKL/USDT",
+	"SNX/USDT",
+	"SOL/USDT",
+	"SRM/USDT",
+	"STMX/USDT",
+	"STORJ/USDT",
+	"STPT/USDT",
+	"STRAX/USDT",
+	"STX/USDT",
+	"SUN/USDT",
+	"SUSHI/USDT",
+	"SXP/USDT",
+	"TCT/USDT",
+	"TFUEL/USDT",
+	"THETA/USDT",
+	"TOMO/USDT",
+	"TRB/USDT",
+	"TROY/USDT",
+	"TRX/USDT",
+	"UMA/USDT",
+	"UNFI/USDT",
+	"UNI/USDT",
+	"UTK/USDT",
+	"VET/USDT",
+	"VITE/USDT",
+	"VTHO/USDT",
+	"WAN/USDT",
+	"WAVES/USDT",
+	"WIN/USDT",
+	"WING/USDT",
+	"WNXM/USDT",
+	"WRX/USDT",
+	"WTC/USDT",
+	"XEM/USDT",
+	"XLM/USDT",
+	"XMR/USDT",
+	"XRP/USDT",
+	"XTZ/USDT",
+	"XVS/USDT",
+	"YFI/USDT",
+	"YFII/USDT",
+	"ZEC/USDT",
+	"ZEN/USDT",
+	"ZIL/USDT",
+	"ZRX/USDT"
+        ],
+    "pair_blacklist": [
+        ]
+    },
+    
+    "api_server": {
+        "enabled": true,
+        "listen_ip_address": "$ipaddress",
+        "listen_port": 8080,
+        "verbosity": "error",
+        "enable_openapi": false,
+        "jwt_secret_key": "$secretkey",
+        "CORS_origins": [],
+        "username": "$webuser",
+        "password": "$webpass"
+    },
+    
+    "pairlists": [
+        {"method": "StaticPairList"}
+    ],
+    
+    "telegram": {
+        "enabled": true,
+        "token": "$telegram_token",
+        "chat_id": "$telegram_chatid",
+        "keyboard": [
+          ["/daily", "/profit", "/count"],
+          ["/status table", "/stats", "/trades"]
+      ]
+    },
+    
+    "bot_name": "$botname",
+    "initial_state": "stopped",
+    "forcebuy_enable": false,
+    "internals": {
+        "process_throttle_secs": 5
+    }
+}
+EOL
+
+echo creating strategy
+echo =================
+
+bash -c "cat > /root/$botname/user_data/strategies/$botname.py" << EOL
+
+from freqtrade.strategy.interface import IStrategy
+from typing import Dict, List
+from functools import reduce
+from pandas import DataFrame
+
+import talib.abstract as ta
+import freqtrade.vendor.qtpylib.indicators as qtpylib
+
+
+class $botname(IStrategy):
+
+    minimal_roi = {
+        "0":  0.01
+    }
+
+    stoploss = -0.3
+    timeframe = '5m'
+
+    def populate_indicators(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
+        macd = ta.MACD(dataframe)
+        dataframe['macd'] = macd['macd']
+        dataframe['macdsignal'] = macd['macdsignal']
+        dataframe['macdhist'] = macd['macdhist']
+        dataframe['cci'] = ta.CCI(dataframe)
+
+        return dataframe
+
+    def populate_buy_trend(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
+        dataframe.loc[
+            (
+                qtpylib.crossed_above(dataframe['macd'], dataframe['macdsignal']) &
+                (dataframe['cci'] <= -50.0)
+            ),
+            'buy'] = 1
+
+        return dataframe
+
+    def populate_sell_trend(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
+        dataframe.loc[
+            (
+                qtpylib.crossed_below(dataframe['macd'], dataframe['macdsignal']) &
+                (dataframe['cci'] >= 100.0)
+            ),
+            'sell'] = 1
+
+        return dataframe
+EOL
+
+echo creating service
+echo ================
+
+bash -c "cat > /etc/systemd/system/$botname.service" << EOL
+Description=$botname service
+After=network.target
+[Service]
+ExecStart=/bin/bash -c "cd /root/$botname ; source .env/bin/activate ; freqtrade trade --strategy $botname"
+Restart=always
+StandardError=append:/var/log/$botname.log
+[Install]
+WantedBy=multi-user.target
+EOL
+
+systemctl daemon-reload
+systemctl enable $botname.service
+systemctl start $botname.service
+
+echo =========================================================================================
+echo The installation has been completed. Your bot should talk to you on Telegram.
+echo Your bot service is running, but the trader is stopped. This is intentional.
+echo Confirm config.json is as you want it and start the trader by running /start on Telegram.
+echo You can also access the bot at http://$(hostname -I | cut -d' ' -f1):8080.
+echo You can login using username:$webuser password:$webpass
+echo =========================================================================================
