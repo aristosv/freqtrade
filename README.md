@@ -14,7 +14,7 @@ Before continuing make sure you already have the following information:
 - Telegram bot token
 - Telegram chat id.
 
-If you want to set up multiple bots, run the command again and set a different bot name.
+If you want to set up multiple bots, run the command again and choose a different bot name.
 
 ---
 
