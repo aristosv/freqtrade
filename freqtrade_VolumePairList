@@ -9,6 +9,7 @@ read -p "press enter to continue"
 echo Bot Name: ; read botname
 echo Web UI User: ; read webuser
 echo Web UI Pass: ; read webpass
+echo Web UI Port: ; read webport
 echo Stake Currency ; read stake_currency
 echo Stake Amount ; read stake_amount
 echo Max Open Trades ; read max_open_trades
@@ -143,7 +144,7 @@ bash -c "cat > /root/$botname/config.json" << EOL
     "api_server": {
         "enabled": true,
         "listen_ip_address": "$ipaddress",
-        "listen_port": 8080,
+        "listen_port": $webport,
         "verbosity": "error",
         "enable_openapi": false,
         "jwt_secret_key": "$secretkey",
