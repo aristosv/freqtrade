@@ -32,8 +32,8 @@ This is the information you will be required to provide when installing Freqtrad
 - **Web UI user:** The username to login on the web interface of the bot.
 - **Web UI pass:** The password to login on the web interface of the bot.
 - **Web UI Port:** The port to use for the web interface.
-- **Stake Currency:** The coin you want to use to trade on. It's recommended to use a stablecoin like USDT.
-- **Stake Amount:** The amount you want to invest per trade. Binance requires above 16 USDT.
+- **Stake Currency:** The coin you want to use to trade on. e.g. USDT.
+- **Stake Amount:** The amount you want to invest per trade.
 - **Max Open Trades:** The maximum allowed number of trades.
 - **Exchange Name:** The name of your Exchange. For example: binance.
 - **Exchange Key:** Generate an API key on your exchange and use it here.
