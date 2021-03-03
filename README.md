@@ -25,7 +25,7 @@ bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristo
 
 ---
 
-This is the information you will be required to provide when installing Freqtrade.
+This is the information you will be required to provide when installing Freqtrade using this script.
 
 
 - **Bot Name:** This will be the bot's name. When setting up multiple bots each one can have it's own name.
