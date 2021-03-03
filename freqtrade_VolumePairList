@@ -73,6 +73,26 @@ bash -c "cat > /root/$botname/config.json" << EOL
         }
     },
 
+    "exchange": {
+        "name": "$exchange_name",
+        "key": "$exchange_key",
+        "secret": "$exchange_secret",
+        "ccxt_config": {"enableRateLimit": true},
+        "ccxt_async_config": {
+            "enableRateLimit": false,
+            "rateLimit": 500,
+            "aiohttp_trust_env": false
+        },
+        "pair_whitelist": [
+        ],
+        "pair_blacklist": [
+            ".*UP/$stake_currency",
+            ".*DOWN/$stake_currency"
+        ],
+        "outdated_offset": 5,
+        "markets_refresh_interval": 60
+    },
+
     "pairlists": [
         {
             "method": "VolumePairList",
@@ -120,12 +140,6 @@ bash -c "cat > /root/$botname/config.json" << EOL
         }
     ],
 
-    "exchange": {
-        "name": "$exchange_name",
-        "key": "$exchange_key",
-        "secret": "$exchange_secret",
-        },
-
     "api_server": {
         "enabled": true,
         "listen_ip_address": "$ipaddress",
@@ -137,7 +151,7 @@ bash -c "cat > /root/$botname/config.json" << EOL
         "username": "$webuser",
         "password": "$webpass"
     },
-    
+
     "telegram": {
         "enabled": true,
         "token": "$telegram_token",
@@ -148,7 +162,7 @@ bash -c "cat > /root/$botname/config.json" << EOL
       ]
     },
 
-    "initial_state": "stopped",
+    "initial_state": "running",
 }
 EOL
 ##############################################################################
