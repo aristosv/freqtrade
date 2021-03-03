@@ -168,7 +168,6 @@ EOL
 ##############################################################################
 echo creating strategy
 bash -c "cat > /root/$botname/user_data/strategies/$botname.py" << EOL
-
 from freqtrade.strategy.interface import IStrategy
 from typing import Dict, List
 from functools import reduce
@@ -176,7 +175,6 @@ from pandas import DataFrame
 
 import talib.abstract as ta
 import freqtrade.vendor.qtpylib.indicators as qtpylib
-
 
 class $botname(IStrategy):
 
@@ -193,7 +191,6 @@ class $botname(IStrategy):
         dataframe['macdsignal'] = macd['macdsignal']
         dataframe['macdhist'] = macd['macdhist']
         dataframe['cci'] = ta.CCI(dataframe)
-
         return dataframe
 
     def populate_buy_trend(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
@@ -203,7 +200,6 @@ class $botname(IStrategy):
                 (dataframe['cci'] <= -50.0)
             ),
             'buy'] = 1
-
         return dataframe
 
     def populate_sell_trend(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
@@ -213,7 +209,6 @@ class $botname(IStrategy):
                 (dataframe['cci'] >= 100.0)
             ),
             'sell'] = 1
-
         return dataframe
 EOL
 ##############################################################################
