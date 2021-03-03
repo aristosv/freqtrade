@@ -40,5 +40,5 @@ This is the information you will be required to provide when installing Freqtrad
 - **Exchange Name:** The name of your Exchange. For example: binance.
 - **Exchange Key:** Generate an API key on your exchange and use it here.
 - **Exchange Secret:** Along with the API key you will also get a secret.
-- **Telegram Token:** In Telegram, talk to [@botfather](https://t.me/BotFather), create a new bot and get it's token.
+- **Telegram Token:** In Telegram, talk to [@botfather](https://t.me/BotFather), create a new bot and get it's API token.
 - **Telegram ChatID:** In Telegram, talk to [@myidbot](https://t.me/myidbot) and get your ID.
