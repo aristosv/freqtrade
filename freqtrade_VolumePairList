@@ -162,7 +162,7 @@ bash -c "cat > /root/$botname/config.json" << EOL
       ]
     },
 
-    "initial_state": "running",
+    "initial_state": "stopped",
 }
 EOL
 ##############################################################################
