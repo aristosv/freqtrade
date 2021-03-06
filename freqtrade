@@ -42,7 +42,7 @@ cd /root/$botname
 echo checking out git repository
 git checkout develop
 
-echo installing bot
+echo installing freqtrade
 printf 'y\ny\n' | ./setup.sh --install
 
 echo installing frequi
