@@ -123,7 +123,7 @@ bash -c "cat > /root/$botname/config.json" << EOL
         },
         {
             "method": "CooldownPeriod",
-            "stop_duration_candles": 20
+            "stop_duration_candles": 1
         },
         {
             "method": "MaxDrawdown",
