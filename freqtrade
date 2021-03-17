@@ -87,8 +87,26 @@ bash -c "cat > /root/$botname/config.json" << EOL
         "pair_whitelist": [
         ],
         "pair_blacklist": [
-            ".*UP/$stake_currency",
-            ".*DOWN/$stake_currency"
+            ".*UP/USDT",
+            ".*DOWN/USDT",
+            "BUSD/USDT",
+            "EUR/USDT",
+            "AUD/USDT",
+            "BRL/USDT",
+            "GBP/USDT",
+            "TRY/USDT",
+            "TUSD/USDT",
+            "USDC/USDT",
+            "PAX/USDT",
+            "BIDR/USDT",
+            "DAI/USDT",
+            "IDRT/USDT",
+            "RUB/USDT",
+            "ZAR/USDT",
+            "NGN/USDT",
+            "UAH/USDT",
+            "VAI/USDT",
+            "BVND/USDT"
         ],
         "outdated_offset": 5,
         "markets_refresh_interval": 60
