@@ -1,4 +1,5 @@
 17/03/2021
+
 Added binance stablecoins and Fiat currencies to blacklist
 
 02/03/2021
