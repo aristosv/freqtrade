@@ -1,6 +1,6 @@
 **18/03/2021**
 
-- Tidy up script
+- Tidy up installer script
 - Updated README.md
 
 **17/03/2021**
