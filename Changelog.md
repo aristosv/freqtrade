@@ -1,12 +1,12 @@
 **17/03/2021**
 
-Added binance stablecoins and Fiat currencies to blacklist
+- Added binance stablecoins and Fiat currencies to blacklist
 
 **02/03/2021**
 
-Added Leveraged tokens to blacklist
-Prompt for FreqUI port
-Added Protections options in config.json
+- Added Leveraged tokens to blacklist
+- Prompt for FreqUI port
+- Added Protections options in config.json
 
 **01/03/2021**
 
