@@ -28,14 +28,14 @@ bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristo
 This is the information you will be required to provide when installing Freqtrade using this script.
 
 
-- **Bot Name:** This will be the bot's name. When setting up multiple bots each one can have it's own name.
+- **Bot Name:** This defines the bot's directory, service and strategy names.
 - **Web UI user:** The username to login on the web interface of the bot.
 - **Web UI pass:** The password to login on the web interface of the bot.
 - **Web UI Port:** The port to use for the web interface.
-- **Stake Currency:** The coin you want to use to trade on. For example: USDT.
+- **Stake Currency:** The coin you want to use to trade on. Example: USDT.
 - **Stake Amount:** The amount you want to invest per trade.
-- **Max Open Trades:** The maximum allowed number of trades.
-- **Exchange Name:** The name of your Exchange. For example: binance.
+- **Max Open Trades:** The maximum allowed number of trades. -1 uses all available balance.
+- **Exchange Name:** The name of your Exchange. Example: binance.
 - **Exchange Key:** Generate an API key on your exchange and use it here.
 - **Exchange Secret:** Along with the API key you will also get a secret.
 - **Telegram Token:** In Telegram, talk to [@botfather](https://t.me/BotFather), create a new bot and get it's API token.
