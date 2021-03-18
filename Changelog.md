@@ -1,3 +1,8 @@
+**18/03/2021**
+
+- Tidy up script
+- Updated README.md
+
 **17/03/2021**
 
 - Added binance stablecoins and Fiat currencies to blacklist
