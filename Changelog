@@ -1,14 +1,14 @@
 17/03/2021
-Added stablecoins and Fiat currencies to blacklist
+Added binance stablecoins and Fiat currencies to blacklist
 
 02/03/2021
 Added Leveraged tokens to blacklist
-Option for FreqUI port
-Added Protections in config.json
+Prompt for FreqUI port
+Added Protections options in config.json
 
 01/03/2021
-Testing VolumePairList
-Testing Filters
+Now using VolumePairList method
+Also using multiple filters
 Updated README.md
 
 01/03/2021
@@ -22,8 +22,8 @@ Added FreqUI installer
 Now automatically gets host IP Address
 Can now set FreqUI user/pass
 Set dry_run to false
-Now setting jwt_secret_key automatically
-Echoes host URL at the end of the installer
+Now setting "jwt_secret_key" automatically
+Echoes FreqUI URL after installation
 
 27/02/2021
 Removed deprecated ticker_interval from config.json
@@ -44,11 +44,11 @@ Updated README.md
 
 19/01/2021
 Removed comments from strategy
-Updated coin pair list
+Updated coins pair list
 
 18/01/2021
 Created Freqtrade install script
 Created strategy install script
 Created configuration install script
 Created service install script
-Created README
+Created README.md
