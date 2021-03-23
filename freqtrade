@@ -72,10 +72,14 @@ bash -c "cat > /root/$botname/config.json" << EOL
         "name": "$exchange_name",
         "key": "$exchange_key",
         "secret": "$exchange_secret",
- 
+        "ccxt_config": {"enableRateLimit": true},
+        "ccxt_async_config": {
+            "enableRateLimit": false,
+            "rateLimit": 500,
+            "aiohttp_trust_env": false
+        },
         "pair_whitelist": [
         ],
- 
         "pair_blacklist": [
             ".*UP/$stake_currency",
             ".*DOWN/$stake_currency",
@@ -97,7 +101,9 @@ bash -c "cat > /root/$botname/config.json" << EOL
             "UAH/$stake_currency",
             "VAI/$stake_currency",
             "BVND/$stake_currency"
-        ]
+        ],
+        "outdated_offset": 5,
+        "markets_refresh_interval": 60
     },
 
     "pairlists": [
