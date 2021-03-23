@@ -1,3 +1,7 @@
+**23/03/2021**
+
+- Changed "enableRateLimit" to "true"
+
 **18/03/2021**
 
 - Tidy up installer script
