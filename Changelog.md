@@ -3,6 +3,7 @@
 - Removed "aiohttp_trust_env" option from config.json
 - Decreased "rateLimit" to 200
 - Increased "number_assets" to 500
+- Updated README.md
 
 **23/03/2021**
 
