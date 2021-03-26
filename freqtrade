@@ -111,7 +111,7 @@ bash -c "cat > /root/$botname/config.json" << EOL
     "pairlists": [
         {
             "method": "VolumePairList",
-            "number_assets": 300,
+            "number_assets": 500,
             "sort_key": "quoteVolume",
             "refresh_period": 1800
         },
