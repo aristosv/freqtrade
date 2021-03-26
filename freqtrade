@@ -75,8 +75,7 @@ bash -c "cat > /root/$botname/config.json" << EOL
         "ccxt_config": {"enableRateLimit": true},
         "ccxt_async_config": {
             "enableRateLimit": true,
-            "rateLimit": 500,
-            "aiohttp_trust_env": false
+            "rateLimit": 200
         },
         
         "pair_whitelist": [
