@@ -38,7 +38,7 @@ This is the information you will be required to provide when installing Freqtrad
 - **Web UI Port:** The port to use for the web interface.
 - **Stake Currency:** The coin you want to use to trade on. Example: USDT.
 - **Stake Amount:** The amount you want to invest per trade.
-- **Max Open Trades:** The maximum allowed number of trades. -1 uses all available balance.
+- **Max Open Trades:** The maximum allowed number of trades. -1 opens as many as possible.
 - **Exchange Name:** The name of your Exchange. Example: binance.
 - **Exchange Key:** Generate an API key on your exchange and use it here.
 - **Exchange Secret:** Along with the API key you will also get a secret.
