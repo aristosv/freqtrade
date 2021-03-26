@@ -4,7 +4,11 @@ Install [freqtrade](https://github.com/freqtrade/freqtrade) cryptotrading bot. T
 
 ---
 
-**Disclaimer:** This software can, and probably will, lose your money. Investigate, find a strategy you're comfortable with, and use it with this bot. You are responsible for your decisions and your money. The script provides a configuration, strategy and service file. Look at them, understand them, modify them. Good luck.
+**Disclaimer:** This software can, and probably will, lose your money. Investigate, find a strategy you're comfortable with, and use it with this bot. You are responsible for your decisions and your money.
+
+---
+
+**Purpose:** The purpose of this script is to provide an automated installation process, a working configuration and strategy, and to simply make it easier for me to install and configure this bot for my friends. There are no warranties whatsoever. 
 
 ---
 
