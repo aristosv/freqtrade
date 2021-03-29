@@ -101,7 +101,7 @@ bash -c "cat > /root/$botname/config.json" << EOL
             "NGN/$stake_currency",
             "UAH/$stake_currency",
             "VAI/$stake_currency",
-            "BVND/$stake_currency"
+            "BVND/$stake_currency",
             "PAXG/$stake_currency"
         ],
 
