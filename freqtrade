@@ -193,10 +193,13 @@ from pandas import DataFrame
 import talib.abstract as ta
 import freqtrade.vendor.qtpylib.indicators as qtpylib
 
-class $botname(IStrategy):
+class freqtrade_USDT(IStrategy):
 
     minimal_roi = {
-        "0":  0.01
+        "60":  0.01,
+        "30":  0.03,
+        "20":  0.04,
+        "0":  0.05
     }
 
     stoploss = -0.3
@@ -208,11 +211,13 @@ class $botname(IStrategy):
         dataframe['macdsignal'] = macd['macdsignal']
         dataframe['macdhist'] = macd['macdhist']
         dataframe['cci'] = ta.CCI(dataframe)
+        dataframe['rsi'] = ta.RSI(dataframe, timeperiod=14)
         return dataframe
 
     def populate_buy_trend(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
         dataframe.loc[
             (
+                (dataframe['rsi'] < 50) &
                 qtpylib.crossed_above(dataframe['macd'], dataframe['macdsignal']) &
                 (dataframe['cci'] <= -50.0)
             ),
@@ -222,6 +227,7 @@ class $botname(IStrategy):
     def populate_sell_trend(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
         dataframe.loc[
             (
+                (dataframe['rsi'] > 70) &
                 qtpylib.crossed_below(dataframe['macd'], dataframe['macdsignal']) &
                 (dataframe['cci'] >= 100.0)
             ),
