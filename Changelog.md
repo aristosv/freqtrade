@@ -1,3 +1,6 @@
+**29/03/2021**
+- Added "PAXG" to blacklist
+
 **26/03/2021**
 
 - Added "AgeFilter"
