@@ -1,5 +1,7 @@
 **29/03/2021**
 - Added "PAXG" to blacklist
+- Added RSI indicator
+- Modified ROI
 
 **26/03/2021**
 
