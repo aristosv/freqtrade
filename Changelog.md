@@ -2,6 +2,7 @@
 - Added "PAXG" to blacklist
 - Added RSI indicator
 - Modified ROI
+- Modified "AgeFilter" to 5
 
 **26/03/2021**
 
