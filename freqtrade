@@ -102,6 +102,7 @@ bash -c "cat > /root/$botname/config.json" << EOL
             "UAH/$stake_currency",
             "VAI/$stake_currency",
             "BVND/$stake_currency"
+            "PAXG/$stake_currency"
         ],
 
         "outdated_offset": 5,
