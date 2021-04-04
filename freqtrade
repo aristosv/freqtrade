@@ -191,7 +191,7 @@ from functools import reduce
 from pandas import DataFrame
 import talib.abstract as ta
 import freqtrade.vendor.qtpylib.indicators as qtpylib
-class freqtrade_USDT(IStrategy):
+class $botname(IStrategy):
 
     stoploss = -0.3
     timeframe = '5m'
