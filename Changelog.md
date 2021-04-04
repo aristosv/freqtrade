@@ -1,3 +1,7 @@
+**04/04/2021**
+- Removed "minimal_roi" from strategy
+- Added "trailing_stop" to strategy
+
 **29/03/2021**
 - Added "PAXG" to blacklist
 - Added RSI indicator
