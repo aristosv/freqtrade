@@ -13,6 +13,7 @@ Install [freqtrade](https://github.com/freqtrade/freqtrade) cryptotrading bot. T
 ---
 
 Before continuing make sure you already have the following information:
+
 - Exchange key
 - Exchange secret
 - Telegram bot token
@@ -23,14 +24,14 @@ If you want to set up multiple bots, run the command again and choose a differen
 ---
 
 This command will install freqtrade.
-```
+
+```bash
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/freqtrade/main/freqtrade)
 ```
 
 ---
 
 This is the information you will be required to provide when installing Freqtrade using this script.
-
 
 - **Bot Name:** This defines the bot's directory, service and strategy names.
 - **Web UI user:** The username to login on the web interface of the bot.
