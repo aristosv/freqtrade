@@ -5,7 +5,15 @@ bash -c "cat > /root/$botname/freqtradeUpdate" << EOL
 #!/bin/bash
 
 cd /root/$botname
+echo updating freqtrade
 printf 'y\ny\n' | ./setup.sh --update
+
+echo updating freqUI
+source .env/bin/activate
+freqtrade install-ui
+deactivate
+
+echo restarting freqtrade
 systemctl restart $botname.service
 EOL
 chmod +x /root/$botname/freqtradeUpdate
@@ -13,20 +21,4 @@ chmod +x /root/$botname/freqtradeUpdate
 echo creating freqtradeUpdate cron job
 bash -c "cat > /etc/cron.d/freqtradeUpdate" << EOL
 0 1 * * * root /root/$botname/freqtradeUpdate
-EOL
-
-echo creating freqUI update script
-bash -c "cat > /root/$botname/freqUIUpdate" << EOL
-#!/bin/bash
-
-cd /root/$botname
-source .env/bin/activate
-freqtrade install-ui
-deactivate
-EOL
-chmod +x /root/$botname/freqUIUpdate
-
-echo creating freqUIUpdate cron job
-bash -c "cat > /etc/cron.d/freqUIUpdate" << EOL
-0 2 * * * root /root/$botname/freqUIUpdate
 EOL
