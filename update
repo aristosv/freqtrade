@@ -5,7 +5,7 @@ bash -c "cat > /root/$botname/freqtradeUpdate" << EOL
 #!/bin/bash
 
 cd /root/$botname
-./setup.sh --update
+printf 'y\ny\n' | ./setup.sh --update
 systemctl restart $botname.service
 EOL
 chmod +x /root/$botname/freqtradeUpdate
