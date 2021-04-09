@@ -273,7 +273,7 @@ deactivate
 echo restarting freqtrade
 systemctl restart $botname.service
 EOL
-chmod +x /root/$botname/freqtradeUpdate
+chmod +x /root/$botname/freqUpdate
 
 echo =========================================================================================
 echo The installation has been completed. Your bot should talk to you on Telegram.
