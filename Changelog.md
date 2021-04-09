@@ -1,3 +1,6 @@
+**09/04/2021**
+- freqtrade is now configured to use stoploss_on_exchange
+
 **04/04/2021**
 - Removed "minimal_roi" from strategy
 - Added "trailing_stop" to strategy
