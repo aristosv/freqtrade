@@ -257,8 +257,8 @@ systemctl daemon-reload
 systemctl enable $botname.service
 systemctl start $botname.service
 ##############################################################################
-echo creating freqtrade update script
-bash -c "cat > /root/$botname/freqtradeUpdate" << EOL
+echo creating update script
+bash -c "cat > /root/$botname/freqUpdate" << EOL
 #!/bin/bash
 
 cd /root/$botname
