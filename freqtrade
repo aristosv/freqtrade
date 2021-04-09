@@ -67,6 +67,17 @@ bash -c "cat > /root/$botname/config.json" << EOL
             "bids_to_ask_delta": 1
         }
     },
+    
+    "order_types": {
+        "buy": "limit",
+        "sell": "limit",
+        "emergencysell": "market",
+        "forcesell": "market",
+        "forcebuy": "market",
+        "stoploss": "market",
+        "stoploss_on_exchange": true,
+        "stoploss_on_exchange_interval": 60
+    },
 
     "exchange": {
         "name": "$exchange_name",
