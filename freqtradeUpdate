@@ -18,7 +18,8 @@ systemctl restart $botname.service
 EOL
 chmod +x /root/$botname/freqtradeUpdate
 
-echo creating freqtradeUpdate cron job
-bash -c "cat > /etc/cron.d/freqtradeUpdate" << EOL
-0 1 * * * root /root/$botname/freqtradeUpdate
-EOL
+# removing cron job for now. seems risky to update every day
+# echo creating freqtradeUpdate cron job
+# bash -c "cat > /etc/cron.d/freqtradeUpdate" << EOL
+# 0 1 * * * root /root/$botname/freqtradeUpdate
+# EOL
