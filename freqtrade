@@ -256,6 +256,24 @@ EOL
 systemctl daemon-reload
 systemctl enable $botname.service
 systemctl start $botname.service
+##############################################################################
+echo creating freqtrade update script
+bash -c "cat > /root/$botname/freqtradeUpdate" << EOL
+#!/bin/bash
+
+cd /root/$botname
+echo updating freqtrade
+printf 'y\ny\n' | ./setup.sh --update
+
+echo updating freqUI
+source .env/bin/activate
+freqtrade install-ui
+deactivate
+
+echo restarting freqtrade
+systemctl restart $botname.service
+EOL
+chmod +x /root/$botname/freqtradeUpdate
 
 echo =========================================================================================
 echo The installation has been completed. Your bot should talk to you on Telegram.
