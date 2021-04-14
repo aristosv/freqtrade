@@ -1,3 +1,32 @@
 #!/bin/bash
 
-wget https://raw.githubusercontent.com/aristosv/freqtrade/main/config --output-document="/root/freqtrade_USDT/config.json"
+echo ========================================================================
+echo Before continuing make sure you already have the following information:
+echo Exchange key, Exchange secret, Telegram bot token, Telegram chat id.
+echo ========================================================================
+read -p "press enter to continue"
+
+echo Bot Name: ; read botname
+echo Web UI User: ; read webuser
+echo Web UI Pass: ; read webpass
+echo Web UI Port: ; read webport
+echo Stake Currency ; read stake_currency
+echo Stake Amount ; read stake_amount
+echo Max Open Trades ; read max_open_trades
+echo Display Currency ; read display_currency
+echo Exchange Name: ; read exchange_name
+echo Exchange Key: ; read exchange_key
+echo Exchange Secret: ; read exchange_secret
+echo Telegram Token: ; read telegram_token
+echo Telegram ChatID: ; read telegram_chatid
+##############################################################################
+echo setting variables
+secretkey=$(openssl rand -hex 16)
+ipaddress=$(ip route get 1 | awk '{print $NF;exit}')
+##############################################################################
+
+# install prerequisites
+bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/freqtrade/main/prerequisites)
+
+# download configuration
+wget https://raw.githubusercontent.com/aristosv/freqtrade/main/config --output-document="/root/$botname/config.json"
