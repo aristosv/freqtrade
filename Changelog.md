@@ -1,3 +1,6 @@
+**14/04/2021**
+- Improved IP detection
+
 **09/04/2021**
 - Now configured to use stoploss_on_exchange
 - Created freqtrade and freqUI update script
