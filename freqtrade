@@ -22,7 +22,7 @@ echo Telegram ChatID: ; read telegram_chatid
 ##############################################################################
 echo setting variables
 secretkey=$(openssl rand -hex 16)
-ipaddress=$(hostname -I | cut -d' ' -f1)
+ipaddress=$(ip route get 1 | awk '{print $NF;exit}')
 ##############################################################################
 echo installing prerequisites
 apt-get install -y git python3-pip python3-venv sudo jq
