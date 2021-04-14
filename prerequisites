@@ -1,0 +1,21 @@
+#!/bin/bash
+
+echo installing prerequisites
+apt-get install -y git python3-pip python3-venv sudo jq
+
+echo cloning repository
+git clone https://github.com/freqtrade/freqtrade.git /root/$botname
+
+echo going to $botname directory
+cd /root/$botname
+
+echo checking out git repository
+git checkout develop
+
+echo installing freqtrade
+printf 'y\ny\n' | ./setup.sh --install
+
+echo installing frequi
+source .env/bin/activate
+freqtrade install-ui
+deactivate
