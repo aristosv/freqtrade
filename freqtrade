@@ -25,7 +25,7 @@ secretkey=$(openssl rand -hex 16)
 ipaddress=$(hostname -I | cut -d' ' -f1)
 ##############################################################################
 echo installing prerequisites
-apt-get install -y git python3-pip python3-venv sudo
+apt-get install -y git python3-pip python3-venv sudo jq
 
 echo cloning repository
 git clone https://github.com/freqtrade/freqtrade.git /root/$botname
