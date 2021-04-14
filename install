@@ -1,0 +1,3 @@
+#!/bin/bash
+
+wget https://raw.githubusercontent.com/aristosv/freqtrade/main/config --output-document="/root/freqtrade_USDT/config.json"
