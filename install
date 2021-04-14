@@ -30,3 +30,6 @@ bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristo
 
 # download configuration
 wget https://raw.githubusercontent.com/aristosv/freqtrade/main/config --output-document="/root/$botname/config.json"
+
+# download strategy
+wget https://raw.githubusercontent.com/aristosv/freqtrade/main/config --output-document="/root/$botname/user_data/strategies/$botname.py"
