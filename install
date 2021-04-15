@@ -26,27 +26,27 @@ export secretkey=$(openssl rand -hex 16)
 export ipaddress=$(ip route get 1 | awk '{print $NF;exit}')
 ##############################################################################
 
-echo install software
+echo installing software
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/freqtrade/main/install_prerequisites)
 
-echo install freqtrade
+echo installing freqtrade
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/freqtrade/main/install_freqtrade)
 
-echo install configuration
+echo installing configuration
 wget -q https://raw.githubusercontent.com/aristosv/freqtrade/main/install_config --output-document="/usr/local/$botname/config.json"
 
-echo install strategy
+echo installing strategy
 wget -q https://raw.githubusercontent.com/aristosv/freqtrade/main/install_strategy --output-document="/usr/local/$botname/user_data/strategies/$botname.py"
 
-echo install service
+echo installing service
 wget -q https://raw.githubusercontent.com/aristosv/freqtrade/main/install_service --output-document="/etc/systemd/system/$botname.service"
 
-echo enable service
+echo enabling service
 systemctl daemon-reload
 systemctl enable $botname.service > /dev/null 2>&1
 systemctl start $botname.service
 
-echo install update
+echo installing update
 wget -q https://raw.githubusercontent.com/aristosv/freqtrade/main/install_update --output-document="/usr/local/$botname/freqUpdate"
 chmod +x /usr/local/$botname/freqUpdate
 
