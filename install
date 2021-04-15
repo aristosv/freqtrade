@@ -71,6 +71,7 @@ sed -i "s/\$botname/$botname/" /usr/local/$botname/user_data/strategies/$botname
 
 echo writing service changes
 sed -i "s/\$botname/$botname/" /etc/systemd/system/$botname.service
+sed -i "s/\$botname/$botname/" /etc/systemd/system/$botname.service
 
 echo writing update changes
 chmod +x /usr/local/$botname/freqUpdate
