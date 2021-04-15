@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo setting variables
 configfile=/usr/local/$botname/config.json
 strategyfile=/usr/local/$botname/user_data/strategies/$botname.py
 readconfig () {cat $configfile}
@@ -53,20 +54,20 @@ echo downloading updated strategy
 wget -q https://raw.githubusercontent.com/aristosv/freqtrade/main/install_strategy --output-document="$strategyfile"
 
 echo writing saved configuration
-sed -i "s/\$stake_currency/$stake_currency/g" /usr/local/$botname/config.json
-sed -i "s/\$display_currency/$display_currency/g" /usr/local/$botname/config.json
-sed -i "s/\$stake_amount/$stake_amount/g" /usr/local/$botname/config.json
-sed -i "s/\$max_open_trades/$max_open_trades/g" /usr/local/$botname/config.json
-sed -i "s/\$exchange_name/$exchange_name/g" /usr/local/$botname/config.json
-sed -i "s/\$exchange_key/$exchange_key/g" /usr/local/$botname/config.json
-sed -i "s/\$exchange_secret/$exchange_secret/g" /usr/local/$botname/config.json
-sed -i "s/\$telegram_token/$telegram_token/g" /usr/local/$botname/config.json
-sed -i "s/\$telegram_chatid/$telegram_chatid/g" /usr/local/$botname/config.json
-sed -i "s/\$webuser/$webuser/g" /usr/local/$botname/config.json
-sed -i "s/\$webpass/$webpass/g" /usr/local/$botname/config.json
-sed -i "s/\$webport/$webport/g" /usr/local/$botname/config.json
-sed -i "s/\$ipaddress/$ipaddress/g" /usr/local/$botname/config.json
-sed -i "s/\$secretkey/$secretkey/g" /usr/local/$botname/config.json
+echo "$(jq '.stake_currency = $stake_currency' $configfile)" > $configfile
+echo "$(jq '.fiat_display_currency = $display_currency' $configfile)" > $configfile
+echo "$(jq '.stake_amount = $stake_amount' $configfile)" > $configfile
+echo "$(jq '.max_open_trades = $max_open_trades' $configfile)" > $configfile
+echo "$(jq '.exchange | .name = $exchange_name' $configfile)" > $configfile
+echo "$(jq '.exchange | .key = $exchange_key' $configfile)" > $configfile
+echo "$(jq '.exchange | .secret = $exchange_secret' $configfile)" > $configfile
+echo "$(jq '.telegram | .token = $telegram_token' $configfile)" > $configfile
+echo "$(jq '.telegram | .chat_id = $telegram_chatid' $configfile)" > $configfile
+echo "$(jq '.api_server | .username = $webuser' $configfile)" > $configfile
+echo "$(jq '.api_server | .password = $webpass' $configfile)" > $configfile
+echo "$(jq '.api_server | .listen_port = $webport' $configfile)" > $configfile
+echo "$(jq '.api_server | .listen_ip_address = $ipaddress' $configfile)" > $configfile
+echo "$(jq '.api_server | .jwt_secret_key = $secretkey' $configfile)" > $configfile
 
 echo writing strategy changes
 sed -i "s/\$botname/$botname/g" $strategyfile
