@@ -27,7 +27,8 @@ export ipaddress=$(ip route get 1 | awk '{print $NF;exit}')
 ##############################################################################
 
 echo updating system
-apt update ; apt -y upgrade
+apt update > /dev/null 2>&1
+apt -y upgrade > /dev/null 2>&1
 
 echo installing software
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/freqtrade/main/install_prerequisites)
