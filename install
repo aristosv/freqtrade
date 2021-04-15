@@ -71,6 +71,7 @@ sed -i "s/\$botname/$botname/" /usr/local/$botname/user_data/strategies/$botname
 
 echo writing service changes
 sed -i "s/\$botname/$botname/" /etc/systemd/system/$botname.service
+# for some reason sed replaces only 3 occurrences so it has to be run again 
 sed -i "s/\$botname/$botname/" /etc/systemd/system/$botname.service
 
 echo writing update changes
