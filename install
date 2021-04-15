@@ -25,30 +25,31 @@ secretkey=$(openssl rand -hex 16)
 ipaddress=$(ip route get 1 | awk '{print $NF;exit}')
 ##############################################################################
 
-# install prerequisites
+echo install prerequisites
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/freqtrade/main/install_prerequisites)
 
-# install freqtrade
+echo install freqtrade
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/freqtrade/main/install_freqtrade)
 
-# install configuration
+echo install configuration
 wget --no-check-certificate https://raw.githubusercontent.com/aristosv/freqtrade/main/install_config --output-document="/usr/local/$botname/config.json"
 
-# install strategy
+echo install strategy
 wget --no-check-certificate https://raw.githubusercontent.com/aristosv/freqtrade/main/install_strategy --output-document="/usr/local/$botname/user_data/strategies/$botname.py"
 
-# install service
+echo install service
 wget --no-check-certificate https://raw.githubusercontent.com/aristosv/freqtrade/main/install_service --output-document="/etc/systemd/system/$botname.service"
 
-# enable service
+echo enable service
 systemctl daemon-reload
 systemctl enable $botname.service
 systemctl start $botname.service
 
-# install update
+echo install update
 wget --no-check-certificate https://raw.githubusercontent.com/aristosv/freqtrade/main/update --output-document="/usr/local/$botname/freqUpdate"
 chmod +x /usr/local/$botname/freqUpdate
 
+echo writing changes
 sed -i "s/\$webuser/$webuser/" /usr/local/$botname/config.json
 sed -i "s/\$webpass/$webpass/" /usr/local/$botname/config.json
 sed -i "s/\$webport/$webport/" /usr/local/$botname/config.json
