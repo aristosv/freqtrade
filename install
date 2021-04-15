@@ -47,8 +47,11 @@ wget -q https://raw.githubusercontent.com/aristosv/freqtrade/main/install_strate
 echo installing service
 wget -q https://raw.githubusercontent.com/aristosv/freqtrade/main/install_service --output-document="/etc/systemd/system/$botname.service"
 
-echo installing update
+echo installing frequpdate
 wget -q https://raw.githubusercontent.com/aristosv/freqtrade/main/install_frequpdate --output-document="/usr/local/$botname/freqUpdate"
+
+echo installing configupdate
+wget -q https://raw.githubusercontent.com/aristosv/freqtrade/main/install_configupdate --output-document="/usr/local/$botname/configUpdate"
 
 echo writing config changes
 sed -i "s/\$stake_currency/$stake_currency/" /usr/local/$botname/config.json
@@ -77,6 +80,10 @@ sed -i "s/\$botname/$botname/" /etc/systemd/system/$botname.service
 echo writing freqUpdate changes
 chmod +x /usr/local/$botname/freqUpdate
 sed -i "s/\$botname/$botname/" /usr/local/$botname/freqUpdate
+
+echo writing configUpdate changes
+chmod +x /usr/local/$botname/configUpdate
+sed -i "s/\$botname/$botname/" /usr/local/$botname/configUpdate
 
 echo enabling service
 systemctl daemon-reload
