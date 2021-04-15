@@ -4,7 +4,7 @@ readconfig () {
  cat /usr/local/$botname/config.json
 }
 
-echo backing up your configuration
+echo saving current configuration
 stake_currency=$(readconfig | jq -cr '.stake_currency')
 display_currency=$(readconfig | jq -cr '.fiat_display_currency')
 stake_amount=$(readconfig | jq -cr '.stake_amount')
