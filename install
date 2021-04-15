@@ -26,6 +26,9 @@ export secretkey=$(openssl rand -hex 16)
 export ipaddress=$(ip route get 1 | awk '{print $NF;exit}')
 ##############################################################################
 
+echo updating system
+apt update ; apt -y upgrade
+
 echo installing software
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/freqtrade/main/install_prerequisites)
 
