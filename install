@@ -29,10 +29,10 @@ ipaddress=$(ip route get 1 | awk '{print $NF;exit}')
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/freqtrade/main/prerequisites)
 
 # download configuration
-wget --no-check-certificate https://raw.githubusercontent.com/aristosv/freqtrade/main/config --output-document="/root/$botname/config.json"
+wget --no-check-certificate https://raw.githubusercontent.com/aristosv/freqtrade/main/config --output-document="/usr/local/$botname/config.json"
 
 # download strategy
-wget --no-check-certificate https://raw.githubusercontent.com/aristosv/freqtrade/main/config --output-document="/root/$botname/user_data/strategies/$botname.py"
+wget --no-check-certificate https://raw.githubusercontent.com/aristosv/freqtrade/main/config --output-document="/usr/local/$botname/user_data/strategies/$botname.py"
 
 # download service file
 wget --no-check-certificate https://raw.githubusercontent.com/aristosv/freqtrade/main/service --output-document="/etc/systemd/system/$botname.service"
@@ -43,8 +43,8 @@ systemctl enable $botname.service
 systemctl start $botname.service
 
 # download update script
-wget --no-check-certificate https://raw.githubusercontent.com/aristosv/freqtrade/main/update --output-document="/root/$botname/freqUpdate"
-chmod +x /root/$botname/freqUpdate
+wget --no-check-certificate https://raw.githubusercontent.com/aristosv/freqtrade/main/update --output-document="/usr/local/$botname/freqUpdate"
+chmod +x /usr/local/$botname/freqUpdate
 
 echo =========================================================================================
 echo The installation has been completed. Your bot should talk to you on Telegram.
