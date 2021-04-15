@@ -33,13 +33,13 @@ echo install freqtrade
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/freqtrade/main/install_freqtrade)
 
 echo install configuration
-wget --no-check-certificate https://raw.githubusercontent.com/aristosv/freqtrade/main/install_config --output-document="/usr/local/$botname/config.json"
+wget https://raw.githubusercontent.com/aristosv/freqtrade/main/install_config --output-document="/usr/local/$botname/config.json"
 
 echo install strategy
-wget --no-check-certificate https://raw.githubusercontent.com/aristosv/freqtrade/main/install_strategy --output-document="/usr/local/$botname/user_data/strategies/$botname.py"
+wget https://raw.githubusercontent.com/aristosv/freqtrade/main/install_strategy --output-document="/usr/local/$botname/user_data/strategies/$botname.py"
 
 echo install service
-wget --no-check-certificate https://raw.githubusercontent.com/aristosv/freqtrade/main/install_service --output-document="/etc/systemd/system/$botname.service"
+wget https://raw.githubusercontent.com/aristosv/freqtrade/main/install_service --output-document="/etc/systemd/system/$botname.service"
 
 echo enable service
 systemctl daemon-reload
@@ -47,7 +47,7 @@ systemctl enable $botname.service
 systemctl start $botname.service
 
 echo install update
-wget --no-check-certificate https://raw.githubusercontent.com/aristosv/freqtrade/main/install_update --output-document="/usr/local/$botname/freqUpdate"
+wget https://raw.githubusercontent.com/aristosv/freqtrade/main/install_update --output-document="/usr/local/$botname/freqUpdate"
 chmod +x /usr/local/$botname/freqUpdate
 
 echo writing changes
