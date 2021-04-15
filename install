@@ -48,7 +48,7 @@ echo installing service
 wget -q https://raw.githubusercontent.com/aristosv/freqtrade/main/install_service --output-document="/etc/systemd/system/$botname.service"
 
 echo installing update
-wget -q https://raw.githubusercontent.com/aristosv/freqtrade/main/install_update --output-document="/usr/local/$botname/freqUpdate"
+wget -q https://raw.githubusercontent.com/aristosv/freqtrade/main/install_frequpdate --output-document="/usr/local/$botname/freqUpdate"
 
 echo writing config changes
 sed -i "s/\$stake_currency/$stake_currency/" /usr/local/$botname/config.json
