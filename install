@@ -22,8 +22,8 @@ echo Web UI Port: ; read webport ; export webport
 
 ##############################################################################
 echo setting variables
-secretkey=$(openssl rand -hex 16)
-ipaddress=$(ip route get 1 | awk '{print $NF;exit}')
+export secretkey=$(openssl rand -hex 16)
+export ipaddress=$(ip route get 1 | awk '{print $NF;exit}')
 ##############################################################################
 
 echo install prerequisites
