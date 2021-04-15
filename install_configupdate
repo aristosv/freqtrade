@@ -1,9 +1,10 @@
 #!/bin/bash
 
 readconfig () {
- cat /usr/local/$botname/config.json
+ cat /usr/local/freqtrade_USDT_test1/config.json
 }
 
+echo backing up your configuration
 stake_currency=$(readconfig | jq -cr '.stake_currency')
 display_currency=$(readconfig | jq -cr '.fiat_display_currency')
 stake_amount=$(readconfig | jq -cr '.stake_amount')
@@ -19,6 +20,7 @@ webport=$(readconfig | jq -cr '.api_server | .listen_port')
 ipaddress=$(readconfig | jq -cr '.api_server | .listen_ip_address')
 secretkey=$(readconfig | jq -cr '.api_server | .jwt_secret_key')
 
+echo this is your configuration
 echo Stake Curency: $stake_currency
 echo Display Currency: $display_currency
 echo Stake Amount: $stake_amount
@@ -34,4 +36,39 @@ echo Listen Port: $webport
 echo Listen IP Address: $ipaddress
 echo Secret Key: $secretkey
 
+echo stopping freqtrade
+systemctl stop $botname.service
+
+echo removing old configuration
+rm /usr/local/$botname/config.json
+
+echo removing old strategy
+rm /usr/local/$botname/user_data/strategies/$botname.py
+
+echo downloading updated configuration
+wget -q https://raw.githubusercontent.com/aristosv/freqtrade/main/install_config --output-document="/usr/local/$botname/config.json"
+
+echo downloading updated strategy
+wget -q https://raw.githubusercontent.com/aristosv/freqtrade/main/install_strategy --output-document="/usr/local/$botname/user_data/strategies/$botname.py"
+
+echo writing configuration changes
+sed -i "s/\$stake_currency/$stake_currency/" /usr/local/$botname/config.json
+sed -i "s/\$display_currency/$display_currency/" /usr/local/$botname/config.json
+sed -i "s/\$stake_amount/$stake_amount/" /usr/local/$botname/config.json
 sed -i "s/\$max_open_trades/$max_open_trades/" /usr/local/$botname/config.json
+sed -i "s/\$exchange_name/$exchange_name/" /usr/local/$botname/config.json
+sed -i "s/\$exchange_key/$exchange_key/" /usr/local/$botname/config.json
+sed -i "s/\$exchange_secret/$exchange_secret/" /usr/local/$botname/config.json
+sed -i "s/\$telegram_token/$telegram_token/" /usr/local/$botname/config.json
+sed -i "s/\$telegram_chatid/$telegram_chatid/" /usr/local/$botname/config.json
+sed -i "s/\$webuser/$webuser/" /usr/local/$botname/config.json
+sed -i "s/\$webpass/$webpass/" /usr/local/$botname/config.json
+sed -i "s/\$webport/$webport/" /usr/local/$botname/config.json
+sed -i "s/\$ipaddress/$ipaddress/" /usr/local/$botname/config.json
+sed -i "s/\$secretkey/$secretkey/" /usr/local/$botname/config.json
+
+echo writing strategy changes
+sed -i "s/\$botname/$botname/" /usr/local/$botname/user_data/strategies/$botname.py
+
+echo starting freqtrade
+systemctl start $botname.service
