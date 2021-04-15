@@ -2,10 +2,7 @@
 
 configfile=/usr/local/$botname/config.json
 strategyfile=/usr/local/$botname/user_data/strategies/$botname.py
-
-readconfig () {
- cat $configfile
-}
+readconfig () {cat $configfile}
 
 echo saving current configuration
 stake_currency=$(readconfig | jq -cr '.stake_currency')
