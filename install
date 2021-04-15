@@ -74,8 +74,9 @@ sed -i "s/\$botname/$botname/" /etc/systemd/system/$botname.service
 # for some reason sed replaces only 3 occurrences so it has to be run again 
 sed -i "s/\$botname/$botname/" /etc/systemd/system/$botname.service
 
-echo writing update changes
+echo writing freqUpdate changes
 chmod +x /usr/local/$botname/freqUpdate
+sed -i "s/\$botname/$botname/" /usr/local/$botname/freqUpdate
 
 echo enabling service
 systemctl daemon-reload
