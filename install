@@ -43,7 +43,7 @@ wget -q https://raw.githubusercontent.com/aristosv/freqtrade/main/install_servic
 
 echo enable service
 systemctl daemon-reload
-systemctl enable $botname.service
+systemctl enable $botname.service > /dev/null 2>&1
 systemctl start $botname.service
 
 echo install update
