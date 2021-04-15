@@ -7,18 +7,18 @@ echo ========================================================================
 read -p "press enter to continue"
 
 echo Bot Name: ; read botname ; export botname
-echo Web UI User: ; read webuser
-echo Web UI Pass: ; read webpass
-echo Web UI Port: ; read webport
-echo Stake Amount ; read stake_amount
-echo Exchange Key: ; read exchange_key
-echo Exchange Name: ; read exchange_name
-echo Stake Currency ; read stake_currency
-echo Telegram Token: ; read telegram_token
-echo Max Open Trades ; read max_open_trades
-echo Telegram ChatID: ; read telegram_chatid
-echo Exchange Secret: ; read exchange_secret
-echo Display Currency ; read display_currency
+echo Web UI User: ; read webuser ; export webuser
+echo Web UI Pass: ; read webpass ; export webpass
+echo Web UI Port: ; read webport ; export webport
+echo Stake Amount ; read stake_amount ; export stake_amount
+echo Exchange Key: ; read exchange_key ; export exchange_key
+echo Exchange Name: ; read exchange_name ; export exchange_name
+echo Stake Currency ; read stake_currency ; export stake_currency
+echo Telegram Token: ; read telegram_token ; export telegram_token
+echo Max Open Trades ; read max_open_trades ; export max_open_trades
+echo Telegram ChatID: ; read telegram_chatid ; export telegram_chatid
+echo Exchange Secret: ; read exchange_secret ; export exchange_secret
+echo Display Currency ; read display_currency ; export display_currency
 ##############################################################################
 echo setting variables
 secretkey=$(openssl rand -hex 16)
