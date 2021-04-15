@@ -67,6 +67,9 @@ sed -i "s/\$webport/$webport/" /usr/local/$botname/config.json
 echo writing strategy changes
 sed -i "s/\$botname/$botname/" /usr/local/$botname/user_data/strategies/$botname.py
 
+echo writing service changes
+sed -i "s/\$botname/$botname/" /etc/systemd/system/$botname.service
+
 echo =========================================================================================
 echo The installation has been completed. Your bot should talk to you on Telegram.
 echo Your bot service is running, but the trader is stopped. This is intentional.
