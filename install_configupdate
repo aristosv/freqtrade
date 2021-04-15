@@ -1,7 +1,7 @@
 #!/bin/bash
 
 readconfig () {
- cat /usr/local/freqtrade_USDT_test1/config.json
+ cat /usr/local/$botname/config.json
 }
 
 echo backing up your configuration
