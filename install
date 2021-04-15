@@ -47,7 +47,7 @@ systemctl enable $botname.service
 systemctl start $botname.service
 
 echo install update
-wget --no-check-certificate https://raw.githubusercontent.com/aristosv/freqtrade/main/update --output-document="/usr/local/$botname/freqUpdate"
+wget --no-check-certificate https://raw.githubusercontent.com/aristosv/freqtrade/main/install_update --output-document="/usr/local/$botname/freqUpdate"
 chmod +x /usr/local/$botname/freqUpdate
 
 echo writing changes
