@@ -54,36 +54,34 @@ echo installing configupdate
 wget -q https://raw.githubusercontent.com/aristosv/freqtrade/main/install_configupdate --output-document="/usr/local/$botname/configUpdate"
 
 echo writing config changes
-sed -i "s/\$stake_currency/$stake_currency/" /usr/local/$botname/config.json
-sed -i "s/\$display_currency/$display_currency/" /usr/local/$botname/config.json
-sed -i "s/\$stake_amount/$stake_amount/" /usr/local/$botname/config.json
-sed -i "s/\$max_open_trades/$max_open_trades/" /usr/local/$botname/config.json
-sed -i "s/\$exchange_name/$exchange_name/" /usr/local/$botname/config.json
-sed -i "s/\$exchange_key/$exchange_key/" /usr/local/$botname/config.json
-sed -i "s/\$exchange_secret/$exchange_secret/" /usr/local/$botname/config.json
-sed -i "s/\$telegram_token/$telegram_token/" /usr/local/$botname/config.json
-sed -i "s/\$telegram_chatid/$telegram_chatid/" /usr/local/$botname/config.json
-sed -i "s/\$webuser/$webuser/" /usr/local/$botname/config.json
-sed -i "s/\$webpass/$webpass/" /usr/local/$botname/config.json
-sed -i "s/\$webport/$webport/" /usr/local/$botname/config.json
-sed -i "s/\$ipaddress/$ipaddress/" /usr/local/$botname/config.json
-sed -i "s/\$secretkey/$secretkey/" /usr/local/$botname/config.json
+sed -i "s/\$stake_currency/$stake_currency/g" /usr/local/$botname/config.json
+sed -i "s/\$display_currency/$display_currency/g" /usr/local/$botname/config.json
+sed -i "s/\$stake_amount/$stake_amount/g" /usr/local/$botname/config.json
+sed -i "s/\$max_open_trades/$max_open_trades/g" /usr/local/$botname/config.json
+sed -i "s/\$exchange_name/$exchange_name/g" /usr/local/$botname/config.json
+sed -i "s/\$exchange_key/$exchange_key/g" /usr/local/$botname/config.json
+sed -i "s/\$exchange_secret/$exchange_secret/g" /usr/local/$botname/config.json
+sed -i "s/\$telegram_token/$telegram_token/g" /usr/local/$botname/config.json
+sed -i "s/\$telegram_chatid/$telegram_chatid/g" /usr/local/$botname/config.json
+sed -i "s/\$webuser/$webuser/g" /usr/local/$botname/config.json
+sed -i "s/\$webpass/$webpass/g" /usr/local/$botname/config.json
+sed -i "s/\$webport/$webport/g" /usr/local/$botname/config.json
+sed -i "s/\$ipaddress/$ipaddress/g" /usr/local/$botname/config.json
+sed -i "s/\$secretkey/$secretkey/g" /usr/local/$botname/config.json
 
 echo writing strategy changes
-sed -i "s/\$botname/$botname/" /usr/local/$botname/user_data/strategies/$botname.py
+sed -i "s/\$botname/$botname/g" /usr/local/$botname/user_data/strategies/$botname.py
 
 echo writing service changes
-sed -i "s/\$botname/$botname/" /etc/systemd/system/$botname.service
-# for some reason sed replaces only 3 occurrences so it has to be run again 
-sed -i "s/\$botname/$botname/" /etc/systemd/system/$botname.service
+sed -i "s/\$botname/$botname/g" /etc/systemd/system/$botname.service
 
 echo writing freqUpdate changes
 chmod +x /usr/local/$botname/freqUpdate
-sed -i "s/\$botname/$botname/" /usr/local/$botname/freqUpdate
+sed -i "s/\$botname/$botname/g" /usr/local/$botname/freqUpdate
 
 echo writing configUpdate changes
 chmod +x /usr/local/$botname/configUpdate
-sed -i "s/\$botname/$botname/" /usr/local/$botname/configUpdate
+sed -i "s/\$botname/$botname/g" /usr/local/$botname/configUpdate
 
 echo enabling service
 systemctl daemon-reload
