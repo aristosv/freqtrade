@@ -1,7 +1,7 @@
 Description=$botname service
 After=network.target
 [Service]
-ExecStart=/bin/bash -c "cd /root/$botname ; source .env/bin/activate ; freqtrade trade --strategy $botname"
+ExecStart=/bin/bash -c "cd /usr/local/$botname ; source .env/bin/activate ; freqtrade trade --strategy $botname"
 Restart=always
 StandardError=append:/var/log/$botname.log
 [Install]
