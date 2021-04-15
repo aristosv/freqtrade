@@ -7,18 +7,19 @@ echo ========================================================================
 read -p "press enter to continue"
 
 echo Bot Name: ; read botname ; export botname
+echo Stake Currency ; read stake_currency ; export stake_currency
+echo Display Currency ; read display_currency ; export display_currency
+echo Stake Amount ; read stake_amount ; export stake_amount
+echo Max Open Trades ; read max_open_trades ; export max_open_trades
+echo Exchange Name: ; read exchange_name ; export exchange_name
+echo Exchange Key: ; read exchange_key ; export exchange_key
+echo Exchange Secret: ; read exchange_secret ; export exchange_secret
+echo Telegram Token: ; read telegram_token ; export telegram_token
+echo Telegram ChatID: ; read telegram_chatid ; export telegram_chatid
 echo Web UI User: ; read webuser ; export webuser
 echo Web UI Pass: ; read webpass ; export webpass
 echo Web UI Port: ; read webport ; export webport
-echo Stake Amount ; read stake_amount ; export stake_amount
-echo Exchange Key: ; read exchange_key ; export exchange_key
-echo Exchange Name: ; read exchange_name ; export exchange_name
-echo Stake Currency ; read stake_currency ; export stake_currency
-echo Telegram Token: ; read telegram_token ; export telegram_token
-echo Max Open Trades ; read max_open_trades ; export max_open_trades
-echo Telegram ChatID: ; read telegram_chatid ; export telegram_chatid
-echo Exchange Secret: ; read exchange_secret ; export exchange_secret
-echo Display Currency ; read display_currency ; export display_currency
+
 ##############################################################################
 echo setting variables
 secretkey=$(openssl rand -hex 16)
@@ -50,18 +51,18 @@ wget --no-check-certificate https://raw.githubusercontent.com/aristosv/freqtrade
 chmod +x /usr/local/$botname/freqUpdate
 
 echo writing changes
+sed -i "s/\$stake_currency/$stake_currency/" /usr/local/$botname/config.json
+sed -i "s/\$display_currency/$display_currency/" /usr/local/$botname/config.json
+sed -i "s/\$stake_amount/$stake_amount/" /usr/local/$botname/config.json
+sed -i "s/\$max_open_trades/$max_open_trades/" /usr/local/$botname/config.json
+sed -i "s/\$exchange_name/$exchange_name/" /usr/local/$botname/config.json
+sed -i "s/\$exchange_key/$exchange_key/" /usr/local/$botname/config.json
+sed -i "s/\$exchange_secret/$exchange_secret/" /usr/local/$botname/config.json
+sed -i "s/\$telegram_token/$telegram_token/" /usr/local/$botname/config.json
+sed -i "s/\$telegram_chatid/$telegram_chatid/" /usr/local/$botname/config.json
 sed -i "s/\$webuser/$webuser/" /usr/local/$botname/config.json
 sed -i "s/\$webpass/$webpass/" /usr/local/$botname/config.json
 sed -i "s/\$webport/$webport/" /usr/local/$botname/config.json
-sed -i "s/\$stake_amount/$stake_amount/" /usr/local/$botname/config.json
-sed -i "s/\$exchange_key/$exchange_key/" /usr/local/$botname/config.json
-sed -i "s/\$exchange_name/$exchange_name/" /usr/local/$botname/config.json
-sed -i "s/\$stake_currency/$stake_currency/" /usr/local/$botname/config.json
-sed -i "s/\$telegram_token/$telegram_token/" /usr/local/$botname/config.json
-sed -i "s/\$max_open_trades/$max_open_trades/" /usr/local/$botname/config.json
-sed -i "s/\$telegram_chatid/$telegram_chatid/" /usr/local/$botname/config.json
-sed -i "s/\$exchange_secret/$exchange_secret/" /usr/local/$botname/config.json
-sed -i "s/\$display_currency/$display_currency/" /usr/local/$botname/config.json
 
 echo =========================================================================================
 echo The installation has been completed. Your bot should talk to you on Telegram.
