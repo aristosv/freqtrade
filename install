@@ -10,15 +10,15 @@ echo Bot Name: ; read botname
 echo Web UI User: ; read webuser
 echo Web UI Pass: ; read webpass
 echo Web UI Port: ; read webport
-echo Stake Currency ; read stake_currency
 echo Stake Amount ; read stake_amount
-echo Max Open Trades ; read max_open_trades
-echo Display Currency ; read display_currency
-echo Exchange Name: ; read exchange_name
 echo Exchange Key: ; read exchange_key
-echo Exchange Secret: ; read exchange_secret
+echo Exchange Name: ; read exchange_name
+echo Stake Currency ; read stake_currency
 echo Telegram Token: ; read telegram_token
+echo Max Open Trades ; read max_open_trades
 echo Telegram ChatID: ; read telegram_chatid
+echo Exchange Secret: ; read exchange_secret
+echo Display Currency ; read display_currency
 ##############################################################################
 echo setting variables
 secretkey=$(openssl rand -hex 16)
@@ -48,6 +48,19 @@ systemctl start $botname.service
 # install update
 wget --no-check-certificate https://raw.githubusercontent.com/aristosv/freqtrade/main/update --output-document="/usr/local/$botname/freqUpdate"
 chmod +x /usr/local/$botname/freqUpdate
+
+sed -i "s/\$webuser/$webuser/" /usr/local/$botname/config.json
+sed -i "s/\$webpass/$webpass/" /usr/local/$botname/config.json
+sed -i "s/\$webport/$webport/" /usr/local/$botname/config.json
+sed -i "s/\$stake_amount/$stake_amount/" /usr/local/$botname/config.json
+sed -i "s/\$exchange_key/$exchange_key/" /usr/local/$botname/config.json
+sed -i "s/\$exchange_name/$exchange_name/" /usr/local/$botname/config.json
+sed -i "s/\$stake_currency/$stake_currency/" /usr/local/$botname/config.json
+sed -i "s/\$telegram_token/$telegram_token/" /usr/local/$botname/config.json
+sed -i "s/\$max_open_trades/$max_open_trades/" /usr/local/$botname/config.json
+sed -i "s/\$telegram_chatid/$telegram_chatid/" /usr/local/$botname/config.json
+sed -i "s/\$exchange_secret/$exchange_secret/" /usr/local/$botname/config.json
+sed -i "s/\$display_currency/$display_currency/" /usr/local/$botname/config.json
 
 echo =========================================================================================
 echo The installation has been completed. Your bot should talk to you on Telegram.
