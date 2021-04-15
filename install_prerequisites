@@ -1,4 +1,4 @@
 #!/bin/bash
 
-echo install prerequisites
+echo installing prerequisites
 apt-get install -y git python3-pip python3-venv sudo jq > /dev/null 2>&1
