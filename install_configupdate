@@ -1,7 +1,10 @@
 #!/bin/bash
 
+configfile=/usr/local/$botname/config.json
+strategyfile=/usr/local/$botname/user_data/strategies/$botname.py
+
 readconfig () {
- cat /usr/local/$botname/config.json
+ cat $configfile
 }
 
 echo saving current configuration
@@ -41,16 +44,16 @@ echo stopping freqtrade
 systemctl stop $botname.service
 
 echo removing old configuration
-rm /usr/local/$botname/config.json
+rm $configfile
 
 echo removing old strategy
-rm /usr/local/$botname/user_data/strategies/$botname.py
+rm $strategyfile
 
 echo downloading updated configuration
-wget -q https://raw.githubusercontent.com/aristosv/freqtrade/main/install_config --output-document="/usr/local/$botname/config.json"
+wget -q https://raw.githubusercontent.com/aristosv/freqtrade/main/install_config --output-document="$configfile"
 
 echo downloading updated strategy
-wget -q https://raw.githubusercontent.com/aristosv/freqtrade/main/install_strategy --output-document="/usr/local/$botname/user_data/strategies/$botname.py"
+wget -q https://raw.githubusercontent.com/aristosv/freqtrade/main/install_strategy --output-document="$strategyfile"
 
 echo writing saved configuration
 sed -i "s/\$stake_currency/$stake_currency/g" /usr/local/$botname/config.json
@@ -69,7 +72,7 @@ sed -i "s/\$ipaddress/$ipaddress/g" /usr/local/$botname/config.json
 sed -i "s/\$secretkey/$secretkey/g" /usr/local/$botname/config.json
 
 echo writing strategy changes
-sed -i "s/\$botname/$botname/g" /usr/local/$botname/user_data/strategies/$botname.py
+sed -i "s/\$botname/$botname/g" $strategyfile
 
 echo starting freqtrade
 systemctl start $botname.service
