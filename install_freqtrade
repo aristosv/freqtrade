@@ -1,13 +1,13 @@
 #!/bin/bash
 
 echo cloning repository
-git clone https://github.com/freqtrade/freqtrade.git /usr/local/$botname
+git clone https://github.com/freqtrade/freqtrade.git /usr/local/$botname > /dev/null 2>&1
 
 echo going to $botname directory
 cd /usr/local/$botname
 
 echo checking out git repository
-git checkout develop
+git checkout develop > /dev/null 2>&1
 
 echo installing freqtrade
 printf 'y\ny\n' | ./setup.sh --install > /dev/null 2>&1
