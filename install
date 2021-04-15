@@ -50,7 +50,7 @@ echo install update
 wget -q https://raw.githubusercontent.com/aristosv/freqtrade/main/install_update --output-document="/usr/local/$botname/freqUpdate"
 chmod +x /usr/local/$botname/freqUpdate
 
-echo writing changes
+echo writing config changes
 sed -i "s/\$stake_currency/$stake_currency/" /usr/local/$botname/config.json
 sed -i "s/\$display_currency/$display_currency/" /usr/local/$botname/config.json
 sed -i "s/\$stake_amount/$stake_amount/" /usr/local/$botname/config.json
@@ -63,6 +63,9 @@ sed -i "s/\$telegram_chatid/$telegram_chatid/" /usr/local/$botname/config.json
 sed -i "s/\$webuser/$webuser/" /usr/local/$botname/config.json
 sed -i "s/\$webpass/$webpass/" /usr/local/$botname/config.json
 sed -i "s/\$webport/$webport/" /usr/local/$botname/config.json
+
+echo writing strategy changes
+sed -i "s/\$botname/$botname/" /usr/local/$botname/user_data/strategies/$botname.py
 
 echo =========================================================================================
 echo The installation has been completed. Your bot should talk to you on Telegram.
