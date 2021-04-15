@@ -73,6 +73,7 @@ sed -i "s/\$botname/$botname/" /usr/local/$botname/user_data/strategies/$botname
 
 echo writing service changes
 sed -i "s/\$botname/$botname/" /etc/systemd/system/$botname.service
+sed -i "s/\$botname/$botname/" /etc/systemd/system/$botname.service
 
 echo =========================================================================================
 echo The installation has been completed. Your bot should talk to you on Telegram.
