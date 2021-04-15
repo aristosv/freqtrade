@@ -1,0 +1,18 @@
+#!/bin/bash
+
+echo cloning repository
+git clone https://github.com/freqtrade/freqtrade.git /usr/local/$botname
+
+echo going to $botname directory
+cd /usr/local/$botname
+
+echo checking out git repository
+git checkout develop
+
+echo installing freqtrade
+printf 'y\ny\n' | ./setup.sh --install
+
+echo installing frequi
+source .env/bin/activate
+freqtrade install-ui
+deactivate
