@@ -19,7 +19,7 @@
             "bids_to_ask_delta": 1
         }
     },
-    
+
     "order_types": {
         "buy": "limit",
         "sell": "limit",
