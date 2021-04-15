@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /root/$botname
+cd /usr/local/$botname
 echo updating freqtrade
 printf 'y\ny\n' | ./setup.sh --update
 
