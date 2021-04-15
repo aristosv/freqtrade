@@ -63,6 +63,8 @@ sed -i "s/\$telegram_chatid/$telegram_chatid/" /usr/local/$botname/config.json
 sed -i "s/\$webuser/$webuser/" /usr/local/$botname/config.json
 sed -i "s/\$webpass/$webpass/" /usr/local/$botname/config.json
 sed -i "s/\$webport/$webport/" /usr/local/$botname/config.json
+sed -i "s/\$ipaddress/$ipaddress/" /usr/local/$botname/config.json
+sed -i "s/\$secretkey/$secretkey/" /usr/local/$botname/config.json
 
 echo writing strategy changes
 sed -i "s/\$botname/$botname/" /usr/local/$botname/user_data/strategies/$botname.py
