@@ -26,8 +26,10 @@ export secretkey=$(openssl rand -hex 16)
 export ipaddress=$(ip route get 1 | awk '{print $NF;exit}')
 ##############################################################################
 
-echo updating system
+echo updating repositories
 apt update > /dev/null 2>&1
+
+echo upgrading system
 apt -y upgrade > /dev/null 2>&1
 
 echo installing software
@@ -45,14 +47,8 @@ wget -q https://raw.githubusercontent.com/aristosv/freqtrade/main/install_strate
 echo installing service
 wget -q https://raw.githubusercontent.com/aristosv/freqtrade/main/install_service --output-document="/etc/systemd/system/$botname.service"
 
-echo enabling service
-systemctl daemon-reload
-systemctl enable $botname.service > /dev/null 2>&1
-systemctl start $botname.service
-
 echo installing update
 wget -q https://raw.githubusercontent.com/aristosv/freqtrade/main/install_update --output-document="/usr/local/$botname/freqUpdate"
-chmod +x /usr/local/$botname/freqUpdate
 
 echo writing config changes
 sed -i "s/\$stake_currency/$stake_currency/" /usr/local/$botname/config.json
@@ -74,6 +70,14 @@ sed -i "s/\$botname/$botname/" /usr/local/$botname/user_data/strategies/$botname
 echo writing service changes
 sed -i "s/\$botname/$botname/" /etc/systemd/system/$botname.service
 sed -i "s/\$botname/$botname/" /etc/systemd/system/$botname.service
+
+echo writing update changes
+chmod +x /usr/local/$botname/freqUpdate
+
+echo enabling service
+systemctl daemon-reload
+systemctl enable $botname.service > /dev/null 2>&1
+systemctl start $botname.service
 
 echo =========================================================================================
 echo The installation has been completed. Your bot should talk to you on Telegram.
