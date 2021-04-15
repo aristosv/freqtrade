@@ -26,26 +26,26 @@ ipaddress=$(ip route get 1 | awk '{print $NF;exit}')
 ##############################################################################
 
 # install prerequisites
-bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/freqtrade/main/prerequisites)
+bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/freqtrade/main/install_prerequisites)
 
 # install freqtrade
-bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/freqtrade/main/freqtrade)
+bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/freqtrade/main/install_freqtrade)
 
-# download configuration
-wget --no-check-certificate https://raw.githubusercontent.com/aristosv/freqtrade/main/config --output-document="/usr/local/$botname/config.json"
+# install configuration
+wget --no-check-certificate https://raw.githubusercontent.com/aristosv/freqtrade/main/install_config --output-document="/usr/local/$botname/config.json"
 
-# download strategy
-wget --no-check-certificate https://raw.githubusercontent.com/aristosv/freqtrade/main/config --output-document="/usr/local/$botname/user_data/strategies/$botname.py"
+# install strategy
+wget --no-check-certificate https://raw.githubusercontent.com/aristosv/freqtrade/main/install_strategy --output-document="/usr/local/$botname/user_data/strategies/$botname.py"
 
-# download service file
-wget --no-check-certificate https://raw.githubusercontent.com/aristosv/freqtrade/main/service --output-document="/etc/systemd/system/$botname.service"
+# install service
+wget --no-check-certificate https://raw.githubusercontent.com/aristosv/freqtrade/main/install_service --output-document="/etc/systemd/system/$botname.service"
 
 # enable service
 systemctl daemon-reload
 systemctl enable $botname.service
 systemctl start $botname.service
 
-# download update script
+# install update
 wget --no-check-certificate https://raw.githubusercontent.com/aristosv/freqtrade/main/update --output-document="/usr/local/$botname/freqUpdate"
 chmod +x /usr/local/$botname/freqUpdate
 
