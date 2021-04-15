@@ -4,7 +4,7 @@ readconfig () {
  cat /usr/local/$botname/config.json
 }
 
-bot_name=$(basename "$PWD")
+botname=$(basename "$PWD")
 stake_currency=$(readconfig | jq -cr '.stake_currency')
 display_currency=$(readconfig | jq -cr '.fiat_display_currency')
 stake_amount=$(readconfig | jq -cr '.stake_amount')
@@ -20,7 +20,7 @@ webport=$(readconfig | jq -cr '.api_server | .listen_port')
 ipaddress=$(readconfig | jq -cr '.api_server | .listen_ip_address')
 secretkey=$(readconfig | jq -cr '.api_server | .jwt_secret_key')
 
-echo Bot Name: $bot_name
+echo Bot Name: $botname
 echo Stake Curency: $stake_currency
 echo Display Currency: $display_currency
 echo Stake Amount: $stake_amount
