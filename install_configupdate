@@ -20,6 +20,7 @@ webport=$(readconfig | jq -cr '.api_server | .listen_port')
 ipaddress=$(readconfig | jq -cr '.api_server | .listen_ip_address')
 secretkey=$(readconfig | jq -cr '.api_server | .jwt_secret_key')
 
+echo
 echo this is your configuration
 echo Stake Curency: $stake_currency
 echo Display Currency: $display_currency
@@ -35,6 +36,7 @@ echo FreqUI Password: $webpass
 echo Listen Port: $webport
 echo Listen IP Address: $ipaddress
 echo Secret Key: $secretkey
+echo
 
 echo stopping freqtrade
 systemctl stop $botname.service
