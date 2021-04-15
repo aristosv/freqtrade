@@ -94,6 +94,6 @@ echo ===========================================================================
 echo The installation has been completed. Your bot should talk to you on Telegram.
 echo Your bot service is running, but the trader is stopped. This is intentional.
 echo Confirm config.json is as you want it and start the trader by running /start on Telegram.
-echo You can also access the bot at http://$(hostname -I | cut -d' ' -f1):$webport
+echo You can also access the bot at http://$ipaddress:$webport
 echo You can login using username:$webuser password:$webpass
 echo =========================================================================================
