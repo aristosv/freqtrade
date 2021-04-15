@@ -21,7 +21,6 @@ ipaddress=$(readconfig | jq -cr '.api_server | .listen_ip_address')
 secretkey=$(readconfig | jq -cr '.api_server | .jwt_secret_key')
 
 echo
-echo current configuration
 echo Stake Curency: $stake_currency
 echo Display Currency: $display_currency
 echo Stake Amount: $stake_amount
