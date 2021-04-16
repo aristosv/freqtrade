@@ -65,7 +65,8 @@
             "UAH/$stake_currency",
             "VAI/$stake_currency",
             "BVND/$stake_currency",
-            "PAXG/$stake_currency"
+            "PAXG/$stake_currency",
+            "SUSD/$stake_currency"
         ],
 
         "outdated_offset": 5,
