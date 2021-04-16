@@ -2,7 +2,16 @@
 
 echo setting variables
 strategyfile=/usr/local/$botname/user_data/strategies/$botname.py
+
+echo saving current configuration
 class=$(cat $strategyfile | grep -oP '(?<=class )[^ ]*' | cut -f1 -d"(")
+
+echo
+echo Strategy Class: $class
+echo
+
+echo stopping freqtrade
+systemctl stop $botname.service
 
 echo removing old strategy
 rm $strategyfile
@@ -10,5 +19,8 @@ rm $strategyfile
 echo downloading updated strategy
 wget -q https://raw.githubusercontent.com/aristosv/freqtrade/main/install_strategy --output-document="$strategyfile"
 
-echo writing strategy changes
-sed -i "s/\$botname/$class/g" $strategyfile
+echo writing saved strategy
+sed -i "s/\$class/$class/g" $strategyfile
+
+echo starting freqtrade
+systemctl start $botname.service
