@@ -31,8 +31,7 @@ bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristo
 
 ---
 
-This is the information you will be required to provide when installing Freqtrade using this script.
-
+## Required information during setup
 - **Bot Name:** This defines the bot's directory, service and strategy names.
 - **Web UI user:** The username to login on the web interface of the bot.
 - **Web UI pass:** The password to login on the web interface of the bot.
