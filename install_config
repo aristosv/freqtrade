@@ -1,5 +1,3 @@
-//test3
-
 {
     "max_open_trades": $max_open_trades,
     "stake_currency": "$stake_currency",
