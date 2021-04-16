@@ -78,11 +78,11 @@ sed -i "s/\$botname/$botname/g" /usr/local/$botname/user_data/strategies/$botnam
 echo writing service changes
 sed -i "s/\$botname/$botname/g" /etc/systemd/system/$botname.service
 
-echo writing updateFreqtrade
+echo writing updateFreqtrade changes
 chmod +x /usr/local/$botname/updateFreqtrade
 sed -i "s/\$botname/$botname/g" /usr/local/$botname/updateFreqtrade
 
-echo writing updateConfig
+echo writing updateConfig changes
 chmod +x /usr/local/$botname/updateConfig
 sed -i "s/\$botname/$botname/g" /usr/local/$botname/updateConfig
 
