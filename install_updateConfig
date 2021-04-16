@@ -2,7 +2,6 @@
 
 echo setting variables
 configfile=/usr/local/$botname/config.json
-strategyfile=/usr/local/$botname/user_data/strategies/$botname.py
 readconfig () {cat $configfile}
 
 echo saving current configuration
@@ -44,14 +43,8 @@ systemctl stop $botname.service
 echo removing old configuration
 rm $configfile
 
-echo removing old strategy
-rm $strategyfile
-
 echo downloading updated configuration
 wget -q https://raw.githubusercontent.com/aristosv/freqtrade/main/install_config --output-document="$configfile"
-
-echo downloading updated strategy
-wget -q https://raw.githubusercontent.com/aristosv/freqtrade/main/install_strategy --output-document="$strategyfile"
 
 echo writing saved configuration
 echo "$(jq '.stake_currency = $stake_currency' $configfile)" > $configfile
@@ -68,9 +61,6 @@ echo "$(jq '.api_server | .password = $webpass' $configfile)" > $configfile
 echo "$(jq '.api_server | .listen_port = $webport' $configfile)" > $configfile
 echo "$(jq '.api_server | .listen_ip_address = $ipaddress' $configfile)" > $configfile
 echo "$(jq '.api_server | .jwt_secret_key = $secretkey' $configfile)" > $configfile
-
-echo writing strategy changes
-sed -i "s/\$botname/$botname/g" $strategyfile
 
 echo starting freqtrade
 systemctl start $botname.service
