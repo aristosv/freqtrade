@@ -7,7 +7,7 @@ import freqtrade.vendor.qtpylib.indicators as qtpylib
 class $botname(IStrategy):
 
     stoploss = -0.3
-    timeframe = '5m'
+    timeframe = '6m'
     trailing_stop = True
     trailing_stop_positive = 0.01
     trailing_stop_positive_offset = 0.02
