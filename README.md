@@ -48,9 +48,6 @@ This is the information you will be required to provide when installing Freqtrad
 - **Telegram ChatID:** In Telegram, talk to [@myidbot](https://t.me/myidbot) and get your ID.
 
 ## Common Usage
-
----
-
 - **Start the bot:** systemctl start $botname.service
 - **Stop the bot:** systemctl stop $botname.service
 - **Restart the bot:** systemctl restart $botname.service
