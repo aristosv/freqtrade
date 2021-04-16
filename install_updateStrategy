@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo setting variables
+strategyfile=/usr/local/$botname/user_data/strategies/$botname.py
+
+echo removing old strategy
+rm $strategyfile
+
+echo downloading updated strategy
+wget -q https://raw.githubusercontent.com/aristosv/freqtrade/main/install_strategy --output-document="$strategyfile"
+
+echo writing strategy changes
+sed -i "s/\$botname/$botname/g" $strategyfile
