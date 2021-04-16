@@ -73,7 +73,7 @@ sed -i "s/\$ipaddress/$ipaddress/g" /usr/local/$botname/config.json
 sed -i "s/\$secretkey/$secretkey/g" /usr/local/$botname/config.json
 
 echo updating strategy
-sed -i "s/\$botname/$botname/g" /usr/local/$botname/user_data/strategies/$botname.py
+sed -i "s/\$class/$botname/g" /usr/local/$botname/user_data/strategies/$botname.py
 
 echo updating service
 sed -i "s/\$botname/$botname/g" /etc/systemd/system/$botname.service
