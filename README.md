@@ -51,32 +51,10 @@ This is the information you will be required to provide when installing Freqtrad
 
 ---
 
-- Start the bot
-```systemctl start $botname.service```
-
-- Stop the bot
-```systemctl stop $botname.service```
-
-- Restart the bot
-```systemctl restart $botname.service```
-
-- Update the core Freqtrade application
-
-```bash
-systemctl stop $botname.service
-cd ~/$botname
-git pull origin
-systemctl start $botname.service
-```
-
-- Manual update of the strategies
-  
-```bash
-cd ~/$botname/user_data/strategies/
-nano $botname.py
-#Edit-change what you need in here
-systemctl restart $botname.service
-```
-
-- View logs to verify operational status / errors / etc
-```tail -f /var/log/$botname.log```
+**Start the bot:** systemctl start $botname.service
+**Stop the bot:** systemctl stop $botname.service
+**Restart the bot:** systemctl restart $botname.service
+**Update the core Freqtrade application:** /usr/local/$botname/updateFreqtrade
+**Update the configuration from this repo:** /usr/local/$botname/updateConfig
+**Update the strategy from this repo:** /usr/local/$botname/updateStrategy
+**Tail log file:** tail -f /var/log/$botname.log
