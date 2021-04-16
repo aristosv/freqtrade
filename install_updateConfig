@@ -2,23 +2,22 @@
 
 echo setting variables
 configfile=/usr/local/$botname/config.json
-readconfig () {cat $configfile}
 
 echo saving current configuration
-stake_currency=$(readconfig | jq -cr '.stake_currency')
-display_currency=$(readconfig | jq -cr '.fiat_display_currency')
-stake_amount=$(readconfig | jq -cr '.stake_amount')
-max_open_trades=$(readconfig | jq -cr '.max_open_trades')
-exchange_name=$(readconfig | jq -cr '.exchange | .name')
-exchange_key=$(readconfig | jq -cr '.exchange | .key')
-exchange_secret=$(readconfig | jq -cr '.exchange | .secret')
-telegram_token=$(readconfig | jq -cr '.telegram | .token')
-telegram_chatid=$(readconfig | jq -cr '.telegram | .chat_id')
-webuser=$(readconfig | jq -cr '.api_server | .username')
-webpass=$(readconfig | jq -cr '.api_server | .password')
-webport=$(readconfig | jq -cr '.api_server | .listen_port')
-ipaddress=$(readconfig | jq -cr '.api_server | .listen_ip_address')
-secretkey=$(readconfig | jq -cr '.api_server | .jwt_secret_key')
+stake_currency=$(grep '^ *"stake_currency":' $configfile | awk '{ print $2 }' | sed -e 's/,$//' -e 's/^"//' -e 's/"$//')
+display_currency=$(grep '^ *"fiat_display_currency":' $configfile | awk '{ print $2 }' | sed -e 's/,$//' -e 's/^"//' -e 's/"$//')
+stake_amount=$(grep '^ *"stake_amount":' $configfile | awk '{ print $2 }' | sed -e 's/,$//' -e 's/^"//' -e 's/"$//')
+max_open_trades=$(grep '^ *"max_open_trades":' $configfile | awk '{ print $2 }' | sed -e 's/,$//' -e 's/^"//' -e 's/"$//')
+exchange_name=$(grep '^ *"exchange_name":' $configfile | awk '{ print $2 }' | sed -e 's/,$//' -e 's/^"//' -e 's/"$//')
+exchange_key=$(grep '^ *"exchange_key":' $configfile | awk '{ print $2 }' | sed -e 's/,$//' -e 's/^"//' -e 's/"$//')
+exchange_secret=$(grep '^ *"exchange_secret":' $configfile | awk '{ print $2 }' | sed -e 's/,$//' -e 's/^"//' -e 's/"$//')
+telegram_token=$(grep '^ *"telegram_token":' $configfile | awk '{ print $2 }' | sed -e 's/,$//' -e 's/^"//' -e 's/"$//')
+telegram_chatid=$(grep '^ *"telegram_chatid":' $configfile | awk '{ print $2 }' | sed -e 's/,$//' -e 's/^"//' -e 's/"$//')
+webuser=$(grep '^ *"webuser":' $configfile | awk '{ print $2 }' | sed -e 's/,$//' -e 's/^"//' -e 's/"$//')
+webpass=$(grep '^ *"webpass":' $configfile | awk '{ print $2 }' | sed -e 's/,$//' -e 's/^"//' -e 's/"$//')
+webport=$(grep '^ *"webport":' $configfile | awk '{ print $2 }' | sed -e 's/,$//' -e 's/^"//' -e 's/"$//')
+ipaddress=$(grep '^ *"ipaddress":' $configfile | awk '{ print $2 }' | sed -e 's/,$//' -e 's/^"//' -e 's/"$//')
+secretkey=$(grep '^ *"secretkey":' $configfile | awk '{ print $2 }' | sed -e 's/,$//' -e 's/^"//' -e 's/"$//')
 
 echo
 echo Stake Curency: $stake_currency
