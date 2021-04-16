@@ -86,6 +86,10 @@ echo writing updateConfig changes
 chmod +x /usr/local/$botname/updateConfig
 sed -i "s/\$botname/$botname/g" /usr/local/$botname/updateConfig
 
+echo writing updateStrategy changes
+chmod +x /usr/local/$botname/updateStrategy
+sed -i "s/\$botname/$botname/g" /usr/local/$botname/updateStrategy
+
 echo enabling service
 systemctl daemon-reload
 systemctl enable $botname.service > /dev/null 2>&1
