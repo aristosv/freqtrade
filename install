@@ -56,7 +56,7 @@ wget -q https://raw.githubusercontent.com/aristosv/freqtrade/main/install_update
 echo installing updateStrategy
 wget -q https://raw.githubusercontent.com/aristosv/freqtrade/main/install_updateStrategy --output-document="/usr/local/$botname/updateStrategy"
 
-echo writing config changes
+echo writing config file
 sed -i "s/\$stake_currency/$stake_currency/g" /usr/local/$botname/config.json
 sed -i "s/\$display_currency/$display_currency/g" /usr/local/$botname/config.json
 sed -i "s/\$stake_amount/$stake_amount/g" /usr/local/$botname/config.json
@@ -72,21 +72,21 @@ sed -i "s/\$webport/$webport/g" /usr/local/$botname/config.json
 sed -i "s/\$ipaddress/$ipaddress/g" /usr/local/$botname/config.json
 sed -i "s/\$secretkey/$secretkey/g" /usr/local/$botname/config.json
 
-echo writing strategy changes
+echo updating strategy
 sed -i "s/\$botname/$botname/g" /usr/local/$botname/user_data/strategies/$botname.py
 
-echo writing service changes
+echo updating service
 sed -i "s/\$botname/$botname/g" /etc/systemd/system/$botname.service
 
-echo writing updateFreqtrade changes
+echo updating updateFreqtrade
 chmod +x /usr/local/$botname/updateFreqtrade
 sed -i "s/\$botname/$botname/g" /usr/local/$botname/updateFreqtrade
 
-echo writing updateConfig changes
+echo updating updateConfig
 chmod +x /usr/local/$botname/updateConfig
 sed -i "s/\$botname/$botname/g" /usr/local/$botname/updateConfig
 
-echo writing updateStrategy changes
+echo updating updateStrategy
 chmod +x /usr/local/$botname/updateStrategy
 sed -i "s/\$botname/$botname/g" /usr/local/$botname/updateStrategy
 
