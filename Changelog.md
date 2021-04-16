@@ -1,4 +1,9 @@
 **14/04/2021**
+- Seperated configuration, strategy and service files
+- Created updateFreqtrade, updateConfig and updateStrategy scripts
+- Added SUSD to blacklist
+
+**14/04/2021**
 - Improved IP detection
 
 **09/04/2021**
