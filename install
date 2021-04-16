@@ -56,7 +56,7 @@ wget -q https://raw.githubusercontent.com/aristosv/freqtrade/main/install_update
 echo installing updateStrategy
 wget -q https://raw.githubusercontent.com/aristosv/freqtrade/main/install_updateStrategy --output-document="/usr/local/$botname/updateStrategy"
 
-echo writing config file
+echo updating config
 sed -i "s/\$stake_currency/$stake_currency/g" /usr/local/$botname/config.json
 sed -i "s/\$display_currency/$display_currency/g" /usr/local/$botname/config.json
 sed -i "s/\$stake_amount/$stake_amount/g" /usr/local/$botname/config.json
