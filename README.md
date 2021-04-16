@@ -23,14 +23,11 @@ If you want to set up multiple bots, run the command again and choose a differen
 
 ---
 
-This command will install freqtrade.
-
+## Install Freqtrade
 ```bash
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/freqtrade/main/install)
 ```
-
 ---
-
 ## Required information during setup
 - **Bot Name:** This defines the bot's directory, service and strategy names.
 - **Web UI user:** The username to login on the web interface of the bot.
