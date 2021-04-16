@@ -1,4 +1,4 @@
-**14/04/2021**
+**16/04/2021**
 - Seperated configuration, strategy and service files
 - Created updateFreqtrade, updateConfig and updateStrategy scripts
 - Added SUSD to blacklist
