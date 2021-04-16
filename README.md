@@ -28,20 +28,20 @@ If you want to set up multiple bots, run the command again and choose a differen
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/freqtrade/main/install)
 ```
 ---
-## Required information during setup
+## Required setup information
 - **Bot Name:** This defines the bot's directory, service and strategy names.
-- **Web UI user:** The username to login on the web interface of the bot.
-- **Web UI pass:** The password to login on the web interface of the bot.
-- **Web UI Port:** The port to use for the web interface.
 - **Stake Currency:** The coin you want to use to trade on. Example: USDT.
+- **Display Currency:** The currency in which amounts will be displayed. Examples: USD, EUR, GBP.
 - **Stake Amount:** The amount you want to invest per trade.
 - **Max Open Trades:** The maximum allowed number of trades. -1 opens as many as possible.
-- **Display Currency:** The currency in which amounts will be displayed. Examples: USD, EUR, GBP.
 - **Exchange Name:** The name of your Exchange. Example: binance.
 - **Exchange Key:** Generate an API key on your exchange and use it here.
 - **Exchange Secret:** Along with the API key you will also get a secret.
 - **Telegram Token:** In Telegram, talk to [@botfather](https://t.me/BotFather), create a new bot and get it's API token.
 - **Telegram ChatID:** In Telegram, talk to [@myidbot](https://t.me/myidbot) and get your ID.
+- **Web UI user:** The username to login on the web interface of the bot.
+- **Web UI pass:** The password to login on the web interface of the bot.
+- **Web UI Port:** The port to use for the web interface.
 
 ## Common Usage
 - **Start the bot:** systemctl start $botname.service
