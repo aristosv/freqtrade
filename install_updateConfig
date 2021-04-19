@@ -46,20 +46,20 @@ echo downloading updated configuration
 wget -q https://raw.githubusercontent.com/aristosv/freqtrade/main/install_config --output-document="$configfile"
 
 echo writing saved configuration
-sed -i "s/\$stake_currency/$stake_currency/g" /usr/local/$botname/config.json
-sed -i "s/\$display_currency/$display_currency/g" /usr/local/$botname/config.json
-sed -i "s/\$stake_amount/$stake_amount/g" /usr/local/$botname/config.json
-sed -i "s/\$max_open_trades/$max_open_trades/g" /usr/local/$botname/config.json
-sed -i "s/\$exchange_name/$exchange_name/g" /usr/local/$botname/config.json
-sed -i "s/\$exchange_key/$exchange_key/g" /usr/local/$botname/config.json
-sed -i "s/\$exchange_secret/$exchange_secret/g" /usr/local/$botname/config.json
-sed -i "s/\$telegram_token/$telegram_token/g" /usr/local/$botname/config.json
-sed -i "s/\$telegram_chatid/$telegram_chatid/g" /usr/local/$botname/config.json
-sed -i "s/\$webuser/$webuser/g" /usr/local/$botname/config.json
-sed -i "s/\$webpass/$webpass/g" /usr/local/$botname/config.json
-sed -i "s/\$webport/$webport/g" /usr/local/$botname/config.json
-sed -i "s/\$ipaddress/$ipaddress/g" /usr/local/$botname/config.json
-sed -i "s/\$secretkey/$secretkey/g" /usr/local/$botname/config.json
+sed -i "s/\$stake_currency/$stake_currency/g" $configfile
+sed -i "s/\$display_currency/$display_currency/g" $configfile
+sed -i "s/\$stake_amount/$stake_amount/g" $configfile
+sed -i "s/\$max_open_trades/$max_open_trades/g" $configfile
+sed -i "s/\$exchange_name/$exchange_name/g" $configfile
+sed -i "s/\$exchange_key/$exchange_key/g" $configfile
+sed -i "s/\$exchange_secret/$exchange_secret/g" $configfile
+sed -i "s/\$telegram_token/$telegram_token/g" $configfile
+sed -i "s/\$telegram_chatid/$telegram_chatid/g" $configfile
+sed -i "s/\$webuser/$webuser/g" $configfile
+sed -i "s/\$webpass/$webpass/g" $configfile
+sed -i "s/\$webport/$webport/g" $configfile
+sed -i "s/\$ipaddress/$ipaddress/g" $configfile
+sed -i "s/\$secretkey/$secretkey/g" $configfile
 
 echo starting freqtrade
 systemctl start $botname.service
