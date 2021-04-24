@@ -2,7 +2,7 @@ from freqtrade.strategy.interface import IStrategy
 from pandas import DataFrame
 import talib.abstract as ta
 import freqtrade.vendor.qtpylib.indicators as qtpylib
-class freqtrade_USDT_30(IStrategy):
+class $class(IStrategy):
 
     timeframe = '1h'
     stoploss = -0.3
