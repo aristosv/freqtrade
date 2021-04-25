@@ -2,7 +2,7 @@
 - Moved to MACD & SMA strategy
 
 **16/04/2021**
-- Seperated configuration, strategy and service files
+- Separated configuration, strategy and service files
 - Created updateFreqtrade, updateConfig and updateStrategy scripts
 - Added SUSD to blacklist
 
