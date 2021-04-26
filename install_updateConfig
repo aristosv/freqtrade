@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo setting variables
-configfile=/usr/local/$botname/config.json
+configfile=/usr/local/${PWD##*/}/config.json
 
 echo saving current configuration
 stake_currency=$(grep '^ *"stake_currency":' $configfile | awk '{ print $2 }' | sed -e 's/,$//' -e 's/^"//' -e 's/"$//')
@@ -39,7 +39,7 @@ echo Initial State: $initial_state
 echo
 
 echo stopping freqtrade
-systemctl stop $botname.service
+systemctl stop ${PWD##*/}.service
 
 echo removing old configuration
 rm $configfile
@@ -65,4 +65,4 @@ sed -i "s/\$secretkey/$secretkey/g" $configfile
 sed -i "s/\$initial_state/$initial_state/g" $configfile
 
 echo starting freqtrade
-systemctl start $botname.service
+systemctl start ${PWD##*/}.service
