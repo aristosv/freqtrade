@@ -1,5 +1,6 @@
 **26/04/2021**
 - Modified "stop_duration_candles" to 1 to accommodate new strategy
+- Added "initial_state" in updateConfig
 
 **25/04/2021**
 - Moved to MACD & SMA strategy
