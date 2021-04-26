@@ -18,6 +18,7 @@ webpass=$(grep '^ *"password":' $configfile | awk '{ print $2 }' | sed -e 's/,$/
 webport=$(grep '^ *"listen_port":' $configfile | awk '{ print $2 }' | sed -e 's/,$//' -e 's/^"//' -e 's/"$//')
 ipaddress=$(grep '^ *"listen_ip_address":' $configfile | awk '{ print $2 }' | sed -e 's/,$//' -e 's/^"//' -e 's/"$//')
 secretkey=$(grep '^ *"jwt_secret_key":' $configfile | awk '{ print $2 }' | sed -e 's/,$//' -e 's/^"//' -e 's/"$//')
+initial_state=$(grep '^ *"initial_state":' $configfile | awk '{ print $2 }' | sed -e 's/,$//' -e 's/^"//' -e 's/"$//')
 
 echo
 echo Stake Curency: $stake_currency
@@ -34,6 +35,7 @@ echo FreqUI Password: $webpass
 echo Listen Port: $webport
 echo Listen IP Address: $ipaddress
 echo Secret Key: $secretkey
+echo Initial State: $initial_state
 echo
 
 echo stopping freqtrade
@@ -60,6 +62,7 @@ sed -i "s/\$webpass/$webpass/g" $configfile
 sed -i "s/\$webport/$webport/g" $configfile
 sed -i "s/\$ipaddress/$ipaddress/g" $configfile
 sed -i "s/\$secretkey/$secretkey/g" $configfile
+sed -i "s/\$initial_state/$initial_state/g" $configfile
 
 echo starting freqtrade
 systemctl start $botname.service
