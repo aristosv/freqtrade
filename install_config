@@ -143,5 +143,5 @@
       ]
     },
 
-    "initial_state": "stopped"
+    "initial_state": "$initial_state"
 }
