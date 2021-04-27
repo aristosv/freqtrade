@@ -104,14 +104,14 @@
         },
         {
             "method": "CooldownPeriod",
-            "stop_duration_candles": 1
+            "stop_duration": 5
         },
         {
             "method": "MaxDrawdown",
-            "lookback_period_candles": 200,
-            "trade_limit": 20,
+            "lookback_period": 1440,
+            "trade_limit": 10,
             "stop_duration_candles": 1,
-            "max_allowed_drawdown": 0.2
+            "max_allowed_drawdown": 0.015
         },
         {
             "method": "LowProfitPairs",
