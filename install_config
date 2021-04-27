@@ -139,8 +139,9 @@
         "token": "$telegram_token",
         "chat_id": "$telegram_chatid",
         "keyboard": [
-          ["/daily", "/profit", "/count"],
-          ["/status table", "/stats", "/trades"]
+          ["/daily", "/profit", "/count", "/stats"],
+          ["/status table", "/performance", "/logs"],
+          ["/show_config", "/reload_config","/balance"]
       ]
     },
 
