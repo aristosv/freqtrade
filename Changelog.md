@@ -2,6 +2,7 @@
 - Changed default "initial_state" to "running"
 - Modified "setup complete" message
 - Added BNB to blacklist to avoid "insufficient balance for requested action" on sell order
+- Additional Telegram buttons
 
 **26/04/2021**
 - Modified "stop_duration_candles" to 1 to accommodate new strategy
