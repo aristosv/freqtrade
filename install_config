@@ -97,9 +97,9 @@
     "protections": [
         {
             "method": "StoplossGuard",
-            "lookback_period_candles": 60,
-            "trade_limit": 4,
-            "stop_duration_candles": 1,
+            "lookback_period": 1440,
+            "trade_limit": 5,
+            "stop_duration": 60,
             "only_per_pair": false
         },
         {
@@ -110,7 +110,7 @@
             "method": "MaxDrawdown",
             "lookback_period": 1440,
             "trade_limit": 10,
-            "stop_duration_candles": 1,
+            "stop_duration": 60,
             "max_allowed_drawdown": 0.015
         },
         {
