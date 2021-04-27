@@ -4,6 +4,10 @@ import talib.abstract as ta
 import freqtrade.vendor.qtpylib.indicators as qtpylib
 class $class(IStrategy):
 
+    minimal_roi = {
+        "2880": 0.01
+    }
+
     timeframe = '1h'
     stoploss = -0.3
     trailing_stop = True
