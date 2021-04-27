@@ -1,3 +1,7 @@
+**27/04/2021**
+- Changed default "initial_state" to "running"
+- Modified "setup complete" message
+
 **26/04/2021**
 - Modified "stop_duration_candles" to 1 to accommodate new strategy
 
