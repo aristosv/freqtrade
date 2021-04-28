@@ -108,14 +108,14 @@
         },
         {
             "method": "MaxDrawdown",
-            "lookback_period": 1440,
-            "trade_limit": 10,
-            "stop_duration": 60,
-            "max_allowed_drawdown": 0.3
+            "lookback_period": 2880,
+            "trade_limit": 20,
+            "stop_duration": 240,
+            "max_allowed_drawdown": 0.2
         },
         {
             "method": "LowProfitPairs",
-            "lookback_period": 1440,
+            "lookback_period": 360,
             "trade_limit": 2,
             "stop_duration": 60,
             "required_profit": 0.02
