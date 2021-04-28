@@ -22,7 +22,8 @@
 {"method": "PrecisionFilter"},
 ```
 ## PriceFilter
-
+- remove pair if the price unit raises above 1
+- and if the pair price is below 0.00001%
 ```
 {"method": "PriceFilter", "low_price_ratio": 0.01, "min_price": 0.00000010},
 ```
