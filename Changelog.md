@@ -1,3 +1,6 @@
+**28/04/2021**
+- Modified Protections settings to accommodate new strategy
+
 **27/04/2021**
 - Changed default "initial_state" to "running"
 - Modified "setup complete" message
