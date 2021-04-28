@@ -22,7 +22,7 @@
 {"method": "PrecisionFilter"},
 ```
 ## PriceFilter
-- remove pair if the price unit (pip) raises above 1
+- filter out pairs, if the price unit of a pair raises above 1% 
 - and if the pair minimum price is below 0.00001%
 ```
 {"method": "PriceFilter", "low_price_ratio": 0.01, "min_price": 0.00000010},
