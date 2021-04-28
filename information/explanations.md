@@ -9,6 +9,7 @@
 }
 ```
 ---
+## MaxDrawdown
 - if in the last 24 hours
 - considering only pairs that made at least 10 trades
 - if drawdown is more than 30%
