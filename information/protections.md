@@ -26,14 +26,14 @@
 - in the last 24 hours
 - considering only pairs that made at least 20 trades
 - if drawdown is more than 20%
-- stop trading for 4 hours (global lock)
+- stop trading for 60 minutes (global lock)
 ```
 {
     "method": "MaxDrawdown",
     "lookback_period": 1440,
     "trade_limit": 10,
     "max_allowed_drawdown": 0.2
-    "stop_duration": 240,
+    "stop_duration": 60,
 },
 ```
 ---
