@@ -17,7 +17,7 @@
 ```
 ---
 ## PrecisionFilter
-Filters out low value coins which don't allow setting stoplosses.
+- Filter out low value coins which don't allow setting stoploss.
 ```
 {"method": "PrecisionFilter"},
 ```
