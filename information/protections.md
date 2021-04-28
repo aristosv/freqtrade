@@ -13,7 +13,8 @@
 ```
 ---
 ## CooldownPeriod
-- after a trade closes, wait 5 minutes before buying the same pair again (pair lock)
+- after a trade closes
+- wait 5 minutes before buying the same pair again (pair lock)
 ```
 {
     "method": "CooldownPeriod",
