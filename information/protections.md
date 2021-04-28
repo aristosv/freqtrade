@@ -1,7 +1,7 @@
 ## StoplossGuard
 - in the last 24 hours
 - if 5 trades hit stoploss
-- stop trading for 60 minutes
+- stop trading for 60 minutes (global lock)
 ```
 {
     "method": "StoplossGuard",
@@ -16,7 +16,7 @@
 - in the last 24 hours
 - considering only pairs that made at least 10 trades
 - if drawdown is more than 30%
-- stop trading for 60 minutes
+- stop trading for 60 minutes (global lock)
 ```
 {
     "method": "MaxDrawdown",
@@ -31,7 +31,7 @@
 - in the last 24 hours
 - considering only pairs that made at least 2 trades
 - with less than 2% profit
-- stop trading on those pairs for 60 minutes
+- stop trading on those pairs for 60 minutes (remove from whitelist)
 ```
 {
     "method": "LowProfitPairs",
@@ -43,7 +43,7 @@
 ```
 ---
 ## CooldownPeriod
-- after a trade closes, wait 5 minutes before buying the same pair again
+- after a trade closes, wait 5 minutes before buying the same pair again (pair lock)
 ```
 {
     "method": "CooldownPeriod",
