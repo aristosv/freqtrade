@@ -1,10 +1,13 @@
-
+## StoplossGuard
+- in the last 24 hours
+- if 5 trades hit stoploss
+- stop trading for 60 minutes
 ```
 {
     "method": "StoplossGuard",
-    "lookback_period_candles": 24,
-    "trade_limit": 4,
-    "stop_duration_candles": 4,
+    "lookback_period": 1440,
+    "trade_limit": 5,
+    "stop_duration": 60,
     "only_per_pair": false
 }
 ```
