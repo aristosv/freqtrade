@@ -12,6 +12,15 @@
 },
 ```
 ---
+## CooldownPeriod
+- after a trade closes, wait 5 minutes before buying the same pair again (pair lock)
+```
+{
+    "method": "CooldownPeriod",
+    "stop_duration": 5
+},
+```
+---
 ## MaxDrawdown
 - in the last 24 hours
 - considering only pairs that made at least 10 trades
@@ -20,10 +29,10 @@
 ```
 {
     "method": "MaxDrawdown",
-    "lookback_period": 1440,
-    "trade_limit": 10,
-    "max_allowed_drawdown": 0.3
-    "stop_duration": 60,
+    "lookback_period": 2880,
+    "trade_limit": 20,
+    "max_allowed_drawdown": 0.2
+    "stop_duration": 240,
 },
 ```
 ---
@@ -35,18 +44,9 @@
 ```
 {
     "method": "LowProfitPairs",
-    "lookback_period": 1440,
+    "lookback_period": 360,
     "trade_limit": 2,
     "required_profit": 0.02
     "stop_duration": 60,
-},
-```
----
-## CooldownPeriod
-- after a trade closes, wait 5 minutes before buying the same pair again (pair lock)
-```
-{
-    "method": "CooldownPeriod",
-    "stop_duration": 5
 },
 ```
