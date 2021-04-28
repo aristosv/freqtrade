@@ -1,5 +1,5 @@
 
-
+```
 {
     "method": "StoplossGuard",
     "lookback_period_candles": 24,
