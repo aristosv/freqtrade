@@ -12,6 +12,10 @@ Install [freqtrade](https://github.com/freqtrade/freqtrade) cryptotrading bot. T
 
 ---
 
+**Considerations:** The provided configuration and strategy are [Binance](https://www.binance.com/) specific and probably won't work with other exchanges.
+
+---
+
 Before continuing make sure you already have the following information:
 
 - Exchange key
