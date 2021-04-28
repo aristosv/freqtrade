@@ -27,8 +27,8 @@
 ## LowProfitPairs
 - in the last 24 hours
 - considering only pairs that made at least 2 trades
-- with at least a 2% profit
-- stop trading on that pair for 60 minutes
+- with less than 2% profit
+- stop trading on those pairs for 60 minutes
 ```
 {
     "method": "LowProfitPairs",
