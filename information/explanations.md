@@ -7,6 +7,7 @@
     "stop_duration_candles": 4,
     "only_per_pair": false
 }
+```
 ---
 ```
 - if in the last 24 hours
@@ -21,6 +22,7 @@
     "max_allowed_drawdown": 0.3
     "stop_duration": 60,
 },
+```
 ---
 - if in the last 24 hours
 - considering only pairs that made at least 2 trades
