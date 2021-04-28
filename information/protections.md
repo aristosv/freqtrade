@@ -41,7 +41,7 @@
 - in the last 6 hours
 - considering only pairs that made at least 2 trades
 - with less than 2% profit
-- stop trading on those pairs for 60 minutes (remove from whitelist)
+- stop trading on those pairs for 60 minutes (pair lock)
 ```
 {
     "method": "LowProfitPairs",
