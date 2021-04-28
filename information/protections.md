@@ -37,7 +37,7 @@
 ```
 ---
 ## LowProfitPairs
-- in the last 24 hours
+- in the last 4 hours
 - considering only pairs that made at least 2 trades
 - with less than 2% profit
 - stop trading on those pairs for 60 minutes (remove from whitelist)
