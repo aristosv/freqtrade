@@ -15,3 +15,9 @@
 ```
 {"method": "AgeFilter", "min_days_listed": 5},
 ```
+---
+## PrecisionFilter
+Filters out low value coins which don't allow setting stoplosses.
+```
+{"method": "PrecisionFilter"},
+```
