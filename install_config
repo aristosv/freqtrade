@@ -7,7 +7,7 @@
 
     "unfilledtimeout": {
         "buy": 10,
-        "sell": 40
+        "sell": 30
     },
 
     "bid_strategy": {
