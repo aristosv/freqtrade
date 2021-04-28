@@ -23,7 +23,7 @@
 ---
 ## MaxDrawdown
 - in the last 24 hours
-- considering only pairs that made at least 10 trades
+- considering only pairs that made at least 20 trades
 - if drawdown is more than 30%
 - stop trading for 60 minutes (global lock)
 ```
