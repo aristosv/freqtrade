@@ -30,8 +30,8 @@
 ```
 {
     "method": "MaxDrawdown",
-    "lookback_period": 2880,
-    "trade_limit": 20,
+    "lookback_period": 1440,
+    "trade_limit": 10,
     "max_allowed_drawdown": 0.2
     "stop_duration": 240,
 },
