@@ -21,3 +21,8 @@
 ```
 {"method": "PrecisionFilter"},
 ```
+## PriceFilter
+
+```
+{"method": "PriceFilter", "low_price_ratio": 0.01, "min_price": 0.00000010},
+```
