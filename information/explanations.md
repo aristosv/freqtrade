@@ -9,7 +9,7 @@
     "trade_limit": 5,
     "stop_duration": 60,
     "only_per_pair": false
-}
+},
 ```
 ---
 ## MaxDrawdown
@@ -39,6 +39,14 @@
     "trade_limit": 2,
     "required_profit": 0.02
     "stop_duration": 60,
-}
+},
 ```
 ---
+## CooldownPeriod
+- after a trade closes, wait 5 minutes before buying the same pair again
+```
+{
+    "method": "CooldownPeriod",
+    "stop_duration": 5
+},
+```
