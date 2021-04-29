@@ -1,6 +1,6 @@
 # freqtrade
 
-Install [freqtrade](https://github.com/freqtrade/freqtrade) cryptotrading bot. This script has been tested on Debian 10.
+Install [freqtrade](https://github.com/freqtrade/freqtrade) cryptotrading bot. This script was tested on Debian 10.
 
 ---
 
