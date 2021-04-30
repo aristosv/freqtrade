@@ -37,8 +37,8 @@
         "secret": "$exchange_secret",
         "ccxt_config": {"enableRateLimit": true},
         "ccxt_async_config": {
-            "enableRateLimit": true,
-            "rateLimit": 200
+            "enableRateLimit": true,              // enable ratelimit
+            "rateLimit": 200                      // add 2 miliseconds delay between api calls
         },
 
         "pair_whitelist": [
