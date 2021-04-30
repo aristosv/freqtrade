@@ -1,4 +1,5 @@
 **30/04/2021**
+- Added explanations to the configuration
 - Added VolatilityFilter
 
 **28/04/2021**
