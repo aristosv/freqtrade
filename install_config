@@ -88,16 +88,16 @@
         {"method": "ShuffleFilter"},                                                 // randomize pairs for equal trading priority
         {
             "method": "RangeStabilityFilter",
-            "lookback_days": 10,              // in the last 10 days
-            "min_rate_of_change": 0.03,       // ignore pairs with a trading range of less than 3%
-            "refresh_period": 1440            // update every 24 hours
+            "lookback_days": 10,          // in the last 10 days
+            "min_rate_of_change": 0.03,   // ignore pairs with a trading range of less than 3%
+            "refresh_period": 1440        // update every 24 hours
         },
         {
-            "method": "VolatilityFilter",     // ignore pairs if
-            "lookback_days": 10,              // in the last 10 days
-            "min_volatility": 0.05,           // their minimum volatility is less than 0.05
-            "max_volatility": 0.50,           // their maximum volatility is more than 0.50
-            "refresh_period": 86400           // update every 24 hours
+            "method": "VolatilityFilter",
+            "lookback_days": 10,          // ignore pairs if in the last 10 days
+            "min_volatility": 0.05,       // their minimum volatility is less than 0.05
+            "max_volatility": 0.50,       // their maximum volatility is more than 0.50
+            "refresh_period": 86400       // update every 24 hours
         }
     ],
 
