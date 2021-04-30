@@ -96,7 +96,7 @@
             "method": "VolatilityFilter",     // ignore pairs if
             "lookback_days": 10,              // in the last 10 days
             "min_volatility": 0.05,           // their minimum volatility is less than 0.05
-            "max_volatility": 0.50,           // their minimum volatility is more than 0.50
+            "max_volatility": 0.50,           // their maximum volatility is more than 0.50
             "refresh_period": 86400           // update every 24 hours
         }
     ],
