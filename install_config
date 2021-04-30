@@ -76,10 +76,10 @@
 
     "pairlists": [
         {
-            "method": "VolumePairList",
-            "number_assets": 250,
-            "sort_key": "quoteVolume",
-            "refresh_period": 1800
+            "method": "VolumePairList", // sort pairs by trading volume
+            "number_assets": 250,       // search for 250 pairs
+            "sort_key": "quoteVolume",  // sort them by their traded volume
+            "refresh_period": 1800.     // repeat every 30 minutes
         },
         {"method": "AgeFilter", "min_days_listed": 5},                               // ignore pairs listed for less than 5 days
         {"method": "PrecisionFilter"},                                               // ignore pairs with low value which do not allow stoploss
