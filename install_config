@@ -82,14 +82,14 @@
             "refresh_period": 1800      // update every 30 minutes
         },
         {"method": "AgeFilter", "min_days_listed": 5},                               // ignore pairs listed for less than 5 days
-        {"method": "PrecisionFilter"},                                               // ignore pairs with low value which do not allow stoploss
-        {"method": "PriceFilter", "low_price_ratio": 0.01, "min_price": 0.00000010}, // ignore pairs with low value and low price ratio
-        {"method": "SpreadFilter", "max_spread_ratio": 0.005},                       // ignore pairs with high spread
+        {"method": "PrecisionFilter"},                                               // ignore untradable pairs
+        {"method": "PriceFilter", "low_price_ratio": 0.01, "min_price": 0.00000010}, // ignore pairs priced below 1.0% or below 0.00000010
+        {"method": "SpreadFilter", "max_spread_ratio": 0.005},                       // ignore pairs with ask/bid difference above 0.5%
         {"method": "ShuffleFilter"},                                                 // randomize pairs for equal trading priority
         {
             "method": "RangeStabilityFilter",
             "lookback_days": 10,          // in the last 10 days
-            "min_rate_of_change": 0.03,   // ignore pairs with a trading range of less than 3%
+            "min_rate_of_change": 0.03,   // ignore pairs with rate change below 3%
             "refresh_period": 1440        // update every 24 hours
         },
         {
