@@ -81,11 +81,11 @@
             "sort_key": "quoteVolume",
             "refresh_period": 1800
         },
-        {"method": "AgeFilter", "min_days_listed": 5},
-        {"method": "PrecisionFilter"},
-        {"method": "PriceFilter", "low_price_ratio": 0.01, "min_price": 0.00000010},
-        {"method": "SpreadFilter", "max_spread_ratio": 0.005},
-        {"method": "ShuffleFilter"},
+        {"method": "AgeFilter", "min_days_listed": 5},                               // ignore pairs listed for less than 5 days
+        {"method": "PrecisionFilter"},                                               // ignore pairs with low value which do not allow stoploss
+        {"method": "PriceFilter", "low_price_ratio": 0.01, "min_price": 0.00000010}, // ignore pairs with low value and low price ratio
+        {"method": "SpreadFilter", "max_spread_ratio": 0.005},                       // ignore pairs with high spread
+        {"method": "ShuffleFilter"},                                                 // randomize pairs for equal trading priority
         {
             "method": "RangeStabilityFilter",
             "lookback_days": 10,
