@@ -1,3 +1,6 @@
+**30/04/2021**
+- Added VolatilityFilter
+
 **28/04/2021**
 - Modified Protections settings to accommodate new strategy
 - Protections now use minutes not candles
