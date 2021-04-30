@@ -88,9 +88,9 @@
         {"method": "ShuffleFilter"},                                                 // randomize pairs for equal trading priority
         {
             "method": "RangeStabilityFilter",
-            "lookback_days": 10,
-            "min_rate_of_change": 0.03,
-            "refresh_period": 1440
+            "lookback_days": 10,              // in the last 10 days
+            "min_rate_of_change": 0.03,       // ignore pairs with a trading range less than 3%
+            "refresh_period": 1440            // update every 24 hours
         }
     ],
 
