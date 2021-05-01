@@ -1,3 +1,6 @@
+**01/05/2021**
+- Changed keyboard configuration to the most frequently used commands
+
 **30/04/2021**
 - Added explanations to the configuration
 - Added VolatilityFilter
