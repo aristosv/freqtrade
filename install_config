@@ -108,7 +108,7 @@
         },
         {
             "method": "CooldownPeriod",
-            "stop_duration": 5. // after closing a trade wait 5 minutes before re-buying the same pair
+            "stop_duration": 5  // after closing a trade wait 5 minutes before re-buying the same pair
         },
         {
             "method": "MaxDrawdown",
