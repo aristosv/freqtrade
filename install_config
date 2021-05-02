@@ -35,10 +35,10 @@
         "name": "$exchange_name",
         "key": "$exchange_key",
         "secret": "$exchange_secret",
-        "ccxt_config": {"enableRateLimit": true}, // enable ratelimit for the ccxt library
-        "ccxt_async_config": {                    // and for async communication 
-            "enableRateLimit": true,              // again enable ratelimit
-            "rateLimit": 200                      // and add 2 miliseconds delay between api calls
+        "ccxt_config": {"enableRateLimit": true},  // enable ratelimit for the ccxt library
+        "ccxt_async_config": {                     // and for async communication 
+            "enableRateLimit": true,               // again enable ratelimit
+            "rateLimit": 200                       // and add 2 miliseconds delay between api calls
         },
 
         "pair_whitelist": [
@@ -68,10 +68,7 @@
             "PAXG/$stake_currency",
             "SUSD/$stake_currency",
             "BNB/$stake_currency"
-        ],
-
-        "outdated_offset": 5,
-        "markets_refresh_interval": 60
+        ]
     },
 
     "pairlists": [
@@ -81,37 +78,37 @@
             "sort_key": "quoteVolume",  // sort pairs by traded volume
             "refresh_period": 1800      // update every 30 minutes
         },
-        {"method": "AgeFilter", "min_days_listed": 5},                               // ignore pairs listed for less than 5 days
-        {"method": "PrecisionFilter"},                                               // ignore untradable pairs
-        {"method": "PriceFilter", "low_price_ratio": 0.01, "min_price": 0.00000010}, // ignore pairs priced below 1.0% or below 0.00000010
-        {"method": "SpreadFilter", "max_spread_ratio": 0.005},                       // ignore pairs with ask/bid difference above 0.5%
-        {"method": "ShuffleFilter"},                                                 // randomize pairs for equal trading priority
+        {"method": "AgeFilter", "min_days_listed": 5},                                // ignore pairs listed for less than 5 days
+        {"method": "PrecisionFilter"},                                                // ignore untradable pairs
+        {"method": "PriceFilter", "low_price_ratio": 0.01, "min_price": 0.00000010},  // ignore pairs priced below 1.0% or below 0.00000010
+        {"method": "SpreadFilter", "max_spread_ratio": 0.005},                        // ignore pairs with ask/bid difference above 0.5%
+        {"method": "ShuffleFilter"},                                                  // randomize pairs for equal trading priority
         {
             "method": "RangeStabilityFilter",
-            "lookback_days": 10,          // in the last 10 days
-            "min_rate_of_change": 0.03,   // ignore pairs with rate change below 3%
-            "refresh_period": 1440        // update every 24 hours
+            "lookback_days": 10,         // in the last 10 days
+            "min_rate_of_change": 0.03,  // ignore pairs with rate change below 3%
+            "refresh_period": 1440       // update every 24 hours
         },
         {
             "method": "VolatilityFilter",
-            "lookback_days": 10,          // ignore pairs if in the last 10 days
-            "min_volatility": 0.05,       // their minimum volatility is less than 0.05
-            "max_volatility": 0.50,       // their maximum volatility is more than 0.50
-            "refresh_period": 86400       // update every 24 hours
+            "lookback_days": 10,     // ignore pairs if in the last 10 days
+            "min_volatility": 0.05,  // their minimum volatility is less than 0.05
+            "max_volatility": 0.50,  // their maximum volatility is more than 0.50
+            "refresh_period": 86400  // update every 24 hours
         }
     ],
 
     "protections": [
         {
             "method": "StoplossGuard",
-            "lookback_period": 1440,      // in the last 24 hours
-            "trade_limit": 5,             // if 5 trades hit stoploss
-            "stop_duration": 60,          // stop trading for an hour
-            "only_per_pair": false        // applies to all pairs
+            "lookback_period": 1440,  // in the last 24 hours
+            "trade_limit": 5,         // if 5 trades hit stoploss
+            "stop_duration": 60,      // stop trading for an hour
+            "only_per_pair": false    // applies to all pairs
         },
         {
             "method": "CooldownPeriod",
-            "stop_duration": 5            // after closing a trade wait 5 minutes before re-buying the same pair
+            "stop_duration": 5. // after closing a trade wait 5 minutes before re-buying the same pair
         },
         {
             "method": "MaxDrawdown",
@@ -122,10 +119,10 @@
         },
         {
             "method": "LowProfitPairs",
-            "lookback_period": 360,       // in the last 6 hours
-            "trade_limit": 2,             // considering only pairs that made at least 2 trades
-            "required_profit": 0.02,      // with less than 2% profit
-            "stop_duration": 60           // stop trading the specific pairs for 60 minutes
+            "lookback_period": 360,  // in the last 6 hours
+            "trade_limit": 2,        // considering only pairs that made at least 2 trades
+            "required_profit": 0.02, // with less than 2% profit
+            "stop_duration": 60      // stop trading the specific pairs for 60 minutes
         }
     ],
 
