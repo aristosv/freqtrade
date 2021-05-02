@@ -1,3 +1,6 @@
+**02/05/2021**
+- stoploss is now at -40%
+
 **01/05/2021**
 - Changed keyboard configuration to the most frequently used commands
 
