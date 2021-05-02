@@ -21,14 +21,14 @@
     },
 
     "order_types": {
-        "buy": "limit",                     // when buying place limit order
-        "sell": "limit",                    // when selling place limit order
-        "emergencysell": "market",          // for emergency sells use market order
-        "forcesell": "market",              // for forcesells use market order
-        "forcebuy": "market",               // for forcebuys use market orders
-        "stoploss": "market",               // for stoplosses use market orders
-        "stoploss_on_exchange": true,       // place orders on the exchange
-        "stoploss_on_exchange_interval": 60 // check stoploss on the exchange every minute
+        "buy": "limit",                      // when buying place limit order
+        "sell": "limit",                     // when selling place limit order
+        "emergencysell": "market",           // for emergency sells use market order
+        "forcesell": "market",               // for forcesells use market order
+        "forcebuy": "market",                // for forcebuys use market orders
+        "stoploss": "market",                // for stoplosses use market orders
+        "stoploss_on_exchange": true,        // place orders on the exchange
+        "stoploss_on_exchange_interval": 60  // check stoploss on the exchange every minute
     },
 
     "exchange": {
