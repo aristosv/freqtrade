@@ -6,7 +6,7 @@ import talib.abstract as ta
 import freqtrade.vendor.qtpylib.indicators as qtpylib
 class $class(IStrategy):
 
-    stoploss = -0.3
+    stoploss = -0.4
     timeframe = '5m'
     trailing_stop = True
     trailing_stop_positive = 0.01
