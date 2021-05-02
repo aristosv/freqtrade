@@ -1,5 +1,7 @@
 **02/05/2021**
-- stoploss is now at -40%
+- stoploss is now at -40% as per the results below
+![backtest_results](https://user-images.githubusercontent.com/528302/116808569-29a80300-ab42-11eb-9ffb-fb6c710ccf82.jpeg)
+
 
 **01/05/2021**
 - Changed keyboard configuration to the most frequently used commands
