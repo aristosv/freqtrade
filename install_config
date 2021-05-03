@@ -45,8 +45,8 @@
         ],
 
         "pair_blacklist": [
-            ".*UP/$stake_currency",    // remove leveraged tokens
-            ".*DOWN/$stake_currency",  // remove leveraged tokens
+            ".*UP/$stake_currency",    // remove UP leveraged tokens
+            ".*DOWN/$stake_currency",  // remove DOWN leveraged tokens
             "BUSD/$stake_currency",    // stablecoin
             "EUR/$stake_currency",     // remove Euro
             "AUD/$stake_currency",     // remove Australian dollar
