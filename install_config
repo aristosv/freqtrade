@@ -44,16 +44,16 @@
         "pair_whitelist": [
         ],
 
-        "pair_blacklist": [
-            ".*UP/$stake_currency",    // remove UP leveraged tokens
-            ".*DOWN/$stake_currency",  // remove DOWN leveraged tokens
-            "EUR/$stake_currency",     // remove Euro
-            "AUD/$stake_currency",     // remove Australian dollar
-            "BRL/$stake_currency",     // remove Brazilian real
-            "GBP/$stake_currency",     // remove British pound
-            "RUB/$stake_currency",     // remove Russian ruble
-            "ZAR/$stake_currency",     // remove South African rand
-            "TRY/$stake_currency",     // remove Turkish lira
+        "pair_blacklist": [            // do not trade the following pairs
+            ".*UP/$stake_currency",    // UP leveraged tokens
+            ".*DOWN/$stake_currency",  // DOWN leveraged tokens
+            "EUR/$stake_currency",     // Euro
+            "AUD/$stake_currency",     // Australian dollar
+            "BRL/$stake_currency",     // Brazilian real
+            "GBP/$stake_currency",     // British pound
+            "RUB/$stake_currency",     // Russian ruble
+            "ZAR/$stake_currency",     // South African rand
+            "TRY/$stake_currency",     // Turkish lira
             "BUSD/$stake_currency",    // stablecoin
             "TUSD/$stake_currency",    // stablecoin
             "USDC/$stake_currency",    // stablecoin
