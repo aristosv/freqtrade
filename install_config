@@ -128,11 +128,11 @@
 
     "api_server": {
         "enabled": true,
-        "listen_ip_address": "$ipaddress",
-        "listen_port": $webport,
-        "verbosity": "error",
-        "enable_openapi": false,
-        "jwt_secret_key": "$secretkey",
+        "listen_ip_address": "$ipaddress", // server ip address
+        "listen_port": $webport,           // api server port
+        "verbosity": "error",              // verbosity level
+        "enable_openapi": false,           // enable openapi
+        "jwt_secret_key": "$secretkey",    // randon key value
         "CORS_origins": [],
         "username": "$webuser",
         "password": "$webpass"
