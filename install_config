@@ -48,15 +48,15 @@
             ".*UP/$stake_currency",    // remove leveraged tokens
             ".*DOWN/$stake_currency",  // remove leveraged tokens
             "BUSD/$stake_currency",    // stablecoin
-            "EUR/$stake_currency",     // fiat currency
-            "AUD/$stake_currency",     // fiat currency
-            "BRL/$stake_currency",     // fiat currency
-            "GBP/$stake_currency",     // fiat currency
-            "TRY/$stake_currency",
-            "TUSD/$stake_currency",
-            "USDC/$stake_currency",
-            "PAX/$stake_currency",
-            "BIDR/$stake_currency",
+            "EUR/$stake_currency",     // remove Euro
+            "AUD/$stake_currency",     // remove Australian dollar
+            "BRL/$stake_currency",     // remove Brazilian real
+            "GBP/$stake_currency",     // remove British pound
+            "TRY/$stake_currency",     // remove Turkish lira
+            "TUSD/$stake_currency",    // stablecoin
+            "USDC/$stake_currency",    // stablecoin
+            "PAX/$stake_currency",     // remove Paxos Standard Token
+            "BIDR/$stake_currency",    // stablecoin
             "DAI/$stake_currency",
             "IDRT/$stake_currency",
             "RUB/$stake_currency",
