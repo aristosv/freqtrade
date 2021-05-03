@@ -45,13 +45,13 @@
         ],
 
         "pair_blacklist": [
-            ".*UP/$stake_currency",
-            ".*DOWN/$stake_currency",
-            "BUSD/$stake_currency",
-            "EUR/$stake_currency",
-            "AUD/$stake_currency",
-            "BRL/$stake_currency",
-            "GBP/$stake_currency",
+            ".*UP/$stake_currency",    // remove leveraged tokens
+            ".*DOWN/$stake_currency",  // remove leveraged tokens
+            "BUSD/$stake_currency",    // stablecoin
+            "EUR/$stake_currency",     // fiat currency
+            "AUD/$stake_currency",     // fiat currency
+            "BRL/$stake_currency",     // fiat currency
+            "GBP/$stake_currency",     // fiat currency
             "TRY/$stake_currency",
             "TUSD/$stake_currency",
             "USDC/$stake_currency",
