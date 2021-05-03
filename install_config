@@ -47,20 +47,20 @@
         "pair_blacklist": [
             ".*UP/$stake_currency",    // remove UP leveraged tokens
             ".*DOWN/$stake_currency",  // remove DOWN leveraged tokens
-            "BUSD/$stake_currency",    // stablecoin
             "EUR/$stake_currency",     // remove Euro
             "AUD/$stake_currency",     // remove Australian dollar
             "BRL/$stake_currency",     // remove Brazilian real
             "GBP/$stake_currency",     // remove British pound
+            "RUB/$stake_currency",     // remove Russian ruble
+            "ZAR/$stake_currency",     // remove South African rand
             "TRY/$stake_currency",     // remove Turkish lira
+            "BUSD/$stake_currency",    // stablecoin
             "TUSD/$stake_currency",    // stablecoin
             "USDC/$stake_currency",    // stablecoin
-            "PAX/$stake_currency",     // remove Paxos Standard Token
+            "PAX/$stake_currency",     // stablecoin
             "BIDR/$stake_currency",    // stablecoin
-            "DAI/$stake_currency",
-            "IDRT/$stake_currency",
-            "RUB/$stake_currency",
-            "ZAR/$stake_currency",
+            "DAI/$stake_currency",     // stablecoin
+            "IDRT/$stake_currency",    // stablecoin
             "NGN/$stake_currency",
             "UAH/$stake_currency",
             "VAI/$stake_currency",
