@@ -67,7 +67,7 @@
             "BVND/$stake_currency",    // stablecoin
             "PAXG/$stake_currency",    // stablecoin
             "SUSD/$stake_currency",    // stablecoin
-            "BNB/$stake_currency".     // binance coin
+            "BNB/$stake_currency"     // binance coin
         ]
     },
 
