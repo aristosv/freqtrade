@@ -53,6 +53,8 @@
             "GBP/$stake_currency",     // British pound
             "RUB/$stake_currency",     // Russian ruble
             "ZAR/$stake_currency",     // South African rand
+            "NGN/$stake_currency",     // Nigerian naira
+            "UAH/$stake_currency",     // Ukrainian hryvnia
             "TRY/$stake_currency",     // Turkish lira
             "BUSD/$stake_currency",    // stablecoin
             "TUSD/$stake_currency",    // stablecoin
@@ -61,13 +63,11 @@
             "BIDR/$stake_currency",    // stablecoin
             "DAI/$stake_currency",     // stablecoin
             "IDRT/$stake_currency",    // stablecoin
-            "NGN/$stake_currency",
-            "UAH/$stake_currency",
-            "VAI/$stake_currency",
-            "BVND/$stake_currency",
-            "PAXG/$stake_currency",
-            "SUSD/$stake_currency",
-            "BNB/$stake_currency"
+            "VAI/$stake_currency",     // stablecoin
+            "BVND/$stake_currency",    // stablecoin
+            "PAXG/$stake_currency",    // stablecoin
+            "SUSD/$stake_currency",    // stablecoin
+            "BNB/$stake_currency".     // binance coin
         ]
     },
 
