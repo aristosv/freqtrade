@@ -139,14 +139,14 @@
     },
 
     "telegram": {
-        "enabled": true,
-        "token": "$telegram_token",
-        "chat_id": "$telegram_chatid",
-        "keyboard": [
+        "enabled": true,                                   // enable telegram
+        "token": "$telegram_token",                        // telegram bot token
+        "chat_id": "$telegram_chatid",                     // your telegram chat id
+        "keyboard": [                                      // custom telegram keyboard
           ["/daily", "/profit", "/stats", "/count"],
           ["/status table", "/balance", "/logs", "/help"]
       ]
     },
 
-    "initial_state": "running"
+    "initial_state": "running"  // initial bot state
 }
