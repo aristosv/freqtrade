@@ -1,5 +1,5 @@
 **02/05/2021**
-- stoploss is now at -40% as per the results below
+- stoploss is now at -40% as per the backtesting results
 ![backtest_results](https://user-images.githubusercontent.com/528302/116808569-29a80300-ab42-11eb-9ffb-fb6c710ccf82.jpeg)
 
 
