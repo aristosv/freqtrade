@@ -21,24 +21,24 @@
     },
 
     "order_types": {
-        "buy": "limit",                      // when buying use a limit order
-        "sell": "limit",                     // when selling use a limit order
-        "emergencysell": "market",           // for emergency sells use a market order
-        "forcesell": "market",               // for forcesells use a market order
-        "forcebuy": "market",                // for forcebuys use a market orders
-        "stoploss": "market",                // for stoplosses use a market orders
-        "stoploss_on_exchange": true,        // place orders on the exchange
-        "stoploss_on_exchange_interval": 60  // check stoploss on the exchange every minute
+        "buy": "limit",
+        "sell": "limit",
+        "emergencysell": "market",
+        "forcesell": "market",
+        "forcebuy": "market",
+        "stoploss": "market",
+        "stoploss_on_exchange": true,
+        "stoploss_on_exchange_interval": 60
     },
 
     "exchange": {
         "name": "binance",
         "key": "",
         "secret": "",
-        "ccxt_config": {"enableRateLimit": true},  // enable ratelimit for the ccxt library
-        "ccxt_async_config": {                     // for async communication 
-            "enableRateLimit": true,               // enable ratelimit
-            "rateLimit": 200                       // and add 2 miliseconds delay between api calls
+        "ccxt_config": {"enableRateLimit": true},
+        "ccxt_async_config": {
+            "enableRateLimit": true,
+            "rateLimit": 200
         },
 
         "pair_whitelist": [
@@ -335,11 +335,11 @@
     "pairlists": [
         {
             "method": "StaticPairList",
-            "number_assets": 250,       // search for 250 pairs
-            "sort_key": "quoteVolume",  // sort pairs by traded volume
-            "refresh_period": 1800      // update every 30 minutes
+            "number_assets": 250,
+            "sort_key": "quoteVolume",
+            "refresh_period": 1800
         },
-        {"method": "AgeFilter", "min_days_listed": 100},                                // ignore pairs listed for less than 5 days
+        {"method": "AgeFilter", "min_days_listed": 100},
         {"method": "PrecisionFilter"},                                                // ignore untradable pairs
         {"method": "PriceFilter", "low_price_ratio": 0.01, "min_price": 0.00000010},  // ignore pairs priced below 1.0% or below 0.00000010
         {"method": "SpreadFilter", "max_spread_ratio": 0.005},                        // ignore pairs with ask/bid difference above 0.5%
