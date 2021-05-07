@@ -1,5 +1,6 @@
 **07/05/2021**
 - added "amend_last_stake_amount": true,
+- updated ip detection method to use wan ip
 
 **02/05/2021**
 - stoploss is now at -40% as per the backtesting results
