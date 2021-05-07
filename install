@@ -23,7 +23,7 @@ echo Web UI Port: ; read webport ; export webport
 ##############################################################################
 echo setting variables
 export secretkey=$(openssl rand -hex 16)
-export ipaddress=$(ip route | grep $(ip route | grep default | awk '{ print $5 }') | grep -v "default" | awk '/scope/ { print $9 }')
+export ipaddress=$(wget -q -O - ipinfo.io/ip)
 ##############################################################################
 
 echo updating repositories
