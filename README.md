@@ -8,7 +8,7 @@ Install [freqtrade](https://github.com/freqtrade/freqtrade) cryptotrading bot. T
 
 ---
 
-**Purpose:** The purpose of this script is to provide an automated installation process, a working configuration and strategy, and to simply make it easier to install and configure [freqtrade](https://github.com/freqtrade/freqtrade).
+**Purpose:** The purpose of this script is to provide an automated installation process, a working configuration and strategy, and to simply make it easier to install, configure and update [freqtrade](https://github.com/freqtrade/freqtrade).
 
 ---
 
