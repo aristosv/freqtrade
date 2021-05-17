@@ -4,7 +4,7 @@ from freqtrade.strategy.interface import IStrategy
 from typing import Dict, List
 from functools import reduce
 import talib.abstract as ta
-class freqtrade(IStrategy):
+class $class(IStrategy):
 
     stoploss = -0.4
     timeframe = '1h'
