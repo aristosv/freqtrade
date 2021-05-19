@@ -7,7 +7,7 @@ import talib.abstract as ta
 class $class(IStrategy):
 
     stoploss = -0.4
-    timeframe = '1h'
+    timeframe = '1m'
     trailing_stop = True
     trailing_stop_positive = 0.01
     trailing_stop_positive_offset = 0.02
