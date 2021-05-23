@@ -45,30 +45,30 @@
         "pair_whitelist": [
         ],
 
-        "pair_blacklist": [            // do not trade the following pairs
-            ".*UP/$stake_currency",    // UP leveraged tokens
-            ".*DOWN/$stake_currency",  // DOWN leveraged tokens
-            "EUR/$stake_currency",     // Euro
-            "AUD/$stake_currency",     // Australian dollar
-            "BRL/$stake_currency",     // Brazilian real
-            "GBP/$stake_currency",     // British pound
-            "RUB/$stake_currency",     // Russian ruble
-            "ZAR/$stake_currency",     // South African rand
-            "NGN/$stake_currency",     // Nigerian naira
-            "UAH/$stake_currency",     // Ukrainian hryvnia
-            "TRY/$stake_currency",     // Turkish lira
-            "BUSD/$stake_currency",    // stablecoin
-            "TUSD/$stake_currency",    // stablecoin
-            "USDC/$stake_currency",    // stablecoin
-            "PAX/$stake_currency",     // stablecoin
-            "BIDR/$stake_currency",    // stablecoin
-            "DAI/$stake_currency",     // stablecoin
-            "IDRT/$stake_currency",    // stablecoin
-            "VAI/$stake_currency",     // stablecoin
-            "BVND/$stake_currency",    // stablecoin
-            "PAXG/$stake_currency",    // stablecoin
-            "SUSD/$stake_currency",    // stablecoin
-            "BNB/$stake_currency"      // binance coin
+        "pair_blacklist": [             // do not trade the following pairs
+            ".*UP/$stake_currency",     // UP leveraged tokens
+            ".*DOWN/$stake_currency",   // DOWN leveraged tokens
+            "EUR/$stake_currency",      // Euro
+            "AUD/$stake_currency",      // Australian dollar
+            "BRL/$stake_currency",      // Brazilian real
+            "GBP/$stake_currency",      // British pound
+            "RUB/$stake_currency",      // Russian ruble
+            "ZAR/$stake_currency",      // South African rand
+            "NGN/$stake_currency",      // Nigerian naira
+            "UAH/$stake_currency",      // Ukrainian hryvnia
+            "TRY/$stake_currency",      // Turkish lira
+            "BUSD/$stake_currency",     // stablecoin
+            "TUSD/$stake_currency",     // stablecoin
+            "USDC/$stake_currency",     // stablecoin
+            "PAX/$stake_currency",      // stablecoin
+            "BIDR/$stake_currency",     // stablecoin
+            "DAI/$stake_currency",      // stablecoin
+            "IDRT/$stake_currency",     // stablecoin
+            "VAI/$stake_currency",      // stablecoin
+            "BVND/$stake_currency",     // stablecoin
+            "PAXG/$stake_currency",     // stablecoin
+            "SUSD/$stake_currency",     // stablecoin
+            "BNB/$stake_currency"       // binance coin
         ]
     },
 
