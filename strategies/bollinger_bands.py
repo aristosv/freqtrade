@@ -14,7 +14,8 @@ class $class(IStrategy):
     trailing_only_offset_is_reached = True
 
     def populate_indicators(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
-        bollinger = qtpylib.bollinger_bands(qtpylib.typical_price(dataframe), window=20, stds=3)
+        dataframe['rsi'] = ta.RSI(dataframe, timeperiod=14)
+        bollinger = qtpylib.bollinger_bands(qtpylib.typical_price(dataframe), window=20, stds=4)
         dataframe['bb_lowerband'] = bollinger['lower']
         dataframe['bb_middleband'] = bollinger['mid']
         dataframe['bb_upperband'] = bollinger['upper']
@@ -23,6 +24,7 @@ class $class(IStrategy):
     def populate_buy_trend(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
         dataframe.loc[
             (
+                (dataframe['rsi'] < 30) &
                 (dataframe['close'] <= 0.98 * dataframe['bb_lowerband'])
             )
             ,
