@@ -1,3 +1,9 @@
+**15/08/2021**
+- removed "amend_last_stake_amount". Defaults to "false"
+- added "unit": "minutes" in "unfilledtimeout"
+- updated "bid_strategy" with new options
+- moved protections to strategy file (protections in config are deprecated)
+
 **07/05/2021**
 - added "amend_last_stake_amount": true,
 - updated ip detection method to use wan ip
