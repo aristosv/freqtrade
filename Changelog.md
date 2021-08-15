@@ -1,5 +1,5 @@
 **15/08/2021**
-- removed "amend_last_stake_amount". Defaults to "false"
+- removed "amend_last_stake_amount". Now defaults to "false"
 - added "unit": "minutes" in "unfilledtimeout"
 - updated "bid_strategy" with new options
 - moved protections to strategy file (protections in config are deprecated)
