@@ -32,7 +32,7 @@ class $class(IStrategy):
             "required_profit": 0.02,     # with less than 2% profit
             "stop_duration": 60          # stop trading the specific pairs for 60 minutes
         }
-    ],
+    ]
 
     stoploss = -0.4
     timeframe = '1m'
