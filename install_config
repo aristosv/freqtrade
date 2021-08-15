@@ -3,17 +3,18 @@
     "stake_currency": "$stake_currency",
     "stake_amount": $stake_amount,
     "fiat_display_currency": "$display_currency",
-    "amend_last_stake_amount": true,
     "dry_run": false,
 
     "unfilledtimeout": {
         "buy": 10,
-        "sell": 30
+        "sell": 30,
+        "unit": "minutes"
     },
 
     "bid_strategy": {
+        "price_side": "bid",
+        "use_order_book": true,
         "ask_last_balance": 0.0,
-        "use_order_book": false,
         "order_book_top": 1,
         "check_depth_of_market": {
             "enabled": false,
@@ -31,6 +32,33 @@
         "stoploss_on_exchange": true,        // place orders on the exchange
         "stoploss_on_exchange_interval": 60  // update stoploss on the exchange every minute
     },
+
+    "pairlists": [
+        {
+            "method": "VolumePairList",
+            "number_assets": 250,       // search for 250 pairs
+            "sort_key": "quoteVolume",  // sort pairs by traded volume
+            "refresh_period": 1800      // update every 30 minutes
+        },
+        {"method": "AgeFilter", "min_days_listed": 5},                                // ignore pairs listed for less than 5 days
+        {"method": "PrecisionFilter"},                                                // ignore untradable pairs
+        {"method": "PriceFilter", "low_price_ratio": 0.01, "min_price": 0.00000010},  // ignore pairs priced below 1.0% or below 0.00000010
+        {"method": "SpreadFilter", "max_spread_ratio": 0.005},                        // ignore pairs with ask/bid difference above 0.5%
+        {"method": "ShuffleFilter"},                                                  // randomize pairs for equal trading priority
+        {
+            "method": "RangeStabilityFilter",
+            "lookback_days": 10,         // in the last 10 days
+            "min_rate_of_change": 0.03,  // ignore pairs with rate change below 3%
+            "refresh_period": 1440       // update every 24 hours
+        },
+        {
+            "method": "VolatilityFilter",
+            "lookback_days": 10,     // ignore pairs if in the last 10 days
+            "min_volatility": 0.05,  // their minimum volatility is less than 0.05
+            "max_volatility": 0.50,  // their maximum volatility is more than 0.50
+            "refresh_period": 86400  // update every 24 hours
+        }
+    ],
 
     "exchange": {
         "name": "$exchange_name",
@@ -71,61 +99,6 @@
             "BNB/$stake_currency"       // binance coin
         ]
     },
-
-    "pairlists": [
-        {
-            "method": "VolumePairList",
-            "number_assets": 250,       // search for 250 pairs
-            "sort_key": "quoteVolume",  // sort pairs by traded volume
-            "refresh_period": 1800      // update every 30 minutes
-        },
-        {"method": "AgeFilter", "min_days_listed": 5},                                // ignore pairs listed for less than 5 days
-        {"method": "PrecisionFilter"},                                                // ignore untradable pairs
-        {"method": "PriceFilter", "low_price_ratio": 0.01, "min_price": 0.00000010},  // ignore pairs priced below 1.0% or below 0.00000010
-        {"method": "SpreadFilter", "max_spread_ratio": 0.005},                        // ignore pairs with ask/bid difference above 0.5%
-        {"method": "ShuffleFilter"},                                                  // randomize pairs for equal trading priority
-        {
-            "method": "RangeStabilityFilter",
-            "lookback_days": 10,         // in the last 10 days
-            "min_rate_of_change": 0.03,  // ignore pairs with rate change below 3%
-            "refresh_period": 1440       // update every 24 hours
-        },
-        {
-            "method": "VolatilityFilter",
-            "lookback_days": 10,     // ignore pairs if in the last 10 days
-            "min_volatility": 0.05,  // their minimum volatility is less than 0.05
-            "max_volatility": 0.50,  // their maximum volatility is more than 0.50
-            "refresh_period": 86400  // update every 24 hours
-        }
-    ],
-
-    "protections": [
-        {
-            "method": "StoplossGuard",
-            "lookback_period": 1440,  // in the last 24 hours
-            "trade_limit": 5,         // if 5 trades hit stoploss
-            "stop_duration": 60,      // stop trading for an hour
-            "only_per_pair": false    // applies to all pairs
-        },
-        {
-            "method": "CooldownPeriod",
-            "stop_duration": 5  // after closing a trade wait 5 minutes before re-buying the same pair
-        },
-        {
-            "method": "MaxDrawdown",
-            "lookback_period": 360,       // in the last 6 hours
-            "trade_limit": 20,            // considering only pairs that made at least 20 trades
-            "max_allowed_drawdown": 0.2,  // if drawdown is more than 20%
-            "stop_duration": 60           // stop all trading for 60 minutes
-        },
-        {
-            "method": "LowProfitPairs",
-            "lookback_period": 360,  // in the last 6 hours
-            "trade_limit": 2,        // considering only pairs that made at least 2 trades
-            "required_profit": 0.02, // with less than 2% profit
-            "stop_duration": 60      // stop trading the specific pairs for 60 minutes
-        }
-    ],
 
     "api_server": {
         "enabled": true,
