@@ -40,17 +40,20 @@
             "sort_key": "quoteVolume",  // sort pairs by traded volume
             "refresh_period": 1800      // update every 30 minutes
         },
+        
         {"method": "AgeFilter", "min_days_listed": 5},                                // ignore pairs listed for less than 5 days
         {"method": "PrecisionFilter"},                                                // ignore untradable pairs
         {"method": "PriceFilter", "low_price_ratio": 0.01, "min_price": 0.00000010},  // ignore pairs priced below 1.0% or below 0.00000010
         {"method": "SpreadFilter", "max_spread_ratio": 0.005},                        // ignore pairs with ask/bid difference above 0.5%
         {"method": "ShuffleFilter"},                                                  // randomize pairs for equal trading priority
+        
         {
             "method": "RangeStabilityFilter",
             "lookback_days": 10,         // in the last 10 days
             "min_rate_of_change": 0.03,  // ignore pairs with rate change below 3%
             "refresh_period": 1440       // update every 24 hours
         },
+        
         {
             "method": "VolatilityFilter",
             "lookback_days": 10,     // ignore pairs if in the last 10 days
@@ -73,30 +76,30 @@
         "pair_whitelist": [
         ],
 
-        "pair_blacklist": [             // do not trade the following pairs
-            ".*UP/$stake_currency",     // UP leveraged tokens
-            ".*DOWN/$stake_currency",   // DOWN leveraged tokens
-            "EUR/$stake_currency",      // Euro
-            "AUD/$stake_currency",      // Australian dollar
-            "BRL/$stake_currency",      // Brazilian real
-            "GBP/$stake_currency",      // British pound
-            "RUB/$stake_currency",      // Russian ruble
-            "ZAR/$stake_currency",      // South African rand
-            "NGN/$stake_currency",      // Nigerian naira
-            "UAH/$stake_currency",      // Ukrainian hryvnia
-            "TRY/$stake_currency",      // Turkish lira
-            "BUSD/$stake_currency",     // stablecoin
-            "TUSD/$stake_currency",     // stablecoin
-            "USDC/$stake_currency",     // stablecoin
-            "PAX/$stake_currency",      // stablecoin
-            "BIDR/$stake_currency",     // stablecoin
-            "DAI/$stake_currency",      // stablecoin
-            "IDRT/$stake_currency",     // stablecoin
-            "VAI/$stake_currency",      // stablecoin
-            "BVND/$stake_currency",     // stablecoin
-            "PAXG/$stake_currency",     // stablecoin
-            "SUSD/$stake_currency",     // stablecoin
-            "BNB/$stake_currency"       // binance coin
+        "pair_blacklist": [            // do not trade the following pairs
+            ".*UP/$stake_currency",    // UP leveraged tokens
+            ".*DOWN/$stake_currency",  // DOWN leveraged tokens
+            "EUR/$stake_currency",     // Euro
+            "AUD/$stake_currency",     // Australian dollar
+            "BRL/$stake_currency",     // Brazilian real
+            "GBP/$stake_currency",     // British pound
+            "RUB/$stake_currency",     // Russian ruble
+            "ZAR/$stake_currency",     // South African rand
+            "NGN/$stake_currency",     // Nigerian naira
+            "UAH/$stake_currency",     // Ukrainian hryvnia
+            "TRY/$stake_currency",     // Turkish lira
+            "BUSD/$stake_currency",    // stablecoin
+            "TUSD/$stake_currency",    // stablecoin
+            "USDC/$stake_currency",    // stablecoin
+            "PAX/$stake_currency",     // stablecoin
+            "BIDR/$stake_currency",    // stablecoin
+            "DAI/$stake_currency",     // stablecoin
+            "IDRT/$stake_currency",    // stablecoin
+            "VAI/$stake_currency",     // stablecoin
+            "BVND/$stake_currency",    // stablecoin
+            "PAXG/$stake_currency",    // stablecoin
+            "SUSD/$stake_currency",    // stablecoin
+            "BNB/$stake_currency"      // binance coin
         ]
     },
 
@@ -113,10 +116,10 @@
     },
 
     "telegram": {
-        "enabled": true,                                   // enable telegram
-        "token": "$telegram_token",                        // telegram bot token
-        "chat_id": "$telegram_chatid",                     // your telegram chat id
-        "keyboard": [                                      // custom telegram keyboard
+        "enabled": true,               // enable telegram
+        "token": "$telegram_token",    // telegram bot token
+        "chat_id": "$telegram_chatid", // your telegram chat id
+        "keyboard": [                  // custom telegram keyboard
           ["/daily", "/profit", "/stats", "/count"],
           ["/status table", "/balance", "/logs", "/help"]
       ]
