@@ -6,13 +6,13 @@ from functools import reduce
 import talib.abstract as ta
 class $class(IStrategy):
 
-protections = [
+    protections = [
         {
             "method": "StoplossGuard",
             "lookback_period": 1440,     # in the last 24 hours
             "trade_limit": 5,            # if 5 trades hit stoploss
             "stop_duration": 60,         # stop trading for an hour
-            "only_per_pair": false       # applies to all pairs
+            "only_per_pair": "false"       # applies to all pairs
         },
         {
             "method": "CooldownPeriod",
