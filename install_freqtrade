@@ -8,7 +8,7 @@ echo checking out git repository
 git checkout develop > /dev/null 2>&1
 
 echo installing freqtrade
-printf 'y\ny\n' | ./setup.sh --install > /dev/null 2>&1
+printf 'y\ny\n' | ./setup.sh -i > /dev/null 2>&1
 
 echo installing frequi
 source .env/bin/activate
