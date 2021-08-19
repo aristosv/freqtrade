@@ -1,3 +1,6 @@
+**19/08/2021**
+- improved "pair_blacklist"
+
 **15/08/2021**
 - removed "amend_last_stake_amount". Now defaults to "false"
 - added "unit": "minutes" in "unfilledtimeout"
