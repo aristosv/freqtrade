@@ -103,10 +103,10 @@
     },
 
     "telegram": {
-        "enabled": true,               // enable telegram
-        "token": "$telegram_token",    // telegram bot token
-        "chat_id": "$telegram_chatid", // your telegram chat id
-        "keyboard": [                  // custom telegram keyboard
+        "enabled": true,                                  // enable telegram
+        "token": "$telegram_token",                       // telegram bot token
+        "chat_id": "$telegram_chatid",                    // your telegram chat id
+        "keyboard": [                                     // custom telegram keyboard
           ["/daily", "/profit", "/stats", "/count"],
           ["/status table", "/balance", "/logs", "/help"]
       ]
