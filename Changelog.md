@@ -1,5 +1,6 @@
 **19/08/2021**
 - improved "pair_blacklist"
+- added StaticPairList combined with VolumePairList
 
 **15/08/2021**
 - removed "amend_last_stake_amount". Now defaults to "false"
