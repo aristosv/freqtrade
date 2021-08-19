@@ -34,11 +34,12 @@
     },
 
     "pairlists": [
+        {"method": "StaticPairList"},
         {
             "method": "VolumePairList",
-            "number_assets": 250,       // search for 250 pairs
-            "sort_key": "quoteVolume",  // sort pairs by traded volume
-            "refresh_period": 1800      // update every 30 minutes
+            "number_assets": 250,
+            "sort_key": "quoteVolume",
+            "refresh_period": 1800
         },
 
         {"method": "AgeFilter", "min_days_listed": 5},                                // ignore pairs listed for less than 5 days
@@ -74,6 +75,7 @@
         },
 
         "pair_whitelist": [
+        ".*/$stake_currency"
         ],
 
         "pair_blacklist": [
