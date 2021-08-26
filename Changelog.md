@@ -1,3 +1,6 @@
+**26/08/2021**
+- Due to a [problem](https://github.com/freqtrade/freqtrade/issues/5479) with older panda versions the Bollinger Bands strategy was not working. It has now been fixed.
+
 **19/08/2021**
 - improved "pair_blacklist"
 - added StaticPairList combined with VolumePairList
