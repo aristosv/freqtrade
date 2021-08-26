@@ -1,5 +1,5 @@
 **26/08/2021**
-- Due to a [problem](https://github.com/freqtrade/freqtrade/issues/5479) with older panda versions the Bollinger Bands strategy was not working. It has now been fixed.
+- Due to a [problem](https://github.com/freqtrade/freqtrade/issues/5479) with older panda versions the Bollinger Bands strategy was not working properly. It has now been fixed.
 - Set profit to 1.2% with a 0.3% deviation
 
 **19/08/2021**
