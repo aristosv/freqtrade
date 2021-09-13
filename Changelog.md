@@ -1,5 +1,6 @@
 **13/09/2021**
 - Modified "trailing_stop_positive_offset" to 0.015 to ensure at least 1% profit per trade
+- Removed sell signal since we depend on "trailing_stop" for sales
 
 **26/08/2021**
 - Due to a [problem](https://github.com/freqtrade/freqtrade/issues/5479) with older panda versions the Bollinger Bands strategy was not working properly. It has now been fixed.
