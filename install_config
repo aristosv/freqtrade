@@ -37,12 +37,12 @@
         {"method": "StaticPairList"},
         {
             "method": "VolumePairList",
-            "number_assets": 250,
+            "number_assets": 80,
             "sort_key": "quoteVolume",
             "refresh_period": 1800
         },
 
-        {"method": "AgeFilter", "min_days_listed": 5},                                // ignore pairs listed for less than 5 days
+        {"method": "AgeFilter", "min_days_listed": 3},                                // ignore pairs listed for less than 3 days
         {"method": "PrecisionFilter"},                                                // ignore untradable pairs
         {"method": "PriceFilter", "low_price_ratio": 0.01, "min_price": 0.00000010},  // ignore pairs priced below 1.0% or below 0.00000010
         {"method": "SpreadFilter", "max_spread_ratio": 0.005},                        // ignore pairs with ask/bid difference above 0.5%
@@ -50,16 +50,16 @@
 
         {
             "method": "RangeStabilityFilter",
-            "lookback_days": 10,         // in the last 10 days
-            "min_rate_of_change": 0.03,  // ignore pairs with rate change below 3%
+            "lookback_days": 3,         // in the last 3 days
+            "min_rate_of_change": 0.01,  // ignore pairs with rate change below 1%
             "refresh_period": 1440       // update every 24 hours
         },
 
         {
             "method": "VolatilityFilter",
-            "lookback_days": 10,     // ignore pairs if in the last 10 days
-            "min_volatility": 0.05,  // their minimum volatility is less than 0.05
-            "max_volatility": 0.50,  // their maximum volatility is more than 0.50
+            "lookback_days": 4,     // ignore pairs if in the last 4 days
+            "min_volatility": 0.02,  // their minimum volatility is less than 0.05
+            "max_volatility": 0.75,  // their maximum volatility is more than 0.50
             "refresh_period": 86400  // update every 24 hours
         }
     ],
