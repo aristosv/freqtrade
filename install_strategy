@@ -32,12 +32,12 @@ class $class(IStrategy):
         }
     ]
 
-    stoploss = -0.4
-    timeframe = '1h'
-    trailing_stop = True
-    trailing_stop_positive = 0.005
-    trailing_stop_positive_offset = 0.025
-    trailing_only_offset_is_reached = True
+    stoploss = -0.4                         # close a trade if the loss reaches 40%
+    timeframe = '1h'                        # use 1 hour candles
+    trailing_stop = True                    # enable trailing stop
+    trailing_stop_positive = 0.005          
+    trailing_stop_positive_offset = 0.025   # when a trade reaches 2.5% profit
+    trailing_only_offset_is_reached = True  # start trailing
 
     def populate_indicators(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
         dataframe['rsi'] = ta.RSI(dataframe, timeperiod=14)
