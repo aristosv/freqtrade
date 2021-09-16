@@ -94,8 +94,8 @@
         "enable_openapi": false,           // enable openapi
         "jwt_secret_key": "$secretkey",    // randon key value
         "CORS_origins": [],
-        "username": "$webuser",
-        "password": "$webpass"
+        "username": "$webuser",            // frequi username
+        "password": "$webpass"             // frequi password
     },
 
     "telegram": {
