@@ -3,6 +3,7 @@
     "stake_currency": "$stake_currency",
     "stake_amount": $stake_amount,
     "fiat_display_currency": "$display_currency",
+    "forcebuy_enable": true,
     "dry_run": false,
 
     "unfilledtimeout": {
