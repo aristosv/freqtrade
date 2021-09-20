@@ -1,3 +1,6 @@
+**20/09/2021**
+- Enabled manually buying pairs from freqtrade ("forcebuy_enable": true)
+
 **13/09/2021**
 - Modified "trailing_stop_positive_offset" to 0.015 to ensure at least 1% profit per trade
 - Removed sell signal from strategy since we depend on "trailing_stop" for sales
