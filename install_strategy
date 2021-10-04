@@ -35,8 +35,8 @@ class $class(IStrategy):
     stoploss = -0.4                         # close a trade if the loss reaches 40%
     timeframe = '1h'                        # use 1 hour candles
     trailing_stop = True                    # enable trailing stop
-    trailing_stop_positive = 0.005
-    trailing_stop_positive_offset = 0.015   # when a trade reaches 1.5% profit
+    trailing_stop_positive = 0.015
+    trailing_stop_positive_offset = 0.030   # when a trade reaches 1.5% profit
     trailing_only_offset_is_reached = True  # start trailing
 
     def populate_indicators(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
@@ -50,9 +50,9 @@ class $class(IStrategy):
     def populate_buy_trend(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
         dataframe.loc[
             (
-                    (dataframe['rsi'] < 30) &
-                    (dataframe['close'] < dataframe['bb_lowerband'])
-
+                    (dataframe['close'].shift(1)<dataframe['bb_lowerband']) &        #moves the entry to the next candle if is in the bolinger bands
+                    (dataframe['close'] < dataframe['bb_lowerband']) &
+                    (dataframe['rsi'].rolling(8).min() < 30)
             ),
             'buy'] = 1
         return dataframe
