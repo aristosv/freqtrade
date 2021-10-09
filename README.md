@@ -34,7 +34,7 @@ bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristo
 ---
 ## Required setup information
 - **Bot Name:** This defines the bot's directory, service and strategy names.
-- **Stake Currency:** The coin you want to use to trade on. Example: USDT.
+- **Stake Currency:** The coin you want to use to trade on. Examples: USDT, BTC.
 - **Display Currency:** The currency in which amounts will be displayed. Examples: USD, EUR, GBP.
 - **Stake Amount:** The amount you want to invest per trade.
 - **Max Open Trades:** The maximum allowed number of trades. -1 opens as many as possible.
