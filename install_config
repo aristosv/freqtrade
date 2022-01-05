@@ -96,7 +96,8 @@
             ".*(BNB)/.*",
             ".*(_PREMIUM|BEAR|BULL|DOWN|HALF|HEDGE|UP|[1235][SL])/.*",
             ".*(AUD|BRL|BRZ|CAD|CHF|EUR|GBP|HKD|IDRT|JPY|NGN|RUB|SGD|TRY|UAH|USD|ZAR)/.*",
-            ".*(BIDR|BUSD|BVND|CUSDT|DAI|IDRT|PAX|PAXG|SUSD|TUSD|USDC|USDT|VAI)/.*"
+            ".*(BIDR|BUSD|BVND|CUSDT|DAI|IDRT|PAX|PAXG|SUSD|TUSD|USDC|USDT|VAI)/.*",
+            ".*(PPT|RDN|AGI)/.*"
         ],
         "outdated_offset": 5,
         "markets_refresh_interval": 60
