@@ -149,7 +149,7 @@
         "balance_dust_level": 0.01
     },
     "api_server": {
-        "enabled": false,
+        "enabled": true,
         "listen_ip_address": "$ipaddress",
         "listen_port": $webport,
         "verbosity": "error",
