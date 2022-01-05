@@ -162,7 +162,7 @@
     "bot_name": "$botname",
     "db_url": "sqlite:///tradesv3.sqlite",
     "initial_state": "running",
-    "forcebuy_enable": true,
+    "forcebuy_enable": false,
     "internals": {
         "process_throttle_secs": 5,
         "heartbeat_interval": 60
