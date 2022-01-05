@@ -12,7 +12,7 @@
     "timeframe": "5m",
     "trailing_stop": true,
     "trailing_stop_positive": 0.005,
-    "trailing_stop_positive_offset": 0.0051,
+    "trailing_stop_positive_offset": 0.01,
     "trailing_only_offset_is_reached": true,
     "use_sell_signal": true,
     "sell_profit_only": true,
