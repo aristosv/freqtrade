@@ -119,7 +119,11 @@
         "enabled": true,
         "token": "$telegram_token",
         "chat_id": "$telegram_chatid",
-        "notification_settings": {
+        "keyboard": [
+           ["/daily", "/profit", "/stats", "/count"],
+           ["/status table", "/balance", "/logs", "/help"]
+         ],
+            "notification_settings": {
             "status": "on",
             "warning": "on",
             "startup": "on",
