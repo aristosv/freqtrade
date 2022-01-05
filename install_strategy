@@ -4,41 +4,6 @@ import talib.abstract as ta
 import freqtrade.vendor.qtpylib.indicators as qtpylib
 class $class(IStrategy):
 
-    protections = [
-        {
-            "method": "StoplossGuard",
-            "lookback_period": 1440,     # in the last 24 hours
-            "trade_limit": 5,            # if 5 trades hit stoploss
-            "stop_duration": 60,         # stop trading for an hour
-            "only_per_pair": "false"     # applies to all pairs
-        },
-        {
-            "method": "CooldownPeriod",
-            "stop_duration": 5           # after closing a trade wait 5 minutes before re-buying the same pair
-        },
-        {
-            "method": "MaxDrawdown",
-            "lookback_period": 360,      # in the last 6 hours
-            "trade_limit": 20,           # considering only pairs that made at least 20 trades
-            "max_allowed_drawdown": 0.2, # if drawdown is more than 20%
-            "stop_duration": 60          # stop all trading for 60 minutes
-        },
-        {
-            "method": "LowProfitPairs",
-            "lookback_period": 360,      # in the last 6 hours
-            "trade_limit": 2,            # considering only pairs that made at least 2 trades
-            "required_profit": 0.02,     # with less than 2% profit
-            "stop_duration": 60          # stop trading the specific pairs for 60 minutes
-        }
-    ]
-
-    stoploss = -0.4                         # close a trade if the loss reaches 40%
-    timeframe = '1h'                        # use 1 hour candles
-    trailing_stop = True                    # enable trailing stop
-    trailing_stop_positive = 0.005
-    trailing_stop_positive_offset = 0.015   # when a trade reaches 1.5% profit
-    trailing_only_offset_is_reached = True  # start trailing
-
     def populate_indicators(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
         dataframe['rsi'] = ta.RSI(dataframe, timeperiod=14)
         bollinger = qtpylib.bollinger_bands(qtpylib.typical_price(dataframe), window=20, stds=2)
