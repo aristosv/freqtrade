@@ -4,6 +4,7 @@ echo setting variables
 configfile=/usr/local/$botname/config.json
 
 echo saving current configuration
+botname=$(grep '^ *"botname":' $configfile | awk '{ print $2 }' | sed -e 's/,$//' -e 's/^"//' -e 's/"$//')
 stake_currency=$(grep '^ *"stake_currency":' $configfile | awk '{ print $2 }' | sed -e 's/,$//' -e 's/^"//' -e 's/"$//')
 display_currency=$(grep '^ *"fiat_display_currency":' $configfile | awk '{ print $2 }' | sed -e 's/,$//' -e 's/^"//' -e 's/"$//')
 stake_amount=$(grep '^ *"stake_amount":' $configfile | awk '{ print $2 }' | sed -e 's/,$//' -e 's/^"//' -e 's/"$//')
@@ -20,6 +21,7 @@ ipaddress=$(grep '^ *"listen_ip_address":' $configfile | awk '{ print $2 }' | se
 secretkey=$(grep '^ *"jwt_secret_key":' $configfile | awk '{ print $2 }' | sed -e 's/,$//' -e 's/^"//' -e 's/"$//')
 
 echo
+echo Bot Name: $botname
 echo Stake Curency: $stake_currency
 echo Display Currency: $display_currency
 echo Stake Amount: $stake_amount
@@ -46,6 +48,7 @@ echo downloading updated configuration
 wget -q https://raw.githubusercontent.com/aristosv/freqtrade/main/install_config --output-document="$configfile"
 
 echo writing saved configuration
+sed -i "s/\$botname/$botname/g" $configfile
 sed -i "s/\$stake_currency/$stake_currency/g" $configfile
 sed -i "s/\$display_currency/$display_currency/g" $configfile
 sed -i "s/\$stake_amount/$stake_amount/g" $configfile
