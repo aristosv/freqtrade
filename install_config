@@ -169,7 +169,7 @@
         "heartbeat_interval": 60
     },
     "disable_dataframe_checks": false,
-    "strategy": "$botname",
+    "strategy": "$strategy",
     "strategy_path": "user_data/strategies/",
     "dataformat_ohlcv": "json",
     "dataformat_trades": "jsongz"
