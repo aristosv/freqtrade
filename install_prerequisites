@@ -1,3 +1,4 @@
 #!/bin/bash
 
+echo installing packages
 apt install -y git curl python3-pip python3-venv sudo > /dev/null 2>&1
