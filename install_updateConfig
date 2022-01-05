@@ -1,10 +1,10 @@
 #!/bin/bash
 
 echo setting variables
-configfile=/usr/local/$botname/config.json
+configfile=/usr/local/freqtrade/config.json
 
 echo saving current configuration
-botname=$(grep '^ *"botname":' $configfile | awk '{ print $2 }' | sed -e 's/,$//' -e 's/^"//' -e 's/"$//')
+botname=$(grep '^ *"bot_name":' $configfile | awk '{ print $2 }' | sed -e 's/,$//' -e 's/^"//' -e 's/"$//')
 stake_currency=$(grep '^ *"stake_currency":' $configfile | awk '{ print $2 }' | sed -e 's/,$//' -e 's/^"//' -e 's/"$//')
 display_currency=$(grep '^ *"fiat_display_currency":' $configfile | awk '{ print $2 }' | sed -e 's/,$//' -e 's/^"//' -e 's/"$//')
 stake_amount=$(grep '^ *"stake_amount":' $configfile | awk '{ print $2 }' | sed -e 's/,$//' -e 's/^"//' -e 's/"$//')
@@ -19,6 +19,7 @@ webpass=$(grep '^ *"password":' $configfile | awk '{ print $2 }' | sed -e 's/,$/
 webport=$(grep '^ *"listen_port":' $configfile | awk '{ print $2 }' | sed -e 's/,$//' -e 's/^"//' -e 's/"$//')
 ipaddress=$(grep '^ *"listen_ip_address":' $configfile | awk '{ print $2 }' | sed -e 's/,$//' -e 's/^"//' -e 's/"$//')
 secretkey=$(grep '^ *"jwt_secret_key":' $configfile | awk '{ print $2 }' | sed -e 's/,$//' -e 's/^"//' -e 's/"$//')
+strategy=$(grep '^ *"strategy":' $configfile | awk '{ print $2 }' | sed -e 's/,$//' -e 's/^"//' -e 's/"$//')
 
 echo
 echo Bot Name: $botname
@@ -36,10 +37,11 @@ echo FreqUI Password: $webpass
 echo Listen Port: $webport
 echo Listen IP Address: $ipaddress
 echo Secret Key: $secretkey
+echo Strategy: $strategy
 echo
 
 echo stopping freqtrade
-systemctl stop $botname.service
+systemctl stop freqtrade.service
 
 echo removing old configuration
 rm $configfile
@@ -63,6 +65,7 @@ sed -i "s/\$webpass/$webpass/g" $configfile
 sed -i "s/\$webport/$webport/g" $configfile
 sed -i "s/\$ipaddress/$ipaddress/g" $configfile
 sed -i "s/\$secretkey/$secretkey/g" $configfile
+sed -i "s/\$strategy/$strategy/g" $configfile
 
 echo starting freqtrade
-systemctl start $botname.service
+systemctl start freqtrade.service
