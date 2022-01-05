@@ -55,3 +55,4 @@ bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristo
 - **Update the configuration from this repo:** /usr/local/$botname/updateConfig
 - **Update the strategy from this repo:** /usr/local/$botname/updateStrategy
 - **Tail log file:** tail -f /var/log/$botname.log
+- **Tail service:** journalctl -f -u $botname.service
