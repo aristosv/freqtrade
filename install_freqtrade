@@ -3,7 +3,7 @@
 echo cloning repository
 git clone -b develop https://github.com/freqtrade/freqtrade.git /usr/local/$botname > /dev/null 2>&1
 
-echo installing freqtrade
+echo building freqtrade
 cd /usr/local/$botname
 echo "y y n n" | ./setup.sh -i > /dev/null 2>&1
 
