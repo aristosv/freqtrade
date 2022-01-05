@@ -1,3 +1,6 @@
+**05/01/2022**
+- Minor changes in scripts to accommodate new features and installation process
+
 **20/09/2021**
 - Enabled manually buying pairs from freqtrade ("forcebuy_enable": true)
 
