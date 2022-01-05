@@ -32,7 +32,7 @@ apt update > /dev/null 2>&1
 echo upgrading system
 apt -y upgrade > /dev/null 2>&1
 
-echo installing software
+echo installing prerequisites
 bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/freqtrade/main/install_prerequisites)
 
 echo installing freqtrade
