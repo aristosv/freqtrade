@@ -2,16 +2,36 @@
     "max_open_trades": $max_open_trades,
     "stake_currency": "$stake_currency",
     "stake_amount": $stake_amount,
+    "tradable_balance_ratio": 0.99,
     "fiat_display_currency": "$display_currency",
-    "forcebuy_enable": true,
+    "amount_reserve_percent": 0.05,
+    "amend_last_stake_amount": false,
+    "last_stake_amount_min_ratio": 0.5,
     "dry_run": false,
-
+    "cancel_open_orders_on_exit": true,
+    "timeframe": "5m",
+    "trailing_stop": true,
+    "trailing_stop_positive": 0.005,
+    "trailing_stop_positive_offset": 0.0051,
+    "trailing_only_offset_is_reached": true,
+    "use_sell_signal": true,
+    "sell_profit_only": true,
+    "sell_profit_offset": 0.0,
+    "ignore_roi_if_buy_signal": false,
+    "ignore_buying_expired_candle_after": 300,
+    "minimal_roi": {
+        "40":  0.0,
+        "30":  0.01,
+        "20":  0.02,
+        "0":  0.04
+    },
+    "stoploss": -0.40,
     "unfilledtimeout": {
         "buy": 10,
         "sell": 30,
+        "exit_timeout_count": 0,
         "unit": "minutes"
     },
-
     "bid_strategy": {
         "price_side": "bid",
         "use_order_book": true,
@@ -22,92 +42,130 @@
             "bids_to_ask_delta": 1
         }
     },
-
-    "order_types": {
-        "buy": "limit",                      // when buying use limit orders
-        "sell": "limit",                     // when selling use limit orders
-        "emergencysell": "market",           // for emergency sells use market orders
-        "forcesell": "market",               // for forcesells use market orders
-        "forcebuy": "market",                // for forcebuys use market orders
-        "stoploss": "market",                // for stoplosses use market orders
-        "stoploss_on_exchange": true,        // place orders on the exchange
-        "stoploss_on_exchange_interval": 60  // update stoploss on the exchange every minute
+    "ask_strategy":{
+        "price_side": "ask",
+        "use_order_book": true,
+        "order_book_top": 1
     },
-
+    "order_types": {
+        "buy": "limit",
+        "sell": "limit",
+        "emergencysell": "market",
+        "forcesell": "market",
+        "forcebuy": "market",
+        "stoploss": "market",
+        "stoploss_on_exchange": false,
+        "stoploss_on_exchange_interval": 60
+    },
+    "order_time_in_force": {
+        "buy": "gtc",
+        "sell": "gtc"
+    },
     "pairlists": [
         {"method": "StaticPairList"},
         {
             "method": "VolumePairList",
-            "number_assets": 80,
+            "number_assets": 20,
             "sort_key": "quoteVolume",
             "refresh_period": 1800
         },
-
-        {"method": "AgeFilter", "min_days_listed": 3},                                // ignore pairs listed for less than 3 days
-        {"method": "PrecisionFilter"},                                                // ignore untradable pairs
-        {"method": "PriceFilter", "low_price_ratio": 0.01, "min_price": 0.00000010},  // ignore pairs priced below 1.0% or below 0.00000010
-        {"method": "SpreadFilter", "max_spread_ratio": 0.005},                        // ignore pairs with ask/bid difference above 0.5%
-        {"method": "ShuffleFilter"},                                                  // randomize pairs for equal trading priority
-
+        {"method": "AgeFilter", "min_days_listed": 10},
+        {"method": "PrecisionFilter"},
+        {"method": "PriceFilter", "low_price_ratio": 0.01, "min_price": 0.00000010},
+        {"method": "SpreadFilter", "max_spread_ratio": 0.005},
         {
             "method": "RangeStabilityFilter",
-            "lookback_days": 3,          // in the last 3 days
-            "min_rate_of_change": 0.01,  // ignore pairs with rate change below 1%
-            "refresh_period": 1440       // update every 24 hours
-        },
-
-        {
-            "method": "VolatilityFilter",
-            "lookback_days": 4,      // ignore pairs if in the last 4 days
-            "min_volatility": 0.02,  // their minimum volatility is less than 0.02
-            "max_volatility": 0.75,  // their maximum volatility is more than 0.75
-            "refresh_period": 86400  // update every 24 hours
+            "lookback_days": 10,
+            "min_rate_of_change": 0.01,
+            "refresh_period": 1440
         }
     ],
-
     "exchange": {
-        "name": "$exchange_name",
-        "key": "$exchange_key",
-        "secret": "$exchange_secret",
-        "ccxt_config": {"enableRateLimit": true},  // enable ratelimit for the ccxt library
-        "ccxt_async_config": {                     // for async communication
-            "enableRateLimit": true,               // enable ratelimit
-            "rateLimit": 200                       // and add 2 miliseconds delay between api calls
-        },
-
+        "name": "binance",
+        "sandbox": false,
+        "key": "your_exchange_key",
+        "secret": "your_exchange_secret",
+        "password": "",
+        "ccxt_config": {},
+        "ccxt_async_config": {},
         "pair_whitelist": [
-        ".*/$stake_currency"
+            ".*/$stake_currency"
         ],
-
-        "pair_blacklist": [                                                                // Blacklist the following pairs
-            ".*(BNB)/.*",                                                                  // Binance coin
-            ".*(_PREMIUM|BEAR|BULL|DOWN|HALF|HEDGE|UP|[1235][SL])/.*",                     // Leverage tokens
-            ".*(AUD|BRL|BRZ|CAD|CHF|EUR|GBP|HKD|IDRT|JPY|NGN|RUB|SGD|TRY|UAH|USD|ZAR)/.*", // Fiat currencies
-            ".*(BIDR|BUSD|BVND|CUSDT|DAI|IDRT|PAX|PAXG|SUSD|TUSD|USDC|USDT|VAI)/.*"        // Stable coins
-        ]
+        "pair_blacklist": [
+            "DOGE/BTC"
+            ".*(BNB)/.*",
+            ".*(_PREMIUM|BEAR|BULL|DOWN|HALF|HEDGE|UP|[1235][SL])/.*",
+            ".*(AUD|BRL|BRZ|CAD|CHF|EUR|GBP|HKD|IDRT|JPY|NGN|RUB|SGD|TRY|UAH|USD|ZAR)/.*",
+            ".*(BIDR|BUSD|BVND|CUSDT|DAI|IDRT|PAX|PAXG|SUSD|TUSD|USDC|USDT|VAI)/.*"
+        ],
+        "outdated_offset": 5,
+        "markets_refresh_interval": 60
     },
-
-    "api_server": {
-        "enabled": true,
-        "listen_ip_address": "$ipaddress", // server ip address
-        "listen_port": $webport,           // api server port
-        "verbosity": "error",              // verbosity level
-        "enable_openapi": false,           // enable openapi
-        "jwt_secret_key": "$secretkey",    // randon key value
-        "CORS_origins": [],
-        "username": "$webuser",            // frequi username
-        "password": "$webpass"             // frequi password
+    "edge": {
+        "enabled": false,
+        "process_throttle_secs": 3600,
+        "calculate_since_number_of_days": 7,
+        "allowed_risk": 0.01,
+        "stoploss_range_min": -0.01,
+        "stoploss_range_max": -0.1,
+        "stoploss_range_step": -0.01,
+        "minimum_winrate": 0.60,
+        "minimum_expectancy": 0.20,
+        "min_trade_number": 10,
+        "max_trade_duration_minute": 1440,
+        "remove_pumps": false
     },
-
     "telegram": {
-        "enabled": true,                                  // enable telegram
-        "token": "$telegram_token",                       // telegram bot token
-        "chat_id": "$telegram_chatid",                    // your telegram chat id
-        "keyboard": [                                     // custom telegram keyboard
-          ["/daily", "/profit", "/stats", "/count"],
-          ["/status table", "/balance", "/logs", "/help"]
-      ]
+        "enabled": true,
+        "token": "$telegram_token",
+        "chat_id": "$telegram_chatid",
+        "notification_settings": {
+            "status": "on",
+            "warning": "on",
+            "startup": "on",
+            "buy": "on",
+            "buy_fill": "on",
+            "sell": {
+                "roi": "on",
+                "emergency_sell": "on",
+                "force_sell": "on",
+                "sell_signal": "on",
+                "trailing_stop_loss": "on",
+                "stop_loss": "on",
+                "stoploss_on_exchange": "on",
+                "custom_sell": "on"
+            },
+            "sell_fill": "on",
+            "buy_cancel": "on",
+            "sell_cancel": "on",
+            "protection_trigger": "on",
+            "protection_trigger_global": "on"
+        },
+        "reload": true,
+        "balance_dust_level": 0.01
     },
-
-    "initial_state": "running"  // initial bot state
+    "api_server": {
+        "enabled": false,
+        "listen_ip_address": "$ipaddress",
+        "listen_port": $webport,
+        "verbosity": "error",
+        "enable_openapi": false,
+        "jwt_secret_key": "$secretkey",
+        "CORS_origins": [],
+        "username": "$webuser",
+        "password": "$webpass"
+    },
+    "bot_name": "$botname",
+    "db_url": "sqlite:///tradesv3.sqlite",
+    "initial_state": "running",
+    "forcebuy_enable": true,
+    "internals": {
+        "process_throttle_secs": 5,
+        "heartbeat_interval": 60
+    },
+    "disable_dataframe_checks": false,
+    "strategy": "$botname",
+    "strategy_path": "user_data/strategies/",
+    "dataformat_ohlcv": "json",
+    "dataformat_trades": "jsongz"
 }
