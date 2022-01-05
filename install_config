@@ -81,10 +81,10 @@
         }
     ],
     "exchange": {
-        "name": "binance",
+        "name": "$exchange_name",
         "sandbox": false,
-        "key": "your_exchange_key",
-        "secret": "your_exchange_secret",
+        "key": "$exchange_key",
+        "secret": "$exchange_secret",
         "password": "",
         "ccxt_config": {},
         "ccxt_async_config": {},
