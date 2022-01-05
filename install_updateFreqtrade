@@ -2,7 +2,7 @@
 
 cd /usr/local/$botname
 echo updating freqtrade
-printf 'y\ny\n' | ./setup.sh --update
+echo "y n n" | ./setup.sh -u
 
 echo updating freqUI
 source .env/bin/activate
