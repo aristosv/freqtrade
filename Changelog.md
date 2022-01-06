@@ -1,3 +1,6 @@
+**06/01/2022**
+- Now using MACD Crossed strategy
+
 **05/01/2022**
 - Minor changes in scripts to accommodate new features and installation process
 
