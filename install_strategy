@@ -1,23 +1,22 @@
-from freqtrade.strategy.interface import IStrategy
+rom freqtrade.strategy.interface import IStrategy
 from pandas import DataFrame
 import talib.abstract as ta
 import freqtrade.vendor.qtpylib.indicators as qtpylib
-class $class(IStrategy):
+class freqtrade(IStrategy):
 
     def populate_indicators(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
-        dataframe['rsi'] = ta.RSI(dataframe, timeperiod=14)
-        bollinger = qtpylib.bollinger_bands(qtpylib.typical_price(dataframe), window=20, stds=2)
-        dataframe['bb_lowerband'] = bollinger['lower']
-        dataframe['bb_middleband'] = bollinger['mid']
-        dataframe['bb_upperband'] = bollinger['upper']
+        macd = ta.MACD(dataframe)
+        dataframe['macd'] = macd['macd']
+        dataframe['macdsignal'] = macd['macdsignal']
+        dataframe['macdhist'] = macd['macdhist']
+        dataframe['cci'] = ta.CCI(dataframe)
         return dataframe
 
     def populate_buy_trend(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
         dataframe.loc[
             (
-                    (dataframe['rsi'] < 30) &
-                    (dataframe['close'] < dataframe['bb_lowerband'])
-
+                qtpylib.crossed_above(dataframe['macd'], dataframe['macdsignal']) &
+                (dataframe['cci'] <= -50.0)
             ),
             'buy'] = 1
         return dataframe
@@ -25,6 +24,8 @@ class $class(IStrategy):
     def populate_sell_trend(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
         dataframe.loc[
             (
+                qtpylib.crossed_below(dataframe['macd'], dataframe['macdsignal']) &
+                (dataframe['cci'] >= 100.0)
             ),
-            'sell'] = 0
+            'sell'] = 1
         return dataframe
