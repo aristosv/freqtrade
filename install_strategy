@@ -2,7 +2,7 @@ rom freqtrade.strategy.interface import IStrategy
 from pandas import DataFrame
 import talib.abstract as ta
 import freqtrade.vendor.qtpylib.indicators as qtpylib
-class freqtrade(IStrategy):
+class $class(IStrategy):
 
     def populate_indicators(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
         macd = ta.MACD(dataframe)
