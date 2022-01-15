@@ -20,10 +20,7 @@
     "ignore_roi_if_buy_signal": false,
     "ignore_buying_expired_candle_after": 300,
     "minimal_roi": {
-        "40":  0.0,
-        "30":  0.01,
-        "20":  0.02,
-        "0":  0.04
+        "0":  100,
     },
     "stoploss": -0.40,
     "unfilledtimeout": {
