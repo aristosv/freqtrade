@@ -29,7 +29,7 @@ If you want to set up multiple bots, run the command again and choose a differen
 
 ## Install Freqtrade
 ```bash
-bash <(wget --no-check-certificate -qO- https://raw.githubusercontent.com/aristosv/freqtrade/main/install)
+bash <(wget -qO- https://raw.githubusercontent.com/aristosv/freqtrade/main/install)
 ```
 ---
 ## Required setup information
